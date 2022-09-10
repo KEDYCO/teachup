@@ -3,7 +3,7 @@
 /* BASIC */
 
 html {
-  background-color: #56baed;
+  background-color: #531253;
 }
 
 body {
@@ -259,7 +259,8 @@ input[type=text]:placeholder {
 } 
 
 #icon {
-  width:60%;
+  width:15%;
+  height: 15%;
 }
 
 * {
