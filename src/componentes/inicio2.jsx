@@ -94,7 +94,7 @@ function iniciosesion2 () {
                                             </div>
                                           </div>
                                         </img>
-                                        <script src="maininicio2.jsx" />
+                                        <script src="maininicio2.js" />
                                       </img>
                                     </div>
                                   </form>

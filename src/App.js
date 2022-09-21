@@ -1,11 +1,10 @@
-import './inicio2css/inicio2css';
 import './componentes/inicio2';
-import './componentes'
-import Inicio2 from './componentes/inicio2';
+import Facebook from './componentes/facebooklogin';
+import './FacebookloginCs.css'
 function App(){
   return (
     <div>
-    <Inicio2/>
+    <Facebook/>
     </div>
   )
 }
