@@ -1,11 +1,13 @@
-import './inicio2css/inicio2css';
-import './componentes/inicio2';
-import './componentes'
-import Inicio2 from './componentes/inicio2';
+import logo from './logo.svg';
+import './csslogin.css';
+import './componentes/PaginaLogin';
+import PaginaLogin from './componentes/PaginaLogin';
+
+
 function App(){
   return (
     <div>
-    <Inicio2/>
+    <PaginaLogin/>
     </div>
   )
 }
