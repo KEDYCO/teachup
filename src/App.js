@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import './csslogin.css';
-import './componentes/PaginaLogin';
-import PaginaLogin from './componentes/PaginaLogin';
-
-
+/*import Facebook from './componentes/facebooklogin';
+import './componentes/FacebookloginCs.css'*/
+import Registrarse from "./componentes/Registrarse";
+import './componentes/RegistrarseCs.css'
 function App(){
   return (
     <div>
-    <PaginaLogin/>
+    <Registrarse/>
     </div>
   )
 }
