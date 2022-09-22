@@ -11,7 +11,9 @@ export default function Registrarse() {
   return(
     <div id='Contenedor'>
     <Card id='Cartita'>
-    <Card.Header as="h5" className='text-center'>Completa el formulario!</Card.Header>
+    <Card.Header as="h5" className='text-center'>Completa el formulario!
+    <link rel="stylesheet" href="RegistrarseCss.css"></link>
+    </Card.Header>
     <Card.Body>
       <Form>
           <Row className="mb-3">
