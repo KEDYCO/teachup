@@ -1,4 +1,9 @@
-import React from "react"
+import React from "react";
+import './FacebookloginCs.css';
+import {
+    Link
+  } from "react-router-dom";
+
 
 export default function Facebook(){
     return(
@@ -21,7 +26,7 @@ export default function Facebook(){
                             <input type="password" placeholder="Contraseña"/>
                             <button class="btn-login">Iniciar sesión</button>
                             <a href="#">¿Olvidaste la contraseña?</a>
-                            <button class="btn-new">Registrarse</button>
+                            <Link to='/registrarse' class="btn-new">Registrarse</Link>
                         </div>
 
                     </div>

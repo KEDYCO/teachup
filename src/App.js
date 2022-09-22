@@ -1,12 +1,24 @@
-import Facebook from './componentes/facebooklogin';
-import './componentes/FacebookloginCs.css';
-//import Registrarse from "./componentes/Registrarse";
-//import './componentes/RegistrarseCs.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link
+} from "react-router-dom";
+import Facebook from './componentes/Iniciosesion/facebooklogin';
+import Registrarse from "./componentes/Registro/Registrarse";
+
 function App(){
   return (
-    <div>
-    <Facebook/>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path = "/" element={<Facebook/>}>
+          </Route>
+          <Route path = "/registrarse" element={<Registrarse/>}>
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

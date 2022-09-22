@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './RegistrarseCs.css';
 import {
   MDBBtn,
   MDBContainer,
