@@ -1,11 +1,10 @@
 /*import Facebook from './componentes/facebooklogin';
 import './componentes/FacebookloginCs.css'*/
-import Registrarse from "./componentes/Registrarse";
-import './componentes/RegistrarseCs.css'
+import GridComplexExample from './Registro/Registrarse.js';
 function App(){
   return (
     <div>
-    <Registrarse/>
+    <GridComplexExample/>
     </div>
   )
 }
