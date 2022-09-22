@@ -1,5 +1,5 @@
 import React from "react";
-import './FacebookloginCs.module.css';
+import './FacebookloginCs.css';
 import {
     Link
   } from "react-router-dom";

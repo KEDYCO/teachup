@@ -7,20 +7,16 @@
            
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #363636;
+    background-color: #0e0d0d;
     color: #1c1e21;
 }
 
 main {
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
     position: relative;
     margin: 0 auto;
-}
-
-footer {
-    height: 10vh;
-    background-color: #ffffff;
+    background-color: #1c1e21
 }
 
 
@@ -140,48 +136,4 @@ footer {
     text-decoration: underline;
 }
 
-.footer-contents {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-}
 
-footer ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 10px 0;
-}
-
-footer ol:first-child {
-    border-bottom: 1px solid #dddfe2;
-}
-           
-footer ol:first-child li:last-child button {
-    background-color: #f5f6f7;
-    border: 1px solid #ccd0d5;
-    outline: none;
-    color: #4b4f56;
-    padding: 0 8px;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-footer ol li {
-    padding-right: 15px;
-    font-size: 12px;
-    color: #385898;
-}
-
-footer ol li a {
-    text-decoration: none;
-    color: #385898;
-}
-
-footer ol li a:hover {
-    text-decoration: underline;
-}
-
-footer small {
-    font-size: 11px;
-}
