@@ -1,7 +1,9 @@
-import Facebook from './componentes/facebooklogin';
+
 import './componentes/FacebookloginCs.css';
-//import Registrarse from "./componentes/Registrarse";
-//import './componentes/RegistrarseCs.css';
+import Facebook from "./componentes/facebooklogin";
+import Registrarse from "./componentes/Registrarse";
+import './componentes/RegistrarseCss.css'
+//<Registrarse/>
 function App(){
   return (
     <div>

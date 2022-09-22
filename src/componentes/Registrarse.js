@@ -1,74 +1,77 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import { Card } from 'react-bootstrap';
+import './RegistrarseCss.css'
 
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBRadio
-}
-from 'mdb-react-ui-kit';
 
 export default function Registrarse() {
-  return (
-    <MDBContainer fluid>
+  return(
+    <div id='Contenedor'>
+    <Card id='Cartita'>
+    <Card.Header as="h5" className='text-center'>Completa el formulario!</Card.Header>
+    <Card.Body>
+      <Form>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Ingresar email" />
+            </Form.Group>
 
-      <MDBRow className='justify-content-center align-items-center m-5'>
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Telefono</Form.Label>
+              <Form.Control type="number" placeholder="Nro de telefono" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridAddress1">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control type="alphabet" placeholder="Nombre" />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridAddress2">
+              <Form.Label>Apellido</Form.Label>
+              <Form.Control placeholder="Apellido" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridAddress1">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control placeholder="Contraseña" />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridAddress2">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control placeholder="ReIngrese Contraseña" />
+            </Form.Group>
+          </Row>
+        
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridState">
+              <Form.Label>Ciudad</Form.Label>
+              <Form.Select defaultValue="Elegir">
+                <option>Avellaneda</option>
+                <option>Lomas de Zamora</option>
+                <option>Lanus</option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridState">
+              <Form.Label>Rol</Form.Label>
+              <Form.Select defaultValue="Elegir">
+                <option>Elegir</option>
+                <option>Profesor</option>
+                <option>Alumno</option>
+              </Form.Select>
+            </Form.Group>
+          </Row>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Card.Body>
+    </Card>
+    </div>
 
-        <MDBCard>
-          <MDBCardBody className='px-4'>
 
-            <h3 className="fw-bold mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
-
-            <MDBRow>
-
-              <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='First Name' size='lg' id='form1' type='text'/>
-              </MDBCol>
-
-              <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Last Name' size='lg' id='form2' type='text'/>
-              </MDBCol>
-
-            </MDBRow>
-
-            <MDBRow>
-
-              <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Birthday' size='lg' id='form3' type='text'/>
-              </MDBCol>
-
-              <MDBCol md='6' className='mb-4'>
-                <h6 className="fw-bold">Gender: </h6>
-                <MDBRadio name='inlineRadio' id='inlineRadio1' value='option1' label='Female' inline />
-                <MDBRadio name='inlineRadio' id='inlineRadio2' value='option2' label='Male' inline />
-                <MDBRadio name='inlineRadio' id='inlineRadio3' value='option3' label='Other' inline />
-              </MDBCol>
-
-            </MDBRow>
-
-            <MDBRow>
-
-              <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Email' size='lg' id='form4' type='email'/>
-              </MDBCol>
-
-              <MDBCol md='6'>
-                <MDBInput wrapperClass='mb-4' label='Phone Number' size='lg' id='form5' type='rel'/>
-              </MDBCol>
-
-            </MDBRow>
-
-            <MDBBtn className='mb-4' size='lg'>Submit</MDBBtn>
-
-          </MDBCardBody>
-        </MDBCard>
-
-      </MDBRow>
-    </MDBContainer>
   );
 }
-
