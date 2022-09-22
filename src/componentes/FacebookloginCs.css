@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+   
 }
            
 body {
@@ -36,12 +37,13 @@ footer {
 
 .colm-logo {
     flex: 0 0 50%;
-    text-align: left;
+    text-align: center;
 }
 
 .colm-form {
     flex: 0 0 40%;
     text-align: center;
+    align-content: center;
 }
 
 .colm-logo img {
@@ -58,11 +60,12 @@ footer {
 .colm-form .form-container {
     background-color: #ffffff;
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
-    padding: 20px;
+    padding: 40px;
     max-width: 400px;
+    align-content: center;
 }
 
 .colm-form .form-container input, .colm-form .form-container .btn-login {
@@ -71,6 +74,7 @@ footer {
     height: 45px;
     vertical-align: middle;
     font-size: 16px;
+    align-content: center;
 }
 
 .colm-form .form-container input {
@@ -81,12 +85,12 @@ footer {
 }
 
 .colm-form .form-container input:focus {
-    border-color: #1877f2;
+    border-color: #e0c213;
     box-shadow: 0 0 0 2px #e7f3ff;
 }
 
 .colm-form .form-container .btn-login {
-    background-color: #1877f2;
+    background-color: #e9da91;
     border: none;
     border-radius: 6px;
     font-size: 20px;
@@ -109,7 +113,7 @@ footer {
 }
 
 .colm-form .form-container .btn-new {
-    background-color: #42b72a;
+    background-color: #966c12;
     border: none;
     border-radius: 6px;
     font-size: 17px;
