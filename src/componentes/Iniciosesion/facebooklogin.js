@@ -13,10 +13,11 @@ export default function Facebook(){
             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title>Teachup iniciar sesion o registrarse</title>
+            <link rel="stylesheet" href="FacebookloginCs.css"></link>
         </head>
         <body>
             <main>
-                <div class="row">
+                <div class="rowsinho">
                     <div class="colm-logo">
                         <img src = "teachup.png" alt="Logo"/>
                     </div>
