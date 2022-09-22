@@ -26,12 +26,12 @@ footer {
 .row {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-content: center;
     width: 100%;
     max-width: 1000px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
     transform: translate(-50%, -50%);
 }
 
