@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './IniciosesionCss.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import {
     Link
   } from "react-router-dom";
 
 
 export default function Iniciosesion(){
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return(
         <html lang="en">
         <head>
@@ -25,8 +31,26 @@ export default function Iniciosesion(){
                         <div class="form-container">
                             <input type="text" placeholder="Dirección de correo electrónico"/>
                             <input type="password" placeholder="Contraseña"/>
-                            <Link to='/paginaprincipal' class="btn-login">Iniciar sesión</Link>
-                            <a href="#">¿Olvidaste la contraseña?</a>
+                            <button class="btn-login">Iniciar sesión</button>
+                            <a href="#" onClick={handleShow}>¿Olvido su contraseña? </a> 
+
+                            <Modal show={show} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                <Modal.Title>Recupero de contraseña</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>Complete con su mail para recibir los pasos para su recupero</Modal.Body>
+                                <Form.Group id="mailGroup">
+                                    <Form.Control id="ingresoMail" placeholder="Ingresar email" />
+                                </Form.Group>
+                                <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Cerrar
+                                </Button>
+                                <Button variant="primary" onClick={handleClose}>
+                                    Enviar
+                                </Button>
+                                </Modal.Footer>
+                            </Modal>
                             <Link to='/registrarse' class="btn-new">Registrarse</Link>
                         </div>
 

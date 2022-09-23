@@ -6,7 +6,6 @@ import Row from 'react-bootstrap/Row';
 import { Card } from 'react-bootstrap';
 import './RegistrarseCss.css'
 
-
 export default function Registrarse() {
   return(
     <div id='Contenedor'>
@@ -59,20 +58,42 @@ export default function Registrarse() {
             </Form.Group>
             <Form.Group as={Col} controlId="formGridState">
               <Form.Label>Rol</Form.Label>
-              <Form.Select defaultValue="Elegir">
-                <option>Elegir</option>
+              <Form.Select>
                 <option>Profesor</option>
                 <option>Alumno</option>
               </Form.Select>
             </Form.Group>
+            </Row>
+            <Row>
+            <Form.Group as={Col} controlId="formGridState">
+              <Form.Label>Elegir pregunta de seguridad</Form.Label>
+              <Form.Select defaultValue="Elegir">
+                <option>¿Cual era mi apodo en secundaria?</option>
+                <option>¿Cual fue el nombre de mi primer mascota?</option>
+                <option>¿Como se llamaba el colegio donde me egrese?</option>
+                <option>¿Como se llamaba el colegio donde me egrese</option>
+                <option>Nombre de mi primer pareja</option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridAddress1">
+              <Form.Label>Respuesta</Form.Label>
+              <Form.Control placeholder="Ingrese la respuesta a su pregunta" />
+            </Form.Group>
           </Row>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
         </Form>
       </Card.Body>
+      <Card.Footer>
+        <Button variant="primary" type="submit">
+              Submit
+        </Button>
+        <Row>
+          Al crear una cuenta aceptas tu conformidad con los nuestros Términos y la Política de Privacidad, además de afirmar que tienes 16 años de edad o más.
+        </Row>
+      </Card.Footer>
     </Card>
+    
     </div>
+    
 
 
   );
