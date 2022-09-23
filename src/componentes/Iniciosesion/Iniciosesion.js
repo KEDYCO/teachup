@@ -32,7 +32,7 @@ export default function Iniciosesion(){
                             <input type="text" placeholder="Dirección de correo electrónico"/>
                             <input type="password" placeholder="Contraseña"/>
                             <button class="btn-login">Iniciar sesión</button>
-                            <a href="#" onClick={handleShow}>Forgotten password? </a> 
+                            <a href="#" onClick={handleShow}>¿Olvido su contraseña? </a> 
 
                             <Modal show={show} onHide={handleClose}>
                                 <Modal.Header closeButton>
@@ -44,10 +44,10 @@ export default function Iniciosesion(){
                                 </Form.Group>
                                 <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
-                                    Close
+                                    Cerrar
                                 </Button>
                                 <Button variant="primary" onClick={handleClose}>
-                                    Save Changes
+                                    Enviar
                                 </Button>
                                 </Modal.Footer>
                             </Modal>
