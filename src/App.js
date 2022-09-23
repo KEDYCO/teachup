@@ -4,7 +4,7 @@ import {
   Routes,
 } 
 from "react-router-dom";
-import Facebook from './componentes/Iniciosesion/facebooklogin';
+import Iniciosesion from './componentes/Iniciosesion/Iniciosesion';
 import Registrarse from "./componentes/Registro/Registrarse";
 
 function App(){
@@ -12,7 +12,7 @@ function App(){
     <Router>
       <div>
         <Routes>
-          <Route path = "/" element={<Facebook/>}>
+          <Route path = "/" element={<Iniciosesion/>}>
           </Route>
           <Route path = "/registrarse" element={<Registrarse/>}>
           </Route>

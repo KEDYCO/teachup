@@ -137,3 +137,19 @@ main {
 }
 
 
+
+
+
+#mailGroup{
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+
+#ingresoMail{
+  width: 100%;
+  margin-right: 45%;
+
+}
