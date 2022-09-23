@@ -2,8 +2,8 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Link
-} from "react-router-dom";
+} 
+from "react-router-dom";
 import Facebook from './componentes/Iniciosesion/facebooklogin';
 import Registrarse from "./componentes/Registro/Registrarse";
 
