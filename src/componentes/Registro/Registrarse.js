@@ -8,7 +8,12 @@ import './RegistrarseCss.css'
 
 export default function Registrarse() {
   return(
+    
+    
     <div id='Contenedor'>
+    <nav className="navReg">
+      <a href="/" className="site-titleReg"><img src="teachupsmall.png"/></a>
+    </nav>
     <Card id='Cartita'>
     <Card.Header as="h5" className='text-center'>Completa el formulario!
     <link rel="stylesheet" href="RegistrarseCss.css"></link>
@@ -84,7 +89,7 @@ export default function Registrarse() {
       </Card.Body>
       <Card.Footer>
         <Button variant="primary" type="submit">
-              Submit
+              Enviar
         </Button>
         <Row>
           Al crear una cuenta aceptas tu conformidad con los nuestros Términos y la Política de Privacidad, además de afirmar que tienes 16 años de edad o más.

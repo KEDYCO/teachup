@@ -18,8 +18,23 @@
   align-content: center;
   align-self: center;
   text-align: center;
-  padding: 5%;
+  
   height: 100vh;
   background-color: #243042;
 }
 
+.navReg{
+  background: #e9da91;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  border-bottom: 5px solid rgb(238, 166, 10)
+  
+}
+
+.site-titleReg img{
+  max-width: 275px;
+}
