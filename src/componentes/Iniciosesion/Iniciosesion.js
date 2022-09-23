@@ -31,7 +31,7 @@ export default function Iniciosesion(){
                         <div class="form-container">
                             <input type="text" placeholder="Dirección de correo electrónico"/>
                             <input type="password" placeholder="Contraseña"/>
-                            <button class="btn-login">Iniciar sesión</button>
+                            <Link to='paginaprincipal' class="btn-login">Iniciar sesión</Link>
                             <a href="#" onClick={handleShow}>¿Olvido su contraseña? </a> 
 
                             <Modal show={show} onHide={handleClose}>
