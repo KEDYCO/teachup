@@ -1,11 +1,11 @@
 import React from "react";
-import './FacebookloginCs.css';
+import './IniciosesionCss.css';
 import {
     Link
   } from "react-router-dom";
 
 
-export default function Facebook(){
+export default function Iniciosesion(){
     return(
         <html lang="en">
         <head>
@@ -25,7 +25,7 @@ export default function Facebook(){
                         <div class="form-container">
                             <input type="text" placeholder="Dirección de correo electrónico"/>
                             <input type="password" placeholder="Contraseña"/>
-                            <button class="btn-login">Iniciar sesión</button>
+                            <Link to='/paginaprincipal' class="btn-login">Iniciar sesión</Link>
                             <a href="#">¿Olvidaste la contraseña?</a>
                             <Link to='/registrarse' class="btn-new">Registrarse</Link>
                         </div>

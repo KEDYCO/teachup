@@ -45,7 +45,7 @@ main {
 }
 
 .colm-logo img {
-    max-width: 400px;
+    max-width: 300px;
 }
 
 .colm-logo h2 {
@@ -92,7 +92,7 @@ main {
     border: none;
     border-radius: 6px;
     font-size: 20px;
-    padding: 0 16px;
+    padding: 5px 16px;
     color: #ffffff;
     font-weight: 700;
 }
