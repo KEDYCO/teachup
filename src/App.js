@@ -6,7 +6,9 @@ import {
 from "react-router-dom";
 import Iniciosesion from './componentes/Iniciosesion/Iniciosesion';
 import Registrarse from "./componentes/Registro/Registrarse";
-import Paginaprincipal from "./componentes/Paginaprincipal/Paginaprincipal";
+import Navbar from "./componentes/Paginaprincipal/Navbar";
+
+
 
 function App(){
   return (
@@ -17,7 +19,7 @@ function App(){
           </Route>
           <Route path = "/registrarse" element={<Registrarse/>}>
           </Route>
-          <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
+          <Route path = "/paginaprincipal" element={<Navbar/>}>
           </Route>
         </Routes>
       </div>
