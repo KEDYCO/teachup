@@ -6,7 +6,8 @@ import {
 from "react-router-dom";
 import Iniciosesion from './componentes/Iniciosesion/Iniciosesion';
 import Registrarse from "./componentes/Registro/Registrarse";
-import Navbar from "./componentes/Paginaprincipal/Navbar";
+
+import Paginaprincipal from "./componentes/Paginaprincipal/Paginaprincipal";
 
 
 
@@ -19,7 +20,7 @@ function App(){
           </Route>
           <Route path = "/registrarse" element={<Registrarse/>}>
           </Route>
-          <Route path = "/paginaprincipal" element={<Navbar/>}>
+          <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
           </Route>
         </Routes>
       </div>
