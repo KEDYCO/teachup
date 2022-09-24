@@ -4,14 +4,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {
     Link
   } from "react-router-dom";
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardImage,
-  MDBBtn
-} from 'mdb-react-ui-kit';
 
 export default function Navbar(){
     return(
