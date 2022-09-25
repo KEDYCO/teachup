@@ -1,17 +1,6 @@
 import React from "react";
 import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {
-    Link
-  } from "react-router-dom";
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardImage,
-  MDBBtn
-} from 'mdb-react-ui-kit';
 
 export default function Navbar(){
     return(
@@ -22,12 +11,17 @@ export default function Navbar(){
               <NavDropdown.Item href="#action/3.1"> <img id="fotona" src="imgs/user.png"/>
                  Mi perfil
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2"> <img id="fotona" src="imgs/edit.png"/> Editar perfil</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2"> <img id="fotona" src="imgs/edit.png"/> 
+              Editar perfil
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3"> <img id="fotona" src="imgs/question.png"/> 
+              Mis consultas
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3"> <img id="fotona" src="imgs/settings.png"/>
+              <NavDropdown.Item href="#action/3.4"> <img id="fotona" src="imgs/settings.png"/>
                  Configuración
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4"> <img id="fotona" src="imgs/question.png"/>
+              <NavDropdown.Item href="#action/3.5"> <img id="fotona" src="imgs/question.png"/>
                  Ayuda
               </NavDropdown.Item>
               <NavDropdown.Item href="/"> <img id="fotona" src="imgs/log-out.png"/>

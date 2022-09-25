@@ -6,8 +6,9 @@ import {
 from "react-router-dom";
 import Iniciosesion from './componentes/Iniciosesion/Iniciosesion';
 import Registrarse from "./componentes/Registro/Registrarse";
-
 import Paginaprincipal from "./componentes/Paginaprincipal/Paginaprincipal";
+import ProfileStatistics from "./componentes/Cards/Cards";
+
 
 
 
@@ -22,6 +23,9 @@ function App(){
           </Route>
           <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
           </Route>
+          <Route path = "/prueba" element={<ProfileStatistics/>}>
+          </Route>
+          
         </Routes>
       </div>
     </Router>
