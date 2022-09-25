@@ -10,6 +10,8 @@ import Filtro from "./componentes/PaginaprincipalALU/Filtro";
 import Paginaprincipal from "./componentes/PaginaprincipalALU/Paginaprincipal";
 import ProfileStatistics from "./componentes/Cards/Cards";
 import Paginaprincipalprof from "./componentes/PaginaprincipalPROF/Paginaprincipalprof";
+import RegistrarseAlu from "./componentes/Registro/RegistrarseAlu";
+import RegistrarseProf from "./componentes/Registro/RegistrarseProfesor";
 
 
 
@@ -21,7 +23,11 @@ function App(){
         <Routes>
           <Route path = "/" element={<Iniciosesion/>}>
           </Route>
-          <Route path = "/registrarse" element={<Filtro/>}>
+          <Route path = "/registrarse" element={<Registrarse/>}>
+          </Route>
+          <Route path = "/registrarseAlu" element={<RegistrarseAlu/>}>
+          </Route>
+          <Route path = "/registrarseProf" element={<RegistrarseProf/>}>
           </Route>
           <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
           </Route>

@@ -44,11 +44,11 @@ export default function Registrarse() {
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridAddress1">
               <Form.Label>Contraseña</Form.Label>
-              <Form.Control placeholder="Contraseña" />
+              <Form.Control placeholder="Contraseña" type="password"/>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridAddress2">
               <Form.Label>Contraseña</Form.Label>
-              <Form.Control placeholder="ReIngrese Contraseña" />
+              <Form.Control placeholder="ReIngrese Contraseña" type="password" />
             </Form.Group>
           </Row>
         
@@ -88,11 +88,11 @@ export default function Registrarse() {
         </Form>
       </Card.Body>
       <Card.Footer>
-        <Button variant="primary" type="submit">
-              Enviar
+        <Button variant="primary" type="submit" href='/RegistrarseAlu'>
+              Continuar
         </Button>
         <Row>
-          Al crear una cuenta aceptas tu conformidad con los nuestros Términos y la Política de Privacidad, además de afirmar que tienes 16 años de edad o más.
+          Al crear una cuenta aceptas tu conformidad con nuestros Términos y Condiciones, y la Política de Privacidad, además de afirmar que tienes 16 años de edad o más.
         </Row>
       </Card.Footer>
     </Card>

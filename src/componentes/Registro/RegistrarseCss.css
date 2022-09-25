@@ -12,6 +12,16 @@
   border-width: thick;
   border-radius: 30px;
 }
+#CartitaAlu{
+  width: 25%;
+  color: #000000; 
+  margin: 0 auto; 
+  float: none; 
+  margin-bottom: 10px; 
+  margin-top: 5%;
+  border-width: thick;
+  border-radius: 30px;
+}
  
 #Contenedor{
   align-items: center;
