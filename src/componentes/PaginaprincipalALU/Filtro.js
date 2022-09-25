@@ -1,29 +1,30 @@
 import React from "react";
-import CardHeader from "react-bootstrap/esm/CardHeader";
+import { Dropdown } from "react-bootstrap";
 import './FiltroCss.css'
-import SidebarMenu from 'react-bootstrap-sidebar-menu';
+
 
 export default function Filtro(){
     return(
-    <SidebarMenu>
-    <div>
+    
+    <div id="contenedorFiltro">
     <div class="row">
         <aside class="col-sm-4"/>
     </div>
-    <div class="card">
-        <article class="card-group-item">
-            <header class="card-header">
-                <h6 class="title">Materia </h6>
-            </header>
-            <div class="filter-content">
-                <div class="card-body">
-                <form>
+    <div class="cardFiltro">
+    
+    <article class="card-group-item">
+      <Dropdown>
+          <Dropdown.Toggle variant="success">
+            Seleccionar materias
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <form>
                     <label class="form-check">
                       <input class="form-check-input" type="checkbox" value=""/>
                       <span class="form-check-label">
                         Musica
                       </span>
-                    </label> 
+                    </label>             
                     <label class="form-check">
                       <input class="form-check-input" type="checkbox" value=""/>
                       <span class="form-check-label">
@@ -43,11 +44,13 @@ export default function Filtro(){
                       </span>
                     </label>
                 </form>
-                </div> 
-            </div>
-        </article> 
+            
+          </Dropdown.Menu>
+        </Dropdown>
+        </article>
+       
         
-        <article class="card-group-item">
+        <article class="card-group-item ">
         <header class="card-header">
                 <h6 class="title">Tipo </h6>
             </header>
@@ -100,44 +103,19 @@ export default function Filtro(){
                 </div> 
             </div>
         </article> 
-
         <article class="card-group-item">
-        <header class="card-header">
-                <h6 class="title">Frecuencia </h6>
-            </header>
-            <div class="filter-content">
-                <div class="card-body">
-                <form>
-                    <label class="form-check">
-                      <input class="form-check-input" type="checkbox" value=""/>
-                      <span class="form-check-label">
-                        Unica
-                      </span>
-                    </label> 
-                    <label class="form-check">
-                      <input class="form-check-input" type="checkbox" value=""/>
-                      <span class="form-check-label">
-                        Semanal
-                      </span>
-                    </label>  
-                </form>
-                </div> 
-            </div>
-        </article> 
-
-        <article class="card-group-item">
-        <header class="card-header">
-                <h6 class="title">Ciudad </h6>
-            </header>
-            <div class="filter-content">
-                <div class="card-body">
-                <form>
+      <Dropdown>
+          <Dropdown.Toggle variant="success">
+            Seleccionar ciudades
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <form>
                     <label class="form-check">
                       <input class="form-check-input" type="checkbox" value=""/>
                       <span class="form-check-label">
                         Avellaneda
                       </span>
-                    </label> 
+                    </label>             
                     <label class="form-check">
                       <input class="form-check-input" type="checkbox" value=""/>
                       <span class="form-check-label">
@@ -149,11 +127,18 @@ export default function Filtro(){
                       <span class="form-check-label">
                         Lomas de Zamora
                       </span>
-                    </label> 
+                    </label>
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox" value=""/>
+                      <span class="form-check-label">
+                        Vicente Lopez
+                      </span>
+                    </label>
                 </form>
-                </div> 
-            </div>
-        </article> 
+            
+          </Dropdown.Menu>
+        </Dropdown>
+        </article>
 
         <article class="card-group-item">
 		<header class="card-header">
@@ -201,10 +186,11 @@ export default function Filtro(){
     <div class ="align-self-center">
         <button type="button" class="btn btn-outline-success">Filtrar</button>
     </div>
+    
     </div> 
     
     </div> 
-  </SidebarMenu>
+  
     )
 
 }
