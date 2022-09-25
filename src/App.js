@@ -6,9 +6,10 @@ import {
 from "react-router-dom";
 import Iniciosesion from './componentes/Iniciosesion/Iniciosesion';
 import Registrarse from "./componentes/Registro/Registrarse";
-import Filtro from "./componentes/Paginaprincipal/Filtro";
-import Paginaprincipal from "./componentes/Paginaprincipal/Paginaprincipal";
+import Filtro from "./componentes/PaginaprincipalALU/Filtro";
+import Paginaprincipal from "./componentes/PaginaprincipalALU/Paginaprincipal";
 import ProfileStatistics from "./componentes/Cards/Cards";
+import Paginaprincipalprof from "./componentes/PaginaprincipalPROF/Paginaprincipalprof";
 
 
 
@@ -23,6 +24,8 @@ function App(){
           <Route path = "/registrarse" element={<Filtro/>}>
           </Route>
           <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
+          </Route>
+          <Route path = "/paginaprincipalprof" element={<Paginaprincipalprof/>}>
           </Route>
         </Routes>
       </div>

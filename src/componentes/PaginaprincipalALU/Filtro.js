@@ -1,8 +1,11 @@
 import React from "react";
 import CardHeader from "react-bootstrap/esm/CardHeader";
+import './FiltroCss.css'
+import SidebarMenu from 'react-bootstrap-sidebar-menu';
 
 export default function Filtro(){
     return(
+    <SidebarMenu>
     <div>
     <div class="row">
         <aside class="col-sm-4"/>
@@ -201,7 +204,7 @@ export default function Filtro(){
     </div> 
     
     </div> 
-    
+  </SidebarMenu>
     )
 
 }

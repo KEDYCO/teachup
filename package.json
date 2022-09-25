@@ -12,6 +12,7 @@
     "mdb-react-ui-kit": "^4.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-bootstrap-sidebar-menu": "^2.0.3",
     "react-bootstrap-star-rating": "^3.5.5-alpha.0.3",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
