@@ -1,4 +1,14 @@
-.card{
-    align-content: flex-start;
-    box-sizing: border-box;
+.cardFiltro{
+    align-content: center;
+    background-color: #e9da91 !important; 
+    height: 100vh;
+    
+}
+
+#contenedorFiltro{
+    
+
+}
+row{
+    padding-right: 0% !important;
 }

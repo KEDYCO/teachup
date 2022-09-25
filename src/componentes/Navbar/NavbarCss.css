@@ -15,11 +15,14 @@ body{
     background: #e9da91;
     color: white;
     display: flex;
+    border-bottom: 5px solid rgb(238, 166, 10);
     justify-content: space-between;
     align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
     font-size: 18px;
+    
+    
 }
 
 

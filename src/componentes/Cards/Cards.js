@@ -11,7 +11,7 @@ export default function Tarjetas() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className="vh-100" style={{ backgroundColor: '#eee' }}>
+    <div className="vh-100" style={{ backgroundColor:  "#1c1e21", overflow : "scroll" }}>
       <MDBContainer className="container py-5 h-100">
         <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
           <MDBCol md="12" xl="4">
@@ -38,9 +38,9 @@ export default function Tarjetas() {
                     <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
                   </div>
                 </div>
-                <MDBBtn rounded size="lg" onClick={handleShow} >
+                <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
-                </MDBBtn>
+                </Button>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -73,9 +73,9 @@ export default function Tarjetas() {
                     <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
                   </div>
                 </div>
-                <MDBBtn rounded size="lg" onClick={handleShow} >
+                <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
-                </MDBBtn>
+                </Button>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>            
@@ -107,9 +107,9 @@ export default function Tarjetas() {
                     <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
                   </div>
                 </div>
-                <MDBBtn rounded size="lg" onClick={handleShow} >
+                <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
-                </MDBBtn>
+                </Button>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -141,9 +141,9 @@ export default function Tarjetas() {
                     <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
                   </div>
                 </div>
-                <MDBBtn rounded size="lg" onClick={handleShow} >
+                <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
-                </MDBBtn>
+                </Button>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -175,9 +175,9 @@ export default function Tarjetas() {
                     <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
                   </div>
                 </div>
-                <MDBBtn rounded size="lg" onClick={handleShow} >
+                <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
-                </MDBBtn>
+                </Button>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -209,9 +209,9 @@ export default function Tarjetas() {
                     <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
                   </div>
                 </div>
-                <MDBBtn rounded size="lg" onClick={handleShow} >
+                <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
-                </MDBBtn>
+                </Button>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>                           
