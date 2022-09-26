@@ -1,8 +1,51 @@
 import React from "react";
+import { useState } from "react";
 import { Dropdown, Button } from "react-bootstrap";
 import './FiltroCss.css'
 
 export default function Filtro(){
+  const[precioMinimo, setPrecioMinimo]= useState(0);
+  const funcPrecMin=(e)=>{
+    if(  e.target.value > 0){
+      setPrecioMinimo(e.target.value)
+    }
+    else{
+      setPrecioMinimo(0);
+    }
+    
+  }
+  const[precioMax, setPrecioMax]= useState(0);
+  const funcPrecMax=(e)=>{
+    if(  e.target.value > 0){
+      setPrecioMax(e.target.value)
+    }
+    else{
+      setPrecioMax(0);
+    }
+  }
+
+
+  const[puntMin, setPuntMin]= useState(1);
+  const funcPuntMin=(e)=>{
+    if( e.target.value > 1 ){
+      setPuntMin(e.target.value)
+    }
+    else{
+      setPuntMin(1);
+    }
+  }
+
+
+  const[puntMax, setPuntMax]= useState(10);
+  const funcPuntMax=(e)=>{
+    if(e.target.value > 0 && 10 >= e.target.value ){
+      setPuntMax(e.target.value);
+    }
+    else{
+      setPuntMax(10);
+    }
+  }
+
   return(
     
     <div id="contenedorFiltro">
@@ -152,11 +195,11 @@ export default function Filtro(){
         <div class="form-row">
         <div class="form-group col-md-6">
           <label>Minimo</label>
-          <input type="number" class="form-control" id="inputEmail4" placeholder="$0"/>
+          <input type="number" class="form-control" value={precioMinimo} onChange={funcPrecMin} placeholder="$0"/>
         </div>
         <div class="form-group col-md-6 text-right">
           <label>Maximo</label>
-          <input type="number" class="form-control" placeholder="$1,0000"/>
+          <input type="number" class="form-control" value={precioMax} onChange={funcPrecMax} />
         </div>
         </div>
         </div> 
@@ -171,11 +214,12 @@ export default function Filtro(){
         <div class="form-row">
         <div class="form-group col-md-6">
           <label>Min</label>
-          <input type="number" class="form-control" id="inputEmail4" placeholder="1"/>
+          <input type="number" class="form-control" value={puntMin} onChange={funcPuntMin} />
         </div>
         <div class="form-group col-md-6 text-right">
           <label>Max</label>
-          <input type="number" class="form-control" placeholder="10"/>
+
+          <input type="number" class="form-control" value={puntMax} onChange={funcPuntMax} />
         </div>
         </div>
         </div> 
