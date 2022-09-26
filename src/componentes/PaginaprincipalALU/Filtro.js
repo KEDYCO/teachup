@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Button } from "react-bootstrap";
 import './FiltroCss.css'
 
 export default function Filtro(){
@@ -180,8 +180,8 @@ export default function Filtro(){
         </div>
         </div> 
       </div>
-      <footer className="botonFiltrado">
-        <button type="button" class="btn btn-outline-warning" >Filtrar</button>
+      <footer className="footbotonFiltrado">
+        <button type="button" className="btnFilt btn btn-dark" >Filtrar</button>
       </footer>
     </article> 
     

@@ -21,10 +21,14 @@
     padding-left: 5%;
 }
 
-.botonFiltrado{
+.footbotonFiltrado{
     padding-top: 10%;
     align-items: center;
     align-content: center;
     align-self: center;
     text-align: center;
+}
+
+.btnFilt{
+ 
 }
