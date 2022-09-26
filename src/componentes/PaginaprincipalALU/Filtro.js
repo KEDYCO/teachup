@@ -25,9 +25,26 @@ export default function Filtro(){
   }
 
 
+  const[puntMin, setPuntMin]= useState(1);
+  const funcPuntMin=(e)=>{
+    if( e.target.value > 1 ){
+      setPuntMin(e.target.value)
+    }
+    else{
+      setPuntMin(1);
+    }
+  }
 
 
-
+  const[puntMax, setPuntMax]= useState(10);
+  const funcPuntMax=(e)=>{
+    if(e.target.value > 0 && 10 >= e.target.value ){
+      setPuntMax(e.target.value);
+    }
+    else{
+      setPuntMax(10);
+    }
+  }
 
 
 
@@ -200,12 +217,12 @@ export default function Filtro(){
         <div class="form-row">
         <div class="form-group col-md-6">
           <label>Min</label>
-          <input type="number" class="form-control"  placeholder="1"/>
+          <input type="number" class="form-control" value={puntMin} onChange={funcPuntMin} />
         </div>
         <div class="form-group col-md-6 text-right">
           <label>Max</label>
 
-          <input type="number" class="form-control" placeholder="10"/>
+          <input type="number" class="form-control" value={puntMax} onChange={funcPuntMax} />
         </div>
         </div>
         </div> 
