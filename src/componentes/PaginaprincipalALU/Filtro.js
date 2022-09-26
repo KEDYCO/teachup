@@ -1,8 +1,37 @@
 import React from "react";
+import { useState } from "react";
 import { Dropdown, Button } from "react-bootstrap";
 import './FiltroCss.css'
 
 export default function Filtro(){
+  const[precioMinimo, setPrecioMinimo]= useState(0);
+  const funcPrecMin=(e)=>{
+    if(  e.target.value > 0){
+      setPrecioMinimo(e.target.value)
+    }
+    else{
+      setPrecioMinimo(0);
+    }
+    
+  }
+  const[precioMax, setPrecioMax]= useState(0);
+  const funcPrecMax=(e)=>{
+    if(  e.target.value > 0){
+      setPrecioMax(e.target.value)
+    }
+    else{
+      setPrecioMax(0);
+    }
+  }
+
+
+
+
+
+
+
+
+
   return(
     
     <div id="contenedorFiltro">
@@ -152,11 +181,11 @@ export default function Filtro(){
         <div class="form-row">
         <div class="form-group col-md-6">
           <label>Minimo</label>
-          <input type="number" class="form-control" id="inputEmail4" placeholder="$0"/>
+          <input type="number" class="form-control" value={precioMinimo} onChange={funcPrecMin} placeholder="$0"/>
         </div>
         <div class="form-group col-md-6 text-right">
           <label>Maximo</label>
-          <input type="number" class="form-control" placeholder="$1,0000"/>
+          <input type="number" class="form-control" value={precioMax} onChange={funcPrecMax} />
         </div>
         </div>
         </div> 
@@ -171,10 +200,11 @@ export default function Filtro(){
         <div class="form-row">
         <div class="form-group col-md-6">
           <label>Min</label>
-          <input type="number" class="form-control" id="inputEmail4" placeholder="1"/>
+          <input type="number" class="form-control"  placeholder="1"/>
         </div>
         <div class="form-group col-md-6 text-right">
           <label>Max</label>
+
           <input type="number" class="form-control" placeholder="10"/>
         </div>
         </div>
