@@ -2,13 +2,29 @@
     align-content: center;
     background-color: #e9da91 !important; 
     height: 100vh;
+    border-width: thick;
+    border-radius: 30px;
     
 }
 
 #contenedorFiltro{
-    
-
+    padding-top: 15%;
+    padding-left: 3%;
 }
 row{
     padding-right: 0% !important;
+}
+
+.card-group-item{
+
+    padding-top: 10%;
+    padding-left: 5%;
+}
+
+.botonFiltrado{
+    padding-top: 10%;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    text-align: center;
 }

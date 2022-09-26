@@ -14,14 +14,14 @@ import { Col, Row } from "react-bootstrap";
   
 export default function Paginaprincipal(){
     return (
-        <div style={{ backgroundColor:  "#1c1e21", width: "99.2%"}}>
+        <div style={{ backgroundColor:  "#1c1e21"}}>
           <div className="divNav">
           <Navbar ></Navbar>
-          <div >
+          <div>
             <MDBRow>
-              <MDBCol lg={3} className="contenedorPagina"><Filtro></Filtro></MDBCol>
+              <MDBCol lg={2} className="contenedorPagina"><Filtro></Filtro></MDBCol>
 
-              <MDBCol className="columnaInutil"><Tarjetas ></Tarjetas></MDBCol>
+              <MDBCol  className="columnaInutil"><Tarjetas ></Tarjetas></MDBCol>
             </MDBRow>
           </div>
           

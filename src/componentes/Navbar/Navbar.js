@@ -15,7 +15,7 @@ export default function Navbar(){
               Editar perfil
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3"> <img id="fotona" src="imgs/question.png"/> 
-              Mis consultas
+              Mis contrataciones
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4"> <img id="fotona" src="imgs/settings.png"/>
