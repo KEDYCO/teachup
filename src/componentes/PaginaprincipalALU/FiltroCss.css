@@ -11,8 +11,8 @@
     padding-top: 15%;
     padding-left: 3%;
 }
-row{
-    padding-right: 0% !important;
+.row{
+    margin-right: 0% !important;
 }
 
 .card-group-item{
