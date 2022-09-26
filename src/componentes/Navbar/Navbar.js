@@ -21,7 +21,13 @@ export default function Navbar(){
               <NavDropdown.Item href="#action/3.4"> <img id="fotona" src="imgs/settings.png"/>
                  Configuración
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.5"> <img id="fotona" src="imgs/question.png"/>
+              <NavDropdown.Item href="#action/3.5"> <img id="fotona" src="imgs/settings.png"/>
+                 Mis comentarios
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.6"> <img id="fotona" src="imgs/settings.png"/>
+                 Administrar comentarios
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.7"> <img id="fotona" src="imgs/question.png"/>
                  Ayuda
               </NavDropdown.Item>
               <NavDropdown.Item href="/"> <img id="fotona" src="imgs/log-out.png"/>
