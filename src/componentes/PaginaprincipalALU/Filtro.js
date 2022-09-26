@@ -46,9 +46,6 @@ export default function Filtro(){
     }
   }
 
-
-
-
   return(
     
     <div id="contenedorFiltro">
