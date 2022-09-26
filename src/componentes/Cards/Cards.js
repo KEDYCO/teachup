@@ -2,14 +2,22 @@
 import React, { useEffect, useState } from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 import './CardsCss.css'
+import { AiFillStar } from 'react-icons/ai';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { Rating } from 'react-simple-star-rating'
+import { ModalBody } from "react-bootstrap";
 
 export default function Tarjetas() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+  const [rating, setRating] = useState(0);
+  
   return (
     <div className="vh-100" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
       <MDBContainer className="container py-5 h-100">
@@ -23,7 +31,7 @@ export default function Tarjetas() {
                 </div>
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a>
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
                   Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
@@ -35,12 +43,17 @@ export default function Tarjetas() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
                   </div>
                 </div>
+                <div className="d-flex justify-content-between text-center">
                 <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
                 </Button>
+                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -212,6 +225,7 @@ export default function Tarjetas() {
                 <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
                 </Button>
+                
               </MDBCardBody>
             </MDBCard>
           </MDBCol>                           
@@ -246,6 +260,16 @@ export default function Tarjetas() {
                                 </Button>
                                 </Modal.Footer>
                             </Modal>
+        <Modal show={show2} onHide={handleClose2}>
+          <Modal.Header closeButton>
+            <Modal.Title>Programación</Modal.Title>
+            <Modal.Body>por Franco Siciliano</Modal.Body>
+          </Modal.Header>
+          
+        </Modal>
+
+      
     </div>
+
   );
 }
