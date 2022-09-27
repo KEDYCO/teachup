@@ -9,7 +9,7 @@ export default function Navbar(){
         <a href="/paginaprincipal" className="site-title"><img src="teachupsmall.png"/></a>
         
         <NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
-              <NavDropdown.Item href="#action/3.1"> <img id="fotona" src="imgs/user.png"/>
+              <NavDropdown.Item href="/miperfil"> <img id="fotona" src="imgs/user.png"/>
                  Mi perfil
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2"> <img id="fotona" src="imgs/edit.png"/>

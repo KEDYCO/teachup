@@ -10,37 +10,37 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 
+
 export default function Commentbox() {
   return (
-    <section style={{ backgroundColor: "#ad655f" }}>
+    <section style={{ backgroundColor: "rgb(28,30,33)" }}>
       <MDBContainer className="py-5" style={{ maxWidth: "1000px" }}>
         <MDBRow className="justify-content-center">
-          <MDBCol md="12" lg="10">
+          <MDBCol md="12" lg="11">
             <MDBCard className="text-dark">
               <MDBCardBody className="p-4">
                 <MDBTypography tag="h4" className="mb-0">
-                  Recent comments
+                  Comentarios
                 </MDBTypography>
                 <p className="fw-light mb-4 pb-2">
-                  Latest Comments section by users
+                  Comentarios recientes de alumnos sobre esta clase
                 </p>
 
                 <div className="d-flex flex-start">
                   <MDBCardImage
                     className="rounded-circle shadow-1-strong me-3"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
+                    src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png"
                     alt="avatar"
                     width="60"
                     height="60"
                   />
                   <div>
                     <MDBTypography tag="h6" className="fw-bold mb-1">
-                      Maggie Marsh
+                      Agustín Sturba
                     </MDBTypography>
                     <div className="d-flex align-items-center mb-3">
                       <p className="mb-0">
-                        March 07, 2021
-                        <span className="badge bg-primary">Pending</span>
+                        24 de septiembre, 2022
                       </p>
                       <a href="#!" className="link-muted">
                         <MDBIcon fas icon="pencil-alt ms-2" />
@@ -53,10 +53,8 @@ export default function Commentbox() {
                       </a>
                     </div>
                     <p className="mb-0">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it.
+                      Excelente clase, muy buen trato hacia los alumnos, pude aprender a programar y 
+                      ahora gano 3000 dólares mensuales en endava solo por subir reels en instagram
                     </p>
                   </div>
                 </div>

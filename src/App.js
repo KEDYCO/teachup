@@ -14,6 +14,8 @@ import RegistrarseAlu from "./componentes/Registro/RegistrarseAlu";
 import RegistrarseProf from "./componentes/Registro/RegistrarseProfesor";
 import MisClasesAlu from "./componentes/ClaseAlumno/DisplayClase";
 
+import PerfilAlumno from "./componentes/MyProfile/VistaPerfil";
+
 
 
 
@@ -35,6 +37,8 @@ function App(){
           <Route path = "/paginaprincipalprof" element={<Paginaprincipalprof/>}>
           </Route>
           <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
+          </Route>
+          <Route path = "/miPerfil" element={<PerfilAlumno/>}>
           </Route>
         </Routes>
       </div>
