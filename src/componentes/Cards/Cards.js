@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { Rating } from 'react-simple-star-rating'
 import { ModalBody } from "react-bootstrap";
+import CommentBox from "../CommentBox/CommentBox.js"
 
 export default function Tarjetas() {
   const [show, setShow] = useState(false);
@@ -260,11 +261,17 @@ export default function Tarjetas() {
                                 </Button>
                                 </Modal.Footer>
                             </Modal>
-        <Modal show={show2} onHide={handleClose2}>
+        
+        <Modal show={show2} onHide={handleClose2} size="lg">
           <Modal.Header closeButton>
             <Modal.Title>Programación</Modal.Title>
             <Modal.Body>por Franco Siciliano</Modal.Body>
           </Modal.Header>
+          <Modal.Body>
+            <div>
+            <CommentBox></CommentBox>
+            </div>
+          </Modal.Body>
           
         </Modal>
 
