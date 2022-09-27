@@ -18,7 +18,7 @@ export default function Navbar(){
               <NavDropdown.Item href="/MisClasesAlu"> <img id="fotona" src="imgs/settings.png"/>
                  Mis clases
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.6"> <img id="fotona" src="imgs/settings.png"/>
+              <NavDropdown.Item href="/AdministrarComentarios"> <img id="fotona" src="imgs/settings.png"/>
                  Administrar comentarios
               </NavDropdown.Item>
               <NavDropdown.Divider />
