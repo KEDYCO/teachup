@@ -36,13 +36,13 @@ export default function Filtro(){
   }
 
 
-  const[puntMax, setPuntMax]= useState(10);
+  const[puntMax, setPuntMax]= useState(5);
   const funcPuntMax=(e)=>{
-    if(e.target.value > 0 && 10 >= e.target.value ){
+    if(e.target.value > 0 && 5 >= e.target.value ){
       setPuntMax(e.target.value);
     }
     else{
-      setPuntMax(10);
+      setPuntMax(5);
     }
   }
 
