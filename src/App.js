@@ -15,6 +15,8 @@ import RegistrarseProf from "./componentes/Registro/RegistrarseProfesor";
 import MisClasesAlu from "./componentes/ClaseAlumno/DisplayClase";
 import AdministrarComentarios from "./componentes/AdministrarComentarios/AdministrarComentarios";
 
+import PerfilAlumno from "./componentes/MyProfile/VistaPerfil";
+
 
 
 
@@ -37,7 +39,11 @@ function App(){
           </Route>
           <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
           </Route>
+<<<<<<< HEAD
           <Route path = "/AdministrarComentarios" element={<AdministrarComentarios/>}>
+=======
+          <Route path = "/miPerfil" element={<PerfilAlumno/>}>
+>>>>>>> 4dfb9f905721da5e20d1d5a64647ae6213947099
           </Route>
         </Routes>
       </div>
