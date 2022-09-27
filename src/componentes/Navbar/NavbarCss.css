@@ -12,10 +12,10 @@ body{
 }
 
 .nav{
-    background: #e9da91;
+    background:  rgb(214, 148, 4);
     color: black;
     display: flex;
-    border-bottom: 5px solid rgb(238, 166, 10);
+    border-bottom: 5px solid #e9da91;
     justify-content: space-between;
     align-items: stretch;
     gap: 2rem;
