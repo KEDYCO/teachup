@@ -12,6 +12,7 @@ import ProfileStatistics from "./componentes/Cards/Cards";
 import Paginaprincipalprof from "./componentes/PaginaprincipalPROF/Paginaprincipalprof";
 import RegistrarseAlu from "./componentes/Registro/RegistrarseAlu";
 import RegistrarseProf from "./componentes/Registro/RegistrarseProfesor";
+import MisClasesAlu from "./componentes/ClaseAlumno/DisplayClase";
 
 
 
@@ -32,6 +33,8 @@ function App(){
           <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
           </Route>
           <Route path = "/paginaprincipalprof" element={<Paginaprincipalprof/>}>
+          </Route>
+          <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
           </Route>
         </Routes>
       </div>

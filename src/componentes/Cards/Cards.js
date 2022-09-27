@@ -58,41 +58,6 @@ export default function Tarjetas() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-                            
-                            <MDBCol md="12" xl="4">
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
-              <MDBCardBody className="text-center">
-                <div className="mt-3 mb-4">
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                    className="rounded-circle" fluid style={{ width: '100px' }} />
-                </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
-                <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a>
-                </MDBCardText>
-                <MDBCardText className="text-muted mb-4">
-                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
-                </MDBCardText>
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
-                  </div>
-                  <div className="px-3">
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <MDBCardText className="mb-1 h5">4.6</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="small text-muted mb-0">Ciudad</MDBCardText>
-                    <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
-                  </div>
-                </div>
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>            
           <MDBCol md="12" xl="4">
             <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
               <MDBCardBody className="text-center">
@@ -102,7 +67,7 @@ export default function Tarjetas() {
                 </div>
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a>
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
                   Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
@@ -112,18 +77,19 @@ export default function Tarjetas() {
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
                     <MDBCardText className="mb-1 h5">$100</MDBCardText>
                   </div>
-                  <div className="px-3">
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <MDBCardText className="mb-1 h5">4.6</MDBCardText>
-                  </div>
                   <div>
-                    <MDBCardText className="small text-muted mb-0">Ciudad</MDBCardText>
-                    <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
                   </div>
                 </div>
+                <div className="d-flex justify-content-between text-center">
                 <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
                 </Button>
+                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -136,7 +102,7 @@ export default function Tarjetas() {
                 </div>
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a>
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
                   Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
@@ -146,18 +112,19 @@ export default function Tarjetas() {
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
                     <MDBCardText className="mb-1 h5">$100</MDBCardText>
                   </div>
-                  <div className="px-3">
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <MDBCardText className="mb-1 h5">4.6</MDBCardText>
-                  </div>
                   <div>
-                    <MDBCardText className="small text-muted mb-0">Ciudad</MDBCardText>
-                    <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
                   </div>
                 </div>
+                <div className="d-flex justify-content-between text-center">
                 <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
                 </Button>
+                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -170,7 +137,7 @@ export default function Tarjetas() {
                 </div>
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a>
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
                   Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
@@ -180,18 +147,19 @@ export default function Tarjetas() {
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
                     <MDBCardText className="mb-1 h5">$100</MDBCardText>
                   </div>
-                  <div className="px-3">
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <MDBCardText className="mb-1 h5">4.6</MDBCardText>
-                  </div>
                   <div>
-                    <MDBCardText className="small text-muted mb-0">Ciudad</MDBCardText>
-                    <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
                   </div>
                 </div>
+                <div className="d-flex justify-content-between text-center">
                 <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
                 </Button>
+                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -204,7 +172,7 @@ export default function Tarjetas() {
                 </div>
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a>
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
                   Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
@@ -214,22 +182,58 @@ export default function Tarjetas() {
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
                     <MDBCardText className="mb-1 h5">$100</MDBCardText>
                   </div>
-                  <div className="px-3">
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <MDBCardText className="mb-1 h5">4.6</MDBCardText>
-                  </div>
                   <div>
-                    <MDBCardText className="small text-muted mb-0">Ciudad</MDBCardText>
-                    <MDBCardText className="mb-1 h5">Buenos Aires</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
                   </div>
                 </div>
+                <div className="d-flex justify-content-between text-center">
                 <Button rounded size="lg" onClick={handleShow} >
                   Contratar clase
                 </Button>
-                
+                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
               </MDBCardBody>
             </MDBCard>
-          </MDBCol>                           
+          </MDBCol>
+          <MDBCol md="12" xl="4">
+            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
+              <MDBCardBody className="text-center">
+                <div className="mt-3 mb-4">
+                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    className="rounded-circle" fluid style={{ width: '100px' }} />
+                </div>
+                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBCardText className="text-muted mb-4">
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                </MDBCardText>
+                <MDBCardText className="text-muted mb-4">
+                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
+                </MDBCardText>
+                <div className="d-flex justify-content-between text-center mt-4 mb-2">
+                  <div>
+                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                  </div>
+                  <div>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-between text-center">
+                <Button rounded size="lg" onClick={handleShow} >
+                  Contratar clase
+                </Button>
+                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>                  
+          
         </MDBRow>
       </MDBContainer>
       <Modal show={show} onHide={handleClose}>

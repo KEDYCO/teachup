@@ -1,0 +1,15 @@
+.title-header-clase h1{
+    color: white !important;
+    background-color: white;
+
+}
+
+.contenedorClaseAlu{
+    max-height: 500%;
+    height: 500%;
+}
+
+.contenedorTodoAlu{
+    max-height: 500%;
+    height: 100vh;
+}
