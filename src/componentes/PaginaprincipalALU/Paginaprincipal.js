@@ -17,6 +17,7 @@ export default function Paginaprincipal(){
         <div style={{ backgroundColor:  "#1c1e21" }}>
           <div className="divNav">
           <Navbar ></Navbar>
+          </div> 
           <div>
             <MDBRow className="rowContenedoraTodo">
               <MDBCol lg={2} className="contenedorPagina"><Filtro></Filtro></MDBCol>
@@ -25,7 +26,7 @@ export default function Paginaprincipal(){
           </div>
           
           
-          </div>     
+              
         </div>
     )
   }

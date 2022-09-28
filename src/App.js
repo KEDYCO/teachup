@@ -19,6 +19,8 @@ import PerfilAlumno from "./componentes/MyProfile/VistaPerfil";
 import EditarPerfilUsuario from "./componentes/EditProfile/EditProfile";
 import EditarPerfil from "./componentes/EditProfile/VistaEditarPerfil";
 
+import VistaAdministrarComentarios from "./componentes/AdministrarComentarios/VistaAdministrarComentarios";
+
 
 
 function App(){
@@ -44,7 +46,7 @@ function App(){
           </Route>
           <Route path = "/editarPerfil" element={<EditarPerfil/>}>
           </Route>
-          <Route path = "/AdministrarComentarios" element={<AdministrarComentarios/>}>
+          <Route path = "/VistaAdministrarComentarios" element={<VistaAdministrarComentarios/>}>
           </Route>
         </Routes>
       </div>
