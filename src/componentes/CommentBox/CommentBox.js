@@ -40,7 +40,7 @@ export default function Commentbox() {
                     <div className="d-flex align-items-center mb-3">
                       <p className="mb-0">
                         March 07, 2021
-                        <span className="badge bg-primary">Pending</span>
+                        <span> <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/></span>
                       </p>
                       <a href="#!" className="link-muted">
                         <MDBIcon fas icon="pencil-alt ms-2" />
