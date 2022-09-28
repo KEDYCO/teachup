@@ -28,7 +28,7 @@ export default function PerfilUsuario() {
               <MDBBreadcrumbItem>
                 <a href='/paginaprincipal'>Home</a>
               </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>
+              <MDBBreadcrumbItem active>Perfil Alumno</MDBBreadcrumbItem>
             </MDBBreadcrumb>
           </MDBCol>
         </MDBRow>
@@ -43,8 +43,8 @@ export default function PerfilUsuario() {
                   className="rounded-circle"
                   style={{ width: '150px' }}
                   fluid />
-                <p className="text-muted mb-1">Full Stack Developer</p>
-                <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                <p className="text-muted mb-1">Alumno de UADE</p>
+                <p className="text-muted mb-4">Avellaneda, Buenos Aires</p>
                 <div className="d-flex justify-content-center mb-2">
                   <Button><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
                 </div>
@@ -86,7 +86,7 @@ export default function PerfilUsuario() {
                     <MDBCardText>Nombre completo</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
+                    <MDBCardText className="text-muted">Alumno Ejemplar</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -95,34 +95,34 @@ export default function PerfilUsuario() {
                     <MDBCardText>Email</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">example@example.com</MDBCardText>
+                    <MDBCardText className="text-muted">alumnoejemplar@gmail.com</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Phone</MDBCardText>
+                    <MDBCardText>Teléfono fijo</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">(097) 234-5678</MDBCardText>
+                    <MDBCardText className="text-muted">42489696</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Mobile</MDBCardText>
+                    <MDBCardText>Teléfono móvil</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">(098) 765-4321</MDBCardText>
+                    <MDBCardText className="text-muted">1123456789</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Address</MDBCardText>
+                    <MDBCardText>Fecha de nacimiento</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Bay Area, San Francisco, CA</MDBCardText>
+                    <MDBCardText className="text-muted">01/01/99</MDBCardText>
                   </MDBCol>
                 </MDBRow>
               </MDBCardBody>
