@@ -9,7 +9,7 @@ export default function NavbarProf(){
         <a href="/paginaprincipalprof" className="site-title"><img src="teachupsmall.png"/></a>
         
         <NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
-              <NavDropdown.Item href="/administrarClases"> <img id="fotona" src="imgs/copybook.png"/>
+              <NavDropdown.Item href="/VistaAdministrarClases"> <img id="fotona" src="imgs/copybook.png"/>
                  Administrar clases
               </NavDropdown.Item>
               <NavDropdown.Item href="/VistaAdministrarComentarios"> <img id="fotona" src="imgs/settings.png"/>
