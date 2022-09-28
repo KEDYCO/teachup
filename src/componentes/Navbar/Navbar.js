@@ -12,9 +12,6 @@ export default function Navbar(){
               <NavDropdown.Item href="/miperfil"> <img id="fotona" src="imgs/user.png"/>
                  Mi perfil
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2"> <img id="fotona" src="imgs/edit.png"/>
-                 Editar perfil
-              </NavDropdown.Item>
               <NavDropdown.Item href="/MisClasesAlu"> <img id="fotona" src="imgs/settings.png"/>
                  Mis clases
               </NavDropdown.Item>
@@ -22,12 +19,6 @@ export default function Navbar(){
                  Administrar comentarios
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4"> <img id="fotona" src="imgs/settings.png"/>
-                 Configuración
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.7"> <img id="fotona" src="imgs/question.png"/>
-                 Ayuda
-              </NavDropdown.Item>
               <NavDropdown.Item href="/"> <img id="fotona" src="imgs/log-out.png"/>
                  Cerrar sesión
               </NavDropdown.Item>

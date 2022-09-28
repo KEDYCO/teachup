@@ -59,7 +59,6 @@ export default function PerfilUsuario() {
                   className="rounded-circle"
                   style={{ width: '150px' }}
                   fluid />
-                <p className="text-muted mb-1">Alumno de UADE</p>
                 <p className="text-muted mb-4">Avellaneda, Buenos Aires</p>
                 <div className="d-flex justify-content-center mb-2">
                   <Button href="/editarPerfil"><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
