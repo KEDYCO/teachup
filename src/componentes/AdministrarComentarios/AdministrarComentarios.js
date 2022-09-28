@@ -57,7 +57,7 @@ export default function AdministrarComentarios() {
                         style={{ marginTop: "-0.16rem" }}
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        rechazar
+                        Rechazar
                      </Button>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function AdministrarComentarios() {
                         style={{ marginTop: "-0.16rem" }}
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        rechazar
+                        Rechazar
                      </Button>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export default function AdministrarComentarios() {
                         style={{ marginTop: "-0.16rem" }}
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        rechazar
+                        Rechazar
                      </Button>
                     </div>
                   </div>
@@ -153,7 +153,7 @@ export default function AdministrarComentarios() {
                         style={{ marginTop: "-0.16rem" }}
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        rechazar
+                        Rechazar
                      </Button>
                     </div>
                   </div>
@@ -187,7 +187,7 @@ export default function AdministrarComentarios() {
                         style={{ marginTop: "-0.16rem" }}
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        rechazar
+                        Rechazar
                      </Button>
                     </div>
                   </div>
@@ -220,7 +220,7 @@ export default function AdministrarComentarios() {
                         style={{ marginTop: "-0.16rem" }}
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        rechazar
+                        Rechazar
                      </Button>
                     </div>
                   </div>

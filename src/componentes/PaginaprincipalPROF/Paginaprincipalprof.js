@@ -4,15 +4,21 @@ import {
     Routes,
   } 
   from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
+import PerfilProfesor from "../MyProfileProf/MyProfileProf";
+import NavbarProf from "../Navbar/NavbarProf";
   
   
   
 export default function Paginaprincipalprof(){
     return (
+      <div>
         <div>
-          <Navbar></Navbar>
+          <NavbarProf></NavbarProf>
         </div>
+      <div className="contenedorTodoPerfil">
+        <PerfilProfesor></PerfilProfesor>
+      </div>
+    </div>
     )
   }
   
