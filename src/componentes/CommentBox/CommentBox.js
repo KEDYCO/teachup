@@ -52,7 +52,7 @@ export default function Commentbox() {
                         <MDBIcon fas icon="heart ms-2" />
                       </a>
                     </div>
-                    <p className="mb-0">
+                    <p className="mb-0" >
                       Excelente clase, muy buen trato hacia los alumnos, pude aprender a programar y 
                       ahora gano 3000 dólares mensuales en endava solo por subir reels en instagram
                     </p>
