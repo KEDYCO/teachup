@@ -26,6 +26,7 @@ import {
   import { Rating } from 'react-simple-star-rating'
   import { ModalBody } from "react-bootstrap";
   import CommentBox from "../CommentBox/CommentBox.js"
+import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
   
   export default function PerfilProfesor() {
     const [show, setShow] = useState(false);
@@ -167,6 +168,14 @@ import {
                       <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
                     </div>
                   </div>
+                  <div className="d-flex justify-content-between text-center">
+                <Button rounded size="sm" variant={"secondary"} onClick={handleShow} >
+                  Ver alumnos
+                </Button>
+                <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
                   
                 </MDBCardBody>
               </MDBCard>
@@ -193,6 +202,14 @@ import {
                       <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
                     </div>
                   </div>
+                  <div className="d-flex justify-content-between text-center">
+                <Button rounded size="sm" variant={"secondary"} onClick={handleShow} >
+                  Ver alumnos
+                </Button>
+                <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
                   
                 </MDBCardBody>
               </MDBCard>
@@ -202,10 +219,37 @@ import {
           </MDBRow>
         </MDBContainer>
         </div>
+        
               
             </MDBCol>
           </MDBRow>
         </MDBContainer>
+
+        <Modal show={show} onHide={handleClose} size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title>Alumnos</Modal.Title>
+            <Modal.Body>Alumnos inscriptos a esta clase: 5</Modal.Body>
+          </Modal.Header>
+          <Modal.Body>
+            <div>
+            <VerAlumnos></VerAlumnos>
+            </div>
+          </Modal.Body>
+          
+        </Modal>
+
+        <Modal show={show2} onHide={handleClose2} size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title>Programación</Modal.Title>
+            <Modal.Body>por Profesor Ejemplar</Modal.Body>
+          </Modal.Header>
+          <Modal.Body>
+            <div>
+            <CommentBox></CommentBox>
+            </div>
+          </Modal.Body>
+          
+        </Modal>
       </section>
     );
   }
