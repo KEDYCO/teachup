@@ -21,11 +21,15 @@ export default function CadaClase() {
   const [rating, setRating] = useState(0);
   
   return (
+    
     <div className="contenedorClaseAlu" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+
       <MDBContainer className="container py-5 h-100">
-      <header style={{color: "#FFA726", fontFamily: "verdana", fontWeight: "bold", textDecoration: "underline"}}>
-      <MDBTypography className="text-decoration-underline fw-bold" tag="h1">Mis clases </MDBTypography>
+      <header  style={{color: "#FFA726", fontFamily: 'Bebas Neue', fontWeight: "bold"}}>
+      <MDBTypography className="text-decoration fw-bold" tag="h1">Mis clases </MDBTypography>
     </header>
      
         <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100"> 
