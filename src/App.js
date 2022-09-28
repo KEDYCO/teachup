@@ -13,9 +13,9 @@ import Paginaprincipalprof from "./componentes/PaginaprincipalPROF/Paginaprincip
 import RegistrarseAlu from "./componentes/Registro/RegistrarseAlu";
 import RegistrarseProf from "./componentes/Registro/RegistrarseProfesor";
 import MisClasesAlu from "./componentes/ClaseAlumno/DisplayClase";
+import AdministrarComentarios from "./componentes/AdministrarComentarios/AdministrarComentarios";
 
 import PerfilAlumno from "./componentes/MyProfile/VistaPerfil";
-
 
 
 
@@ -39,6 +39,8 @@ function App(){
           <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
           </Route>
           <Route path = "/miPerfil" element={<PerfilAlumno/>}>
+          </Route>
+          <Route path = "/AdministrarComentarios" element={<AdministrarComentarios/>}>
           </Route>
         </Routes>
       </div>

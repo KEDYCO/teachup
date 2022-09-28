@@ -35,8 +35,8 @@ export default function Tarjetas() {
                   Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
-                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
-                </MDBCardText>
+                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </MDBCardText> 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
