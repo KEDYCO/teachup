@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   MDBCol,
   MDBContainer,
@@ -13,12 +13,28 @@ import {
   MDBProgress,
   MDBProgressBar,
   MDBIcon,
+  MDBTypography,
   MDBListGroup,
   MDBListGroupItem
 } from 'mdb-react-ui-kit';
-import { Button } from 'react-bootstrap';
+
+import React, { useEffect, useState } from "react";
+import { AiFillStar } from 'react-icons/ai';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import { Rating } from 'react-simple-star-rating'
+import { ModalBody } from "react-bootstrap";
+import CommentBox from "../CommentBox/CommentBox.js"
 
 export default function PerfilUsuario() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+  const [rating, setRating] = useState(0);
   return (
     <section style={{ backgroundColor: "rgb(28,30,33)" }}>
       <MDBContainer className="py-5">
@@ -46,7 +62,7 @@ export default function PerfilUsuario() {
                 <p className="text-muted mb-1">Alumno de UADE</p>
                 <p className="text-muted mb-4">Avellaneda, Buenos Aires</p>
                 <div className="d-flex justify-content-center mb-2">
-                  <Button><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
+                  <Button href="/editarPerfil"><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -79,7 +95,7 @@ export default function PerfilUsuario() {
             </MDBCard>
           </MDBCol>
           <MDBCol lg="8">
-            <MDBCard className="mb-4">
+            <MDBCard className="mb-0">
               <MDBCardBody>
                 <MDBRow>
                   <MDBCol sm="3">
@@ -127,72 +143,75 @@ export default function PerfilUsuario() {
                 </MDBRow>
               </MDBCardBody>
             </MDBCard>
+        
 
-            <MDBRow>
-              <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">assigment</span> Project Status</MDBCardText>
-                    <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={80} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Website Markup</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={72} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>One Page</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={89} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Mobile Template</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={55} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Backend API</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={66} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-
-              <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">assigment</span> Project Status</MDBCardText>
-                    <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={80} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Website Markup</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={72} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>One Page</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={89} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Mobile Template</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={55} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Backend API</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={66} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBRow>
+    <div className="" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
+      
+      <MDBContainer className=" py-5 h-100">
+        <MDBTypography className="text-decoration-underline fw-bold" tag="h1" color="white">Mis clases </MDBTypography>
+        <MDBRow className="mb-3">
+          <MDBCol md='4'>
+            <MDBCard style={{ borderRadius: '15px' }} >
+              <MDBCardBody className="text-center">
+                <div className="mt-3 mb-4">
+                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    className="rounded-circle" fluid style={{ width: '100px' }} />
+                </div>
+                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBCardText className="text-muted mb-4">
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                </MDBCardText>
+                <MDBCardText className="text-muted mb-4">
+                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </MDBCardText> 
+                <div className="d-flex justify-content-between text-center mt-4 mb-2">
+                  <div>
+                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                  </div>
+                  <div>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                  </div>
+                </div>
+                
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+          <MDBCol md='4' className='ml-auto'>
+            <MDBCard style={{ borderRadius: '15px' }} >
+              <MDBCardBody className="text-center">
+                <div className="mt-3 mb-4">
+                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    className="rounded-circle" fluid style={{ width: '100px' }} />
+                </div>
+                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBCardText className="text-muted mb-4">
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                </MDBCardText>
+                <MDBCardText className="text-muted mb-4">
+                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </MDBCardText> 
+                <div className="d-flex justify-content-between text-center mt-4 mb-2">
+                  <div>
+                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                  </div>
+                  <div>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                  </div>
+                </div>
+                
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+          
+          
+        </MDBRow>
+      </MDBContainer>
+      </div>
+            
           </MDBCol>
         </MDBRow>
       </MDBContainer>

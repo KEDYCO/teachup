@@ -1,14 +1,15 @@
 import Navbar from "../Navbar/Navbar";
-import PerfilUsuario from "./MyProfile";
+import EditarPerfilUsuario from "./EditProfile";
 
-export default function PerfilAlumno(){
+
+export default function EditarPerfil(){
     return (
         <div style={{ backgroundColor:  "#1c1e21",height:"100vh" }}>
           <div className="divNav">
           <Navbar ></Navbar>
           </div>
           <div className="contenedorTodoPerfil">
-            <PerfilUsuario></PerfilUsuario>
+            <EditarPerfilUsuario></EditarPerfilUsuario>
           </div>
         </div>     
     )

@@ -66,6 +66,16 @@ body{
     max-width: 25px;
 }
 
+#botonupload{
+    max-width: 20px;
+    align-items: center;
+    align-items: center;
+}
+
+#botonguardar{
+    margin-top: 10px ;
+}
+
 
 
 
