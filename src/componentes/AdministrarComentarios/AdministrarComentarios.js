@@ -9,6 +9,7 @@ import {
   MDBInput,
   MDBRow,
 } from "mdb-react-ui-kit";
+import { Button } from "react-bootstrap";
 
 export default function AdministrarComentarios() {
   return (
@@ -19,11 +20,9 @@ export default function AdministrarComentarios() {
             className="shadow-0 border"
             style={{ backgroundColor: "#f0f2f5" }}
           >
-            <MDBCardBody>
-              <MDBInput wrapperClass="mb-4" placeholder="Type comment..." label="+ Add a note" />
-
+            <MDBCardBody className="colorBody">
               <MDBCard className="mb-4">
-                <MDBCardBody>
+                <MDBCardBody className="colorBody">
                   <p>Type your note, and hit enter to add it</p>
 
                   <div className="d-flex justify-content-between">
@@ -37,20 +36,24 @@ export default function AdministrarComentarios() {
                       <p className="small mb-0 ms-2">Martha</p>
                     </div>
                     <div className="d-flex flex-row align-items-center">
-                      <p className="small text-muted mb-0">Upvote?</p>
+                    <Button rounded size="xs" >
+                       Aprobar comentario
+                    </Button>
                       <MDBIcon
                         far
                         icon="thumbs-up mx-2 fa-xs text-black"
                         style={{ marginTop: "-0.16rem" }}
                       />
-                      <p className="small text-muted mb-0">3</p>
+                      <Button rounded size="xs"  >
+                        Contratar clase
+                     </Button>
                     </div>
                   </div>
                 </MDBCardBody>
               </MDBCard>
 
               <MDBCard className="mb-4">
-                <MDBCardBody>
+                <MDBCardBody className="colorBody">
                   <p>Type your note, and hit enter to add it</p>
 
                   <div className="d-flex justify-content-between">
@@ -77,7 +80,7 @@ export default function AdministrarComentarios() {
               </MDBCard>
 
               <MDBCard className="mb-4">
-                <MDBCardBody>
+                <MDBCardBody className="colorBody">
                   <p>Type your note, and hit enter to add it</p>
 
                   <div className="d-flex justify-content-between">
@@ -104,7 +107,7 @@ export default function AdministrarComentarios() {
               </MDBCard>
 
               <MDBCard className="mb-4">
-                <MDBCardBody>
+                <MDBCardBody className="colorBody">
                   <p>Type your note, and hit enter to add it</p>
 
                   <div className="d-flex justify-content-between">
