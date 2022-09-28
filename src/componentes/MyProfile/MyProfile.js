@@ -148,7 +148,7 @@ export default function PerfilUsuario() {
     <div className="" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
       
       <MDBContainer className=" py-5 h-100">
-        <MDBTypography className="text-decoration-underline fw-bold" tag="h1" color="white">Mis clases </MDBTypography>
+        <MDBTypography className="text-decoration-underline fw-bold" tag="h1" color="white">Clases contratadas </MDBTypography>
         <MDBRow className="mb-3">
           <MDBCol md='4'>
             <MDBCard style={{ borderRadius: '15px' }} >
@@ -160,9 +160,6 @@ export default function PerfilUsuario() {
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
                   Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
-                </MDBCardText>
-                <MDBCardText className="text-muted mb-4">
-                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 </MDBCardText> 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
@@ -189,9 +186,7 @@ export default function PerfilUsuario() {
                 <MDBCardText className="text-muted mb-4">
                   Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
-                <MDBCardText className="text-muted mb-4">
-                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                </MDBCardText> 
+
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
