@@ -20,6 +20,7 @@ import EditarPerfilUsuario from "./componentes/EditProfile/EditProfile";
 import EditarPerfil from "./componentes/EditProfile/VistaEditarPerfil";
 
 import VistaAdministrarComentarios from "./componentes/AdministrarComentarios/VistaAdministrarComentarios";
+import PerfilProfesor from "./componentes/MyProfileProf/MyProfileProf";
 
 
 
@@ -43,6 +44,8 @@ function App(){
           <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
           </Route>
           <Route path = "/miPerfil" element={<PerfilAlumno/>}>
+          </Route>
+          <Route path = "/miPerfilProf" element={<PerfilProfesor/>}>
           </Route>
           <Route path = "/editarPerfil" element={<EditarPerfil/>}>
           </Route>

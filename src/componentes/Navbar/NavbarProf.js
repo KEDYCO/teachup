@@ -3,17 +3,17 @@ import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-export default function Navbar(){
+export default function NavbarProf(){
     return(
         <nav className="nav">
-        <a href="/paginaprincipal" className="site-title"><img src="teachupsmall.png"/></a>
+        <a href="/paginaprincipalprof" className="site-title"><img src="teachupsmall.png"/></a>
         
         <NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
-              <NavDropdown.Item href="/miperfil"> <img id="fotona" src="imgs/user.png"/>
-                 Mi perfil
+              <NavDropdown.Item href="/administrarClases"> <img id="fotona" src="imgs/copybook.png"/>
+                 Administrar clases
               </NavDropdown.Item>
-              <NavDropdown.Item href="/MisClasesAlu"> <img id="fotona" src="imgs/copybook.png"/>
-                 Mis clases
+              <NavDropdown.Item href="/VistaAdministrarComentarios"> <img id="fotona" src="imgs/settings.png"/>
+                 Administrar comentarios
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/"> <img id="fotona" src="imgs/log-out.png"/>

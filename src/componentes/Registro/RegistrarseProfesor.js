@@ -25,6 +25,13 @@ export default function RegistrarseProf() {
     <Card.Body>
       <Form>
           <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridState">
+              <Form.Label>Fecha de Nacimiento</Form.Label>
+              <Form.Control defaultValue="Elegir" type="date">
+              </Form.Control>
+            </Form.Group>   
+            </Row>
+            <Row>
             <Form.Group>
                 <Form.Label>Título</Form.Label>
                 <Form.Control placeholder="Ingresar el título que posee" />

@@ -1,4 +1,3 @@
-
 import {
     MDBCol,
     MDBContainer,
@@ -27,7 +26,7 @@ import {
   import { FormLabel, ModalBody } from "react-bootstrap";
   import CommentBox from "../CommentBox/CommentBox.js"
   
-  export default function EditarPerfilUsuario() {
+  export default function EditarPerfilProfesor() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
