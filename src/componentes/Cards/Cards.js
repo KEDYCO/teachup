@@ -34,8 +34,9 @@ export default function Tarjetas() {
                 <MDBCardText className="text-muted mb-4">
                   Musica<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
-                <MDBCardText className="text-muted mb-4">
-                  Clases de teclado, guitarra, bateria, bajo y canto. Tengo lugar propio en Av. Mitre 2340. Si tenes ganas de aprender, contactame.
+                <MDBCardText className="text-muted mb-4" style={{ overflowX : "hidden"}}>
+
+                  Clases de teclado, guitarra, bateria, bajo y canto. Tengo lugar propio en Av. Mitre 2340. Si tenes ganas de aprender, contactame.a
                 </MDBCardText> 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
