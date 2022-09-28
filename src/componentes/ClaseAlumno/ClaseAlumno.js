@@ -24,10 +24,8 @@ export default function CadaClase() {
     <div className="contenedorClaseAlu" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
         
       <MDBContainer className="container py-5 h-100">
-      <header style={{color: "white", fontFamily: "georgia", fontWeight: "bold", textDecoration: "underline"}}>
-        <MDBTypography tag="h3" className="fw-normal mb-0 text-black" color="white">
-            Mis clases
-        </MDBTypography>
+      <header style={{color: "#FFA726", fontFamily: "verdana", fontWeight: "bold", textDecoration: "underline"}}>
+      <MDBTypography className="text-decoration-underline fw-bold" tag="h1">Mis clases </MDBTypography>
     </header>
      
         <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100"> 

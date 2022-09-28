@@ -9,7 +9,7 @@ export default function Navbar(){
         <a href="/paginaprincipal" className="site-title"><img src="teachupsmall.png"/></a>
         
         <NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
-              <NavDropdown.Item href="#action/3.1"> <img id="fotona" src="imgs/user.png"/>
+              <NavDropdown.Item href="/miperfil"> <img id="fotona" src="imgs/user.png"/>
                  Mi perfil
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2"> <img id="fotona" src="imgs/edit.png"/>
@@ -18,7 +18,7 @@ export default function Navbar(){
               <NavDropdown.Item href="/MisClasesAlu"> <img id="fotona" src="imgs/settings.png"/>
                  Mis clases
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.6"> <img id="fotona" src="imgs/settings.png"/>
+              <NavDropdown.Item href="/AdministrarComentarios"> <img id="fotona" src="imgs/settings.png"/>
                  Administrar comentarios
               </NavDropdown.Item>
               <NavDropdown.Divider />

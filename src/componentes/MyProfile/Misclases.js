@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
-import './CardsCss.css'
 import { AiFillStar } from 'react-icons/ai';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,7 +9,7 @@ import { Rating } from 'react-simple-star-rating'
 import { ModalBody } from "react-bootstrap";
 import CommentBox from "../CommentBox/CommentBox.js"
 
-export default function Tarjetas() {
+export default function Misclases() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -20,9 +19,9 @@ export default function Tarjetas() {
   const [rating, setRating] = useState(0);
   
   return (
-    <div className="vh-100" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
-      <MDBContainer className="container py-5 h-100">
-        <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
+    <div className="" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
+      <MDBContainer className=" py-5 h-100">
+        <MDBRow className="row-cols-2 row-cols-md-2 g-4justify-content-center align-items-center h-100">
           <MDBCol md="12" xl="4">
             <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
               <MDBCardBody className="text-center">
@@ -70,8 +69,8 @@ export default function Tarjetas() {
                   Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
-                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
-                </MDBCardText>
+                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </MDBCardText> 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
@@ -91,7 +90,44 @@ export default function Tarjetas() {
                 </Button>
                 </div>
               </MDBCardBody>
-            </MDBCard>
+            </MDBCard>               
+          </MDBCol>
+        </MDBRow>
+        <MDBRow>
+          <MDBCol md="12" xl="4">
+            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
+              <MDBCardBody className="text-center">
+                <div className="mt-3 mb-4">
+                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                    className="rounded-circle" fluid style={{ width: '100px' }} />
+                </div>
+                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBCardText className="text-muted mb-4">
+                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                </MDBCardText>
+                <MDBCardText className="text-muted mb-4">
+                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </MDBCardText> 
+                <div className="d-flex justify-content-between text-center mt-4 mb-2">
+                  <div>
+                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                  </div>
+                  <div>
+                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-between text-center">
+                <Button rounded size="lg" onClick={handleShow} >
+                  Contratar clase
+                </Button>
+                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  Ver comentarios
+                </Button>
+                </div>
+              </MDBCardBody>
+            </MDBCard>               
           </MDBCol>
           <MDBCol md="12" xl="4">
             <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
@@ -105,8 +141,8 @@ export default function Tarjetas() {
                   Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
-                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
-                </MDBCardText>
+                 pew pew pew pew soy un stormtrooper pew pew pew fiaumm ahhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </MDBCardText> 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
@@ -126,114 +162,8 @@ export default function Tarjetas() {
                 </Button>
                 </div>
               </MDBCardBody>
-            </MDBCard>
+            </MDBCard>               
           </MDBCol>
-          <MDBCol md="12" xl="4">
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
-              <MDBCardBody className="text-center">
-                <div className="mt-3 mb-4">
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                    className="rounded-circle" fluid style={{ width: '100px' }} />
-                </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
-                <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
-                </MDBCardText>
-                <MDBCardText className="text-muted mb-4">
-                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
-                </MDBCardText>
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="12" xl="4">
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
-              <MDBCardBody className="text-center">
-                <div className="mt-3 mb-4">
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                    className="rounded-circle" fluid style={{ width: '100px' }} />
-                </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
-                <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
-                </MDBCardText>
-                <MDBCardText className="text-muted mb-4">
-                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
-                </MDBCardText>
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="12" xl="4">
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
-              <MDBCardBody className="text-center">
-                <div className="mt-3 mb-4">
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                    className="rounded-circle" fluid style={{ width: '100px' }} />
-                </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
-                <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
-                </MDBCardText>
-                <MDBCardText className="text-muted mb-4">
-                  Hola, tengo experiencia en bootstrap y react, puedo enseñarte lo que quieras sobre eso porque soy un maquina campeon mundial y follo como juli
-                </MDBCardText>
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>                  
-          
         </MDBRow>
       </MDBContainer>
       <Modal show={show} onHide={handleClose}>

@@ -27,7 +27,7 @@ export default function Filtro(){
 
   const[puntMin, setPuntMin]= useState(1);
   const funcPuntMin=(e)=>{
-    if( e.target.value > 1 ){
+    if( e.target.value > 1  && 5 >= e.target.value){
       setPuntMin(e.target.value)
     }
     else{
