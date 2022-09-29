@@ -158,12 +158,12 @@ export default function PerfilUsuario() {
                 </div>
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                  Programación<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>50 horas</a>
                 </MDBCardText> 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$912</MDBCardText>
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
@@ -181,19 +181,19 @@ export default function PerfilUsuario() {
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                     className="rounded-circle" fluid style={{ width: '100px' }} />
                 </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBTypography tag="h4">Julian Casablancas</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                  Musica<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$1251</MDBCardText>
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={4} size={"30px"}/>
                   </div>
                 </div>
                 

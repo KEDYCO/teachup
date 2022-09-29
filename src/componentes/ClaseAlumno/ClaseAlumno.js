@@ -40,9 +40,9 @@ export default function CadaClase() {
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                     className="rounded-circle" fluid style={{ width: '100px' }} />
                 </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBTypography tag="h4">Julian Casablancas</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                  Musica<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <Button disabled variant="info" >
                   En curso
@@ -51,11 +51,11 @@ export default function CadaClase() {
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$1251</MDBCardText>
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={5} size={"30px"}/>
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
@@ -76,9 +76,9 @@ export default function CadaClase() {
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                     className="rounded-circle" fluid style={{ width: '100px' }} />
                 </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBTypography tag="h4">John Mulaney</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                  Lengua<span className="mx-2">|</span> <a>Unica</a><span className="mx-2">|</span> <a>3 horas</a>
                 </MDBCardText>
                 <Button disabled variant="success" >
                   Terminado
@@ -87,11 +87,11 @@ export default function CadaClase() {
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$1500</MDBCardText>
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3} size={"30px"}/>
                   </div>
                 </div>
                 <div className="d-flex justify-content-center text-center">
@@ -111,7 +111,7 @@ export default function CadaClase() {
                 </div>
                 <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                  Programación<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>50 horas</a>
                 </MDBCardText>
                 <Button disabled variant="warning" >
                   Esperando confirmacion
@@ -120,7 +120,7 @@ export default function CadaClase() {
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                    <MDBCardText className="mb-1 h5">$912</MDBCardText>
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>

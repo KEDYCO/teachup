@@ -66,7 +66,9 @@ export default function AdministrarComentarios() {
 
               <MDBCard className="mb-4">
                 <MDBCardBody className="colorBody">
-                  <p>whefbñjdfndsfñavcjdslkdsnffañlcn sfñjkfndsñdlikj fddfofnfdfln </p>
+                  <p>Me hizo lavar autos y yo queria aprender karate
+                    
+                  </p>
 
                   <div className="d-flex justify-content-between">
                     <div className="d-flex flex-row align-items-center">
@@ -77,7 +79,7 @@ export default function AdministrarComentarios() {
                         style={{ width: '50px' }}
                         fluid
                       />
-                      <p className="small mb-0 ms-2">Arturo vidal</p>
+                      <p className="small mb-0 ms-2">Daniel</p>
                     </div>
                     <div className="d-flex flex-row align-items-center">
                     <Button className="botonApruebo btn-success" onClick={handleShow} >
@@ -193,46 +195,7 @@ export default function AdministrarComentarios() {
                   </div>
                 </MDBCardBody>
               </MDBCard>
-              <MDBCard className="mb-4">
-                <MDBCardBody className="colorBody">
-                  <p>Me hizo lavar autos y yo queria aprender karate
-                    
-                  </p>
-
-                  <div className="d-flex justify-content-between">
-                    <div className="d-flex flex-row align-items-center">
-                      <MDBCardImage
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                        alt="avatar"
-                        className="rounded-circle"
-                        style={{ width: '50px' }}
-                        fluid
-                      />
-                      <p className="small mb-0 ms-2">Daniel</p>
-                    </div>
-                    <div className="d-flex flex-row align-items-center">
-                    <Button className="botonApruebo btn-success" onClick={handleShow} >
-                       Aprobar
-                    </Button>
-                      <MDBIcon
-                        far
-                        icon="thumbs-up mx-2 fa-xs text-black"
-                        style={{ marginTop: "-0.16rem" }}
-                      />
-                      <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        Rechazar
-                     </Button>
-                    </div>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-
-
-
-
-
-
-
+              
 
             </MDBCardBody>
           </MDBCard>
