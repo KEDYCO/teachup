@@ -1,7 +1,6 @@
 import React from "react";
 import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Notification from "../Notification/Notification";
 
 
 export default function NavbarProf(){
