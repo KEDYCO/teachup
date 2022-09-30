@@ -74,7 +74,7 @@ export default function ClasesProf() {
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Form.Select defaultValue="Elegir" onChange={handleShow4}>
+                <Form.Select defaultValue="Elegir" onChange={handleShow4} md='6' >
                                 <option>Pública</option>
                                 <option>Oculta</option>
                 </Form.Select>

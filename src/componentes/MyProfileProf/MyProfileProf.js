@@ -147,7 +147,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
         <MDBContainer className=" py-5 h-100">
           <MDBTypography className="text-decoration-underline fw-bold" tag="h1" color="white">Clases creadas </MDBTypography>
           <MDBRow className="mb-3">
-            <MDBCol md='4'>
+            <MDBCol md='6'>
               <MDBCard style={{ borderRadius: '15px' }} >
                 <MDBCardBody className="text-center">
                   <div className="mt-3 mb-4">
@@ -180,7 +180,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
-            <MDBCol md='4' className='ml-auto'>
+            <MDBCol md='6' className='ml-auto'>
               <MDBCard style={{ borderRadius: '15px' }} >
                 <MDBCardBody className="text-center">
                   <div className="mt-3 mb-4">

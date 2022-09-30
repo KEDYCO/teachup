@@ -33,7 +33,7 @@ export default function RegistrarseAlu() {
             </Row>
             <Row>
             <Form.Group as={Col} controlId="formGridAddress1">
-            <Form.Label>Estudios alcanzados</Form.Label>
+            <Form.Label>Seleccione el ultimo estudio alcanzado</Form.Label>
               <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Primario' onClick={"fromGridState"}/>
               <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Secundario' />
               <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Terciario' />

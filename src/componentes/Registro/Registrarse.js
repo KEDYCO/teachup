@@ -47,8 +47,8 @@ export default function Registrarse() {
               <Form.Control placeholder="Contraseña" type="password"/>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridAddress2">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control placeholder="ReIngrese Contraseña" type="password" />
+              <Form.Label>Confirmar contraseña</Form.Label>
+              <Form.Control placeholder="Escriba nuevamente la contraseña" type="password" />
             </Form.Group>
           </Row>
         
