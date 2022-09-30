@@ -41,9 +41,9 @@ import {
             <MDBCol>
               <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
                 <MDBBreadcrumbItem>
-                  <a href='/paginaprincipal'>Home</a>
+                  <a href='/paginaprincipalprof'>Home</a>
                 </MDBBreadcrumbItem>
-                <MDBBreadcrumbItem active>Perfil Alumno</MDBBreadcrumbItem>
+                <MDBBreadcrumbItem active>Perfil Profesor</MDBBreadcrumbItem>
               </MDBBreadcrumb>
             </MDBCol>
           </MDBRow>
@@ -58,8 +58,8 @@ import {
                     className="rounded-circle"
                     style={{ width: '150px' }}
                     fluid />
-                  <p className="text-muted mb-1">Alumno de UADE</p>
-                  <p className="text-muted mb-4">Avellaneda, Buenos Aires</p>
+                  <p className="text-muted mb-1">Profesor</p>
+                  <p className="text-muted mb-4">Lanús, Buenos Aires</p>
                   <div className="d-flex justify-content-center mb-2">
                     <Button><img id="botonupload" src="imgs/upload.png"/> Subir Imagen</Button> 
                   </div>
@@ -71,23 +71,23 @@ import {
                   <MDBListGroup flush className="rounded-3">
                     <Form.Group className="d-flex justify-content-between align-items-center p-3">
                       <img id="fotona" src="imgs/github.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
+                      <Form.Control placeholder="profesor-ejemplar" />
                     </Form.Group>
                     <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                       <img id="fotona" src="imgs/linkedin.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
+                      <Form.Control placeholder="profesor-ejemplar" />
                     </MDBListGroupItem>
                     <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                       <img id="fotona" src="imgs/reddit.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
+                      <Form.Control placeholder="profesor-ejemplar" />
                     </MDBListGroupItem>
                     <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                       <img id="fotona" src="imgs/twitter.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
+                      <Form.Control placeholder="profesor-ejemplar" />
                     </MDBListGroupItem>
                     <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                       <img id="fotona" src="imgs/instagram.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
+                      <Form.Control placeholder="profesor-ejemplar" />
                     </MDBListGroupItem>
                   </MDBListGroup>
                 </MDBCardBody>
@@ -101,7 +101,7 @@ import {
                       <MDBCardText>Nombre completo</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                        <Form.Control placeholder="Alumno Ejemplar" />
+                        <Form.Control placeholder="Profesor Ejemplar" />
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -110,7 +110,7 @@ import {
                       <MDBCardText>Email</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">alumnoejemplar@gmail.com</MDBCardText>
+                      <MDBCardText className="text-muted">profesorejemplar@gmail.com</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -137,7 +137,7 @@ import {
                       <MDBCardText>Fecha de nacimiento</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">01/01/99</MDBCardText>
+                      <MDBCardText className="text-muted">02/02/70</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                 </MDBCardBody>
@@ -160,7 +160,7 @@ import {
             Se han guardado los cambios realizados.
           </Modal.Body>
           <Modal.Footer>
-        <Button variant="success" onClick={handleClose} href='/miperfil'>
+        <Button variant="success" onClick={handleClose} href='/paginaprincipalprof'>
             Entendido
         </Button>
         </Modal.Footer>

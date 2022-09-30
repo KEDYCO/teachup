@@ -59,7 +59,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                     fluid />
                   <p className="text-muted mb-4">Lanús, Buenos Aires</p>
                   <div className="d-flex justify-content-center mb-2">
-                    <Button href="/editarPerfil"><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
+                    <Button href="/editarPerfilProf"><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
                   </div>
                 </MDBCardBody>
               </MDBCard>

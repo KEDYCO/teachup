@@ -42,19 +42,11 @@ export default function Commentbox() {
                       <p className="mb-0">
                         24 de septiembre, 2022
                       </p>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="pencil-alt ms-2" />
-                      </a>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="redo-alt ms-2" />
-                      </a>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="heart ms-2" />
-                      </a>
+                      
                     </div>
                     <p className="mb-0" >
                       Excelente clase, muy buen trato hacia los alumnos, pude aprender a programar y 
-                      ahora gano 3000 dólares mensuales en endava solo por subir reels en instagram
+                      me sirvió para el laburo
                     </p>
                   </div>
                 </div>
@@ -63,41 +55,28 @@ export default function Commentbox() {
               <hr className="my-0" />
 
               <MDBCardBody className="p-4">
+              
+
                 <div className="d-flex flex-start">
                   <MDBCardImage
                     className="rounded-circle shadow-1-strong me-3"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).webp"
+                    src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png"
                     alt="avatar"
                     width="60"
                     height="60"
                   />
                   <div>
                     <MDBTypography tag="h6" className="fw-bold mb-1">
-                      Lara Stewart
+                      Mauro Lombardo
                     </MDBTypography>
                     <div className="d-flex align-items-center mb-3">
                       <p className="mb-0">
-                        March 15, 2021
-                        <span className="badge bg-success">Approved</span>
+                        20 de septiembre, 2022
                       </p>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="pencil-alt ms-2" />
-                      </a>
-                      <a href="#!" className="text-success">
-                        <MDBIcon fas icon="redo-alt ms-2" />
-                      </a>
-                      <a href="#!" className="link-danger">
-                        <MDBIcon fas icon="heart ms-2" />
-                      </a>
+                      
                     </div>
-                    <p className="mb-0">
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature from 45 BC, making it over 2000 years old.
-                      Richard McClintock, a Latin professor at Hampden-Sydney
-                      College in Virginia, looked up one of the more obscure
-                      Latin words, consectetur, from a Lorem Ipsum passage, and
-                      going through the cites.
+                    <p className="mb-0" >
+                      Las clases buenas, se hizo un poco larga pero el profesor la sabía llevar bien jaja, recomendado
                     </p>
                   </div>
                 </div>
@@ -106,84 +85,36 @@ export default function Commentbox() {
               <hr className="my-0" />
 
               <MDBCardBody className="p-4">
+          
+           
+
                 <div className="d-flex flex-start">
                   <MDBCardImage
                     className="rounded-circle shadow-1-strong me-3"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(33).webp"
+                    src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png"
                     alt="avatar"
                     width="60"
                     height="60"
                   />
                   <div>
                     <MDBTypography tag="h6" className="fw-bold mb-1">
-                      Alexa Bennett
+                      Alejandro Gómez
                     </MDBTypography>
                     <div className="d-flex align-items-center mb-3">
                       <p className="mb-0">
-                        March 24, 2021
-                        <span className="badge bg-danger">Rejected</span>
+                        17 de septiembre, 2022
                       </p>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="pencil-alt ms-2" />
-                      </a>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="redo-alt ms-2" />
-                      </a>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="heart ms-2" />
-                      </a>
+                      
                     </div>
-                    <p className="mb-0">
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable. If you are going to
-                      use a passage of Lorem Ipsum, you need to be sure.
+                    <p className="mb-0" >
+                      Buenas clases loco, para el profe 5 palabras: CRACK
                     </p>
                   </div>
                 </div>
               </MDBCardBody>
 
-              <hr className="my-0" />
 
-              <MDBCardBody className="p-4">
-                <div className="d-flex flex-start">
-                  <MDBCardImage
-                    className="rounded-circle shadow-1-strong me-3"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(24).webp"
-                    alt="avatar"
-                    width="60"
-                    height="60"
-                  />
-                  <div>
-                    <MDBTypography tag="h6" className="fw-bold mb-1">
-                      Alexa Bennett
-                    </MDBTypography>
-                    <div className="d-flex align-items-center mb-3">
-                      <p className="mb-0">
-                        March 30, 2021
-                        <span className="badge bg-primary">Pending</span>
-                      </p>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="pencil-alt ms-2" />
-                      </a>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="redo-alt ms-2" />
-                      </a>
-                      <a href="#!" className="link-muted">
-                        <MDBIcon fas icon="heart ms-2" />
-                      </a>
-                    </div>
-                    <p className="mb-0">
-                      It uses a dictionary of over 200 Latin words, combined
-                      with a handful of model sentence structures, to generate
-                      Lorem Ipsum which looks reasonable. The generated Lorem
-                      Ipsum is therefore always free from repetition, injected
-                      humour, or non-characteristic words etc.
-                    </p>
-                  </div>
-                </div>
-              </MDBCardBody>
+
             </MDBCard>
           </MDBCol>
         </MDBRow>
