@@ -10,6 +10,8 @@ import { ModalBody } from "react-bootstrap";
 import CommentBox from "../CommentBox/CommentBox.js"
 import { fontFamily } from "@mui/system";
 import AddComment from "../CommentBox/AddComment.js";
+import './AdministrarClasesCss.css'
+
 
 export default function ClasesProf() {
   const [show, setShow] = useState(false);
@@ -74,7 +76,7 @@ export default function ClasesProf() {
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Form.Select defaultValue="Elegir" onChange={handleShow4} md='6' >
+                <Form.Select defaultValue="Elegir" onChange={handleShow4} id="selectorEstadoClase" >
                                 <option>Pública</option>
                                 <option>Oculta</option>
                 </Form.Select>
@@ -108,13 +110,13 @@ export default function ClasesProf() {
                                     <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
                                 </Form.Group>
                                 <Modal.Body>Frecuencia de clase</Modal.Body>
-                                <Form.Group as={Col} controlId="formGridState">
-                              <Form.Select defaultValue="Elegir" >
-                                <option>Única</option>
-                                <option>Semanal</option>
-                                <option>Mensual</option>
-                              </Form.Select>
-                              </Form.Group>
+                                <Form.Group controlId="formGridState" >
+                                  <Form.Select defaultValue="Elegir" onChange={handleShow4} >
+                                    <option>Unica</option>
+                                    <option>Semanal</option>
+                                    <option>Mensual</option>
+                                  </Form.Select>
+                                  </Form.Group>
                               <Modal.Body>Costo del curso (en pesos)</Modal.Body>
                                 <Form.Group id="text-insert">
                                 <Form.Control  id="ingresoCosto" placeholder="Ingresar costo" />
@@ -148,7 +150,7 @@ export default function ClasesProf() {
                                 </Form.Group>
                                 <Modal.Body>Frecuencia de clase</Modal.Body>
                                 <Form.Group as={Col} controlId="formGridState">
-                              <Form.Select defaultValue="Elegir"  >
+                              <Form.Select defaultValue="Elegir" className="frecClasDDL" >
                                 <option>Única</option>
                                 <option>Semanal</option>
                                 <option>Mensual</option>
