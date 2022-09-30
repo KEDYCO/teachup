@@ -24,7 +24,7 @@ export default function AdministrarComentarios() {
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
   return (
-    <MDBContainer className="mt-5" style={{ maxWidth: "1000px" }}>
+    <MDBContainer className="mt-5" style={{ maxWidth: "1000px", height: "100vh" }}>
       <MDBRow className="justify-content-center">
         <MDBCol>
           <MDBCard

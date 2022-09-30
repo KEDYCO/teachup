@@ -30,14 +30,14 @@
 }
 
 .navReg{
-  background: #e9da91;
+  background:  rgb(238, 166, 10);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
-  border-bottom: 5px solid rgb(238, 166, 10)
+  border-bottom: 5px solid #e9da91 ;
   
 }
 
