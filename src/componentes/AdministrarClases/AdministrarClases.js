@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 import Col from 'react-bootstrap/Col';
 import { AiFillStar } from 'react-icons/ai';
+import "./AdministrarClasesCss.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -38,21 +39,21 @@ export default function ClasesProf() {
   const handleShow7 = () => setShow7(true);
 
   return (
-    <div className="contenedorClaseProf" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-      <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
-        
+    <div className="contenedorClaseProf" style={{ backgroundColor: "#1c1e21", overflowX: "hidden" }}>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
       <MDBContainer className="container py-5 h-100">
-      <div className="d-flex justify-content-between">
-      <header  style={{color: "#FFA726", fontFamily: 'Bebas Neue', fontWeight: "bold"}}>
-      <MDBTypography className="text-decoration fw-bold" tag="h1">Mis clases </MDBTypography>
-    </header>
-    <Button rounded size="md" variant={"success"} onClick={handleShow} fontWeight="bold" >
-                  Crear nueva clase
-      </Button>
-    </div>
-        <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100"> 
+        <div className="d-flex justify-content-between">
+          <header style={{ color: "#FFA726", fontFamily: 'Bebas Neue', fontWeight: "bold" }}>
+            <MDBTypography className="text-decoration fw-bold" tag="h1">Mis clases </MDBTypography>
+          </header>
+          <Button rounded size="md" variant={"success"} onClick={handleShow} fontWeight="bold" >
+            Crear nueva clase
+          </Button>
+        </div>
+        <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
           <MDBCol md="12" xl="4">
             <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
               <MDBCardBody className="text-center">
@@ -64,7 +65,7 @@ export default function ClasesProf() {
                 <MDBCardText className="text-muted mb-4">
                   Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
-                
+
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
@@ -72,7 +73,7 @@ export default function ClasesProf() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
@@ -122,15 +123,15 @@ export default function ClasesProf() {
                                 <Form.Control  id="ingresoCosto" placeholder="Ingresar costo" />
                               </Form.Group>
 
-                                <Modal.Footer id="footer-form">
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Cerrar
-                                </Button>
-                                <Button variant="primary" onClick={handleShow7}>
-                                    Enviar
-                                </Button>
-                                </Modal.Footer>
-                            </Modal>
+        <Modal.Footer id="footer-form">
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+          <Button variant="primary" onClick={handleShow7}>
+            Enviar
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
                             <Modal show={show2} onHide={handleClose2}>
                                 <Modal.Header closeButton>
@@ -161,17 +162,17 @@ export default function ClasesProf() {
                                 <Form.Control  id="ingresoCosto" placeholder="Ingresar costo" />
                               </Form.Group>
 
-                                <Modal.Footer id="footer-form">
-                                <Button variant="secondary" onClick={handleClose2}>
-                                    Cerrar
-                                </Button>
-                                <Button variant="primary" onClick={handleShow5}>
-                                    Enviar
-                                </Button>
-                                </Modal.Footer>
-                            </Modal>
+        <Modal.Footer id="footer-form">
+          <Button variant="secondary" onClick={handleClose2}>
+            Cerrar
+          </Button>
+          <Button variant="primary" onClick={handleShow5}>
+            Enviar
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
-  <Modal show={show3} onHide={handleClose3} backdrop="static" keyboard={false}>
+      <Modal show={show3} onHide={handleClose3} backdrop="static" keyboard={false}>
         <Modal.Header>
           <Modal.Title>Eliminar clase</Modal.Title>
         </Modal.Header>
@@ -237,5 +238,6 @@ export default function ClasesProf() {
         </Modal.Footer>
       </Modal>
 
-</div>
-)};
+    </div>
+  )
+};
