@@ -146,10 +146,10 @@ export default function PerfilUsuario() {
 
     <div className="" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
       
-      <MDBContainer className=" py-5 h-100">
+      <MDBContainer className=" py-5 h-100 ">
         <MDBTypography className="text-decoration-underline fw-bold" tag="h1" color="white">Clases contratadas </MDBTypography>
         <MDBRow className="mb-3">
-          <MDBCol md='4'>
+          <MDBCol md='6'>
             <MDBCard style={{ borderRadius: '15px' }} >
               <MDBCardBody className="text-center">
                 <div className="mt-3 mb-4">
@@ -174,8 +174,8 @@ export default function PerfilUsuario() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md='4' className='ml-auto'>
-            <MDBCard style={{ borderRadius: '15px' }} >
+          <MDBCol md='6' >
+            <MDBCard className = "carta12" style={{ borderRadius: '15px' }} >
               <MDBCardBody className="text-center">
                 <div className="mt-3 mb-4">
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"

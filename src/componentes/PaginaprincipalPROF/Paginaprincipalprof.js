@@ -13,7 +13,7 @@ export default function Paginaprincipalprof(){
     return (
       <div>
         <div>
-          <NavbarProf></NavbarProf>
+        <NavbarProf></NavbarProf>
         </div>
       <div className="contenedorTodoPerfil">
         <PerfilProfesor></PerfilProfesor>

@@ -22,6 +22,8 @@ import EditarPerfil from "./componentes/EditProfile/VistaEditarPerfil";
 import VistaAdministrarComentarios from "./componentes/AdministrarComentarios/VistaAdministrarComentarios";
 import PerfilProfesor from "./componentes/MyProfileProf/MyProfileProf";
 import VistaAdministrarClases from "./componentes/AdministrarClases/VistaAdministrarClases";
+import EditarPerfilProfesor from "./componentes/EditProfileProf/EditProfileProf";
+import EditarPerfilProf from "./componentes/EditProfileProf/VistaEditarPerfilProf";
 
 
 
@@ -49,6 +51,8 @@ function App(){
           <Route path = "/miPerfilProf" element={<PerfilProfesor/>}>
           </Route>
           <Route path = "/editarPerfil" element={<EditarPerfil/>}>
+          </Route>
+          <Route path = "/editarPerfilProf" element={<EditarPerfilProf/>}>
           </Route>
           <Route path = "/VistaAdministrarComentarios" element={<VistaAdministrarComentarios/>}>
           </Route>
