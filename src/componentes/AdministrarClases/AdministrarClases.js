@@ -111,7 +111,7 @@ export default function ClasesProf() {
                                     <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
                                 </Form.Group>
                                 <Modal.Body>Frecuencia de clase</Modal.Body>
-                                <Form.Group controlId="formGridState" >
+                                <Form.Group controlId="formGridState" id="text-insert">
                                   <Form.Select defaultValue="Elegir" onChange={handleShow4} >
                                     <option>Unica</option>
                                     <option>Semanal</option>
@@ -150,7 +150,7 @@ export default function ClasesProf() {
                                     <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
                                 </Form.Group>
                                 <Modal.Body>Frecuencia de clase</Modal.Body>
-                                <Form.Group as={Col} controlId="formGridState">
+                                <Form.Group as={Col} controlId="formGridState" id="text-insert">
                               <Form.Select defaultValue="Elegir" className="frecClasDDL" >
                                 <option>Única</option>
                                 <option>Semanal</option>
