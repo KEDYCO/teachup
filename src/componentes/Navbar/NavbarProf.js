@@ -1,6 +1,8 @@
 import React from "react";
 import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { MDBBadge, MDBIcon } from 'mdb-react-ui-kit';
+
 
 
 export default function NavbarProf(){
@@ -19,6 +21,7 @@ export default function NavbarProf(){
                  Cerrar sesión
               </NavDropdown.Item>
             </NavDropdown>
+
         </nav>
 
 )} 

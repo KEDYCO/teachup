@@ -25,6 +25,7 @@ import VistaAdministrarClases from "./componentes/AdministrarClases/VistaAdminis
 import EditarPerfilProfesor from "./componentes/EditProfileProf/EditProfileProf";
 import EditarPerfilProf from "./componentes/EditProfileProf/VistaEditarPerfilProf";
 import AboutUs from "./componentes/LandingPage/LandingPage";
+import VistaAdministrarSolicitudes from "./componentes/AdministrarSolicitudes/VistaAdministrarSolicitud";
 
 
 
@@ -60,6 +61,8 @@ function App(){
           <Route path = "/VistaAdministrarComentarios" element={<VistaAdministrarComentarios/>}>
           </Route>
           <Route path = "/VistaAdministrarClases" element={<VistaAdministrarClases/>}>
+          </Route>
+          <Route path = "/VistaAdministrarSolicitudes" element={<VistaAdministrarSolicitudes/>}>
           </Route>
         </Routes>
       </div>

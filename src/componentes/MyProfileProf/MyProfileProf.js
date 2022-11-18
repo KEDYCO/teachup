@@ -13,6 +13,7 @@ import {
     MDBProgress,
     MDBProgressBar,
     MDBIcon,
+    MDBBadge,
     MDBTypography,
     MDBListGroup,
     MDBListGroupItem
@@ -35,6 +36,9 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
     const [show2, setShow2] = useState(false);
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
+    const [show3, setShow3] = useState(false);
+    const handleClose3 = () => setShow3(false);
+    const handleShow3 = () => setShow3(true);
     const [rating, setRating] = useState(0);
     return (
       <section style={{ backgroundColor: "rgb(28,30,33)" }}>
@@ -114,22 +118,14 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                   <hr />
                   <MDBRow>
                     <MDBCol sm="3">
-                      <MDBCardText>Teléfono fijo</MDBCardText>
+                      <MDBCardText>Teléfono</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
                       <MDBCardText className="text-muted">42489696</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Teléfono móvil</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                      <MDBCardText className="text-muted">1123456789</MDBCardText>
-                    </MDBCol>
-                  </MDBRow>
-                  <hr />
+                  
                   <MDBRow>
                     <MDBCol sm="3">
                       <MDBCardText>Fecha de nacimiento</MDBCardText>
@@ -172,6 +168,12 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                 <Button rounded size="sm" variant={"secondary"} onClick={handleShow} >
                   Ver alumnos
                 </Button>
+                <Button rounded size="sm" variant={"secondary"} href="/VistaAdministrarSolicitudes" >
+                  Solicitudes
+                <MDBBadge className='ms-2' color='danger'>
+                    8
+                  </MDBBadge>
+                </Button>
                 <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
                   Ver comentarios
                 </Button>
@@ -205,6 +207,12 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                   <div className="d-flex justify-content-between text-center">
                 <Button rounded size="sm" variant={"secondary"} onClick={handleShow} >
                   Ver alumnos
+                </Button>
+                <Button rounded size="sm" variant={"secondary"} href="/VistaAdministrarSolicitudes"  >
+                  Solicitudes
+                <MDBBadge className='ms-2' color='danger'>
+                    8
+                  </MDBBadge>
                 </Button>
                 <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
                   Ver comentarios
@@ -246,6 +254,19 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
           <Modal.Body>
             <div>
             <CommentBox></CommentBox>
+            </div>
+          </Modal.Body>
+          
+        </Modal>
+
+        <Modal show={show3} onHide={handleClose3} size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title>Alumnos</Modal.Title>
+            <Modal.Body>Solicitudes de alumnos:</Modal.Body>
+          </Modal.Header>
+          <Modal.Body>
+            <div>
+            <VerAlumnos></VerAlumnos>
             </div>
           </Modal.Body>
           

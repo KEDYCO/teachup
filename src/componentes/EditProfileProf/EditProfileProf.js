@@ -98,10 +98,10 @@ import {
                 <MDBCardBody>
                   <MDBRow>
                     <MDBCol sm="3">
-                      <MDBCardText>Nombre completo</MDBCardText>
+                      <MDBCardText >Nombre completo</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                        <Form.Control placeholder="Profesor Ejemplar" />
+                        <MDBCardText className="text-muted">Profesor Ejemplar</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -116,19 +116,10 @@ import {
                   <hr />
                   <MDBRow>
                     <MDBCol sm="3">
-                      <MDBCardText>Teléfono fijo</MDBCardText>
+                      <MDBCardText>Teléfono </MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
                     <Form.Control placeholder="42489696" />
-                    </MDBCol>
-                  </MDBRow>
-                  <hr />
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Teléfono móvil</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                        <Form.Control placeholder="1123456789" />
                     </MDBCol>
                   </MDBRow>
                   <hr />
