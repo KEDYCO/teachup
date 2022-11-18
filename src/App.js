@@ -24,6 +24,7 @@ import PerfilProfesor from "./componentes/MyProfileProf/MyProfileProf";
 import VistaAdministrarClases from "./componentes/AdministrarClases/VistaAdministrarClases";
 import EditarPerfilProfesor from "./componentes/EditProfileProf/EditProfileProf";
 import EditarPerfilProf from "./componentes/EditProfileProf/VistaEditarPerfilProf";
+import AboutUs from "./componentes/LandingPage/LandingPage";
 
 
 
@@ -32,7 +33,9 @@ function App(){
     <Router>
       <div>
         <Routes>
-          <Route path = "/" element={<Iniciosesion/>}>
+          <Route path = "/" element={<AboutUs/>}>
+          </Route>
+          <Route path = "/inicioSesion" element={<Iniciosesion/>}>
           </Route>
           <Route path = "/registrarse" element={<Registrarse/>}>
           </Route>

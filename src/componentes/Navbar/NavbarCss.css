@@ -44,6 +44,9 @@ body{
     padding: .25rem;
 
 }
+.nav botonContenedor{
+    
+}
 #nav-dropdown{
     color: white;
     text-decoration: none;
@@ -75,6 +78,12 @@ body{
 #botonguardar{
     margin-top: 10px ;
 }
+.botonContenedor{
+    display:flex;
+    margin: 8px;
+}
+
+
 
 
 
