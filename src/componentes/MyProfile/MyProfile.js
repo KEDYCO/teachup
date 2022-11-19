@@ -65,33 +65,6 @@ export default function PerfilUsuario() {
                 </div>
               </MDBCardBody>
             </MDBCard>
-
-            <MDBCard className="mb-4 mb-lg-0">
-              <MDBCardBody className="p-0">
-                <MDBListGroup flush className="rounded-3">
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <img id="fotona" src="imgs/github.png"/>
-                    <MDBCardText>alumno_ejemplar</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <img id="fotona" src="imgs/linkedin.png"/>
-                    <MDBCardText>alumno_ejemplar</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <img id="fotona" src="imgs/reddit.png"/>
-                    <MDBCardText>alumno_ejemplar</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <img id="fotona" src="imgs/twitter.png"/>
-                    <MDBCardText>alumno_ejemplar</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <img id="fotona" src="imgs/instagram.png"/>
-                    <MDBCardText>alumno_ejemplar</MDBCardText>
-                  </MDBListGroupItem>
-                </MDBListGroup>
-              </MDBCardBody>
-            </MDBCard>
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-0">

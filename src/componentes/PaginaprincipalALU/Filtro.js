@@ -54,43 +54,12 @@ export default function Filtro(){
     </div>
     <div class="cardFiltro">
       <article class="card-group-item">
-      <header class="card-header">
-                  <h6 class="title">Materias </h6>
-              </header>
-        <Dropdown >
-            <Dropdown.Toggle variant="dark">
-              Seleccionar materias
-            </Dropdown.Toggle>
-            <Dropdown.Menu >
-              <form>
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Musica
-                        </span>
-                      </label>             
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Programacion
-                        </span>
-                      </label>  
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Lengua
-                        </span>
-                      </label>
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Matematica
-                        </span>
-                      </label>
-                  </form>
-              
-            </Dropdown.Menu>
-          </Dropdown>
+      <div class="input-group">
+        <div id="search-autocomplete" class="form-outline">
+          <input type="search" id="form1" class="form-control" />
+          <label class="form-label" for="form1">Buscar materia</label>
+        </div>
+      </div>
           </article>
         
           

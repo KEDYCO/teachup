@@ -241,14 +241,6 @@ export default function Tarjetas() {
                                 <Modal.Header closeButton>
                                 <Modal.Title>Contratar clase</Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body>Ingrese un teléfono al que el profesor pueda comunicarse</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoTelefono" placeholder="Ingresar teléfono" />
-                                </Form.Group>
-                                <Modal.Body>Ingrese un mail para que el profesor pueda contactarse</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoMail" placeholder="Ingresar e-mail" />
-                                </Form.Group>
                                 <Modal.Body>Horario de referencia para el contacto</Modal.Body>
                                 <Form.Group id="text-insert">
                                     <Form.Control id="ingresoTelefono" placeholder="Ingresar horario" />

@@ -67,32 +67,7 @@ import {
                 </MDBCardBody>
               </MDBCard>
   
-              <MDBCard className="mb-4 mb-lg-0">
-                <MDBCardBody className="p-0">
-                  <MDBListGroup flush className="rounded-3">
-                    <Form.Group className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/github.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
-                    </Form.Group>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/linkedin.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/reddit.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/twitter.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/instagram.png"/>
-                      <Form.Control placeholder="alumno-ejemplar" />
-                    </MDBListGroupItem>
-                  </MDBListGroup>
-                </MDBCardBody>
-              </MDBCard>
+              
             </MDBCol>
             <MDBCol lg="8">
               <MDBCard className="mb-0">
@@ -102,7 +77,7 @@ import {
                       <MDBCardText>Nombre completo</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                        <Form.Control placeholder="Alumno Ejemplar" />
+                    <MDBCardText className="text-muted">Alumno Ejemplar</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -117,19 +92,10 @@ import {
                   <hr />
                   <MDBRow>
                     <MDBCol sm="3">
-                      <MDBCardText>Teléfono fijo</MDBCardText>
+                      <MDBCardText>Teléfono</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
                     <Form.Control placeholder="42489696" />
-                    </MDBCol>
-                  </MDBRow>
-                  <hr />
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Teléfono móvil</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                        <Form.Control placeholder="1123456789" />
                     </MDBCol>
                   </MDBRow>
                   <hr />
