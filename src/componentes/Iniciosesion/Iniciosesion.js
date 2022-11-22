@@ -85,11 +85,11 @@ export default function Iniciosesion(){
                                 </Modal.Header>
                                 <Modal.Body>Nueva contraseña</Modal.Body>
                                 <Form.Group id="mailGroup">
-                                    <Form.Control id="ingresoMail" placeholder="Ingrese contraseña nueva" />
+                                    <Form.Control id="ingresoMail" placeholder="Ingrese contraseña nueva" type="password" />
                                 </Form.Group>
                                 <Modal.Body>Reingrese nueva contraseña</Modal.Body>
                                 <Form.Group id="mailGroup">
-                                    <Form.Control id="ingresoMail" placeholder="Reingrese contraseña nueva" />
+                                    <Form.Control id="ingresoMail" placeholder="Reingrese contraseña nueva" type="password" />
                                 </Form.Group>
                                 <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose3}>

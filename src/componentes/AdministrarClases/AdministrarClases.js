@@ -137,10 +137,7 @@ export default function ClasesProf() {
                                 <Modal.Header closeButton>
                                 <Modal.Title>Modificar clase</Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body>Nombre del profesor</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoNombre" placeholder="Ingresar nombre" />
-                                </Form.Group>
+
                                 <Modal.Body>Materia que se va a enseñar</Modal.Body>
                                 <Form.Group id="text-insert">
                                     <Form.Control id="ingresoMateria" placeholder="Ingresar materia" />

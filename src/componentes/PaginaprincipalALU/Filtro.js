@@ -116,44 +116,6 @@ export default function Filtro(){
                   </div> 
               </div>
           </article> 
-          <article class="card-group-item">
-          <header class="card-header">
-                  <h6 class="title">Ciudades </h6>
-              </header>
-        <Dropdown >
-            <Dropdown.Toggle variant="dark" >
-              Seleccionar ciudades
-            </Dropdown.Toggle>
-            <Dropdown.Menu >
-              <form>
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Avellaneda
-                        </span>
-                      </label>             
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Lanus
-                        </span>
-                      </label>  
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Lomas de Zamora
-                        </span>
-                      </label>
-                      <label class="form-check">
-                        <input class="form-check-input" type="checkbox" value=""/>
-                        <span class="form-check-label">
-                          Vicente Lopez
-                        </span>
-                      </label>
-                  </form>
-            </Dropdown.Menu>
-          </Dropdown>
-          </article>
 
           <article class="card-group-item">
       <header class="card-header">

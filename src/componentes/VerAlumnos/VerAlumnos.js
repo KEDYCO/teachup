@@ -32,9 +32,6 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Agustín Sturba
                     </MDBTypography>
-                    <p className="mb-0">
-                        01/01/2000
-                      </p>
                   </div>
                 </div>
               </MDBCardBody>
@@ -55,9 +52,7 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Julián Gamietea
                     </MDBTypography>
-                    <p className="mb-0">
-                        01/01/2000
-                      </p>
+                    
                   </div>
                 </div>
               </MDBCardBody>
@@ -76,9 +71,7 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Lionel Hernández
                     </MDBTypography>
-                    <p className="mb-0">
-                        01/01/2000
-                      </p>
+                    
                   </div>
                 </div>
               </MDBCardBody>
@@ -98,9 +91,7 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Robert Moreira
                     </MDBTypography>
-                    <p className="mb-0">
-                        01/01/2000
-                      </p>
+                    
                   </div>
                 </div>
               </MDBCardBody>
@@ -119,9 +110,7 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Jorge Bermúdez
                     </MDBTypography>
-                    <p className="mb-0">
-                        01/01/2000
-                      </p>
+                   
                   </div>
                 </div>
               </MDBCardBody>

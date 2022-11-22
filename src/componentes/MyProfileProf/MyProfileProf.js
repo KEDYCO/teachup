@@ -236,7 +236,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
         <Modal show={show} onHide={handleClose} size="lg">
           <Modal.Header closeButton>
             <Modal.Title>Alumnos</Modal.Title>
-            <Modal.Body>Alumnos inscriptos a esta clase: 5</Modal.Body>
+            <Modal.Body>Inscriptos: 5</Modal.Body>
           </Modal.Header>
           <Modal.Body>
             <div>
