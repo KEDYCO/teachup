@@ -18,11 +18,10 @@ export default function RegistrarseAlu() {
     const [ultimoAlcanzado,setUltimoAlcanzado] = React.useState()
     const [estadoEstudio,setEstadoEstudio] = React.useState("En curso")
 
-    
-
   const handleClick = () => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
+
 
   var raw = JSON.stringify({
     "password": location.state.password,
@@ -34,10 +33,10 @@ export default function RegistrarseAlu() {
     "preguntaSeg": location.state.preguntaSeg,
     "respuesta": location.state.respuesta,
     "fechaNac": fechaNac,
-    "alumno": {
-      "ultimoAlcanzado": ultimoAlcanzado,
-      "estadoEstudio": estadoEstudio
-    }
+    "esProfesor": location.state.esProfesor,
+    "ultimoAlcanzado": ultimoAlcanzado,
+    "estadoEstudio": estadoEstudio
+    
   });
   console.log(raw)
   var requestOptions = {

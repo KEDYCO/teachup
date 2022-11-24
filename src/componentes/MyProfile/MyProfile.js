@@ -89,19 +89,10 @@ export default function PerfilUsuario() {
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Teléfono fijo</MDBCardText>
+                    <MDBCardText>Teléfono</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">42489696</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Teléfono móvil</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">1123456789</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />

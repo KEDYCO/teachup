@@ -32,10 +32,9 @@ export default function RegistrarseProf() {
         "preguntaSeg": location.state.preguntaSeg,
         "respuesta": location.state.respuesta,
         "fechaNac": fechaNac,
-        "profesor": {
-          "titulo": titulo,
-          "exp": exp
-        }
+        "titulo": titulo,
+        "exp": exp
+        
       });
       console.log(raw)
       var requestOptions = {

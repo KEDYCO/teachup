@@ -65,33 +65,6 @@ import {
                   </div>
                 </MDBCardBody>
               </MDBCard>
-  
-              <MDBCard className="mb-4 mb-lg-0">
-                <MDBCardBody className="p-0">
-                  <MDBListGroup flush className="rounded-3">
-                    <Form.Group className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/github.png"/>
-                      <Form.Control placeholder="profesor-ejemplar" />
-                    </Form.Group>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/linkedin.png"/>
-                      <Form.Control placeholder="profesor-ejemplar" />
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/reddit.png"/>
-                      <Form.Control placeholder="profesor-ejemplar" />
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/twitter.png"/>
-                      <Form.Control placeholder="profesor-ejemplar" />
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                      <img id="fotona" src="imgs/instagram.png"/>
-                      <Form.Control placeholder="profesor-ejemplar" />
-                    </MDBListGroupItem>
-                  </MDBListGroup>
-                </MDBCardBody>
-              </MDBCard>
             </MDBCol>
             <MDBCol lg="8">
               <MDBCard className="mb-0">
