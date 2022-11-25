@@ -32,6 +32,7 @@ export default function RegistrarseProf() {
         "preguntaSeg": location.state.preguntaSeg,
         "respuesta": location.state.respuesta,
         "fechaNac": fechaNac,
+        "esProfesor": location.state.esProfesor,
         "titulo": titulo,
         "exp": exp
         

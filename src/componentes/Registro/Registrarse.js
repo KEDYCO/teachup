@@ -19,9 +19,9 @@ export default function Registrarse() {
   const [rol, setRol] = React.useState()
   const [preguntaSeg, setPreguntaSeg] = React.useState()
   const [respuesta, setRespuesta] = React.useState()
-  const [error, setError] = useState("");
-  const [title, setTitle] = useState("");
-  const [modalTitle, setModalTitle] = useState("");
+  const [error, setError] = React.useState("");
+  const [title, setTitle] = React.useState("");
+  const [modalTitle, setModalTitle] = React.useState("");
 
 
   const navigate = useNavigate()

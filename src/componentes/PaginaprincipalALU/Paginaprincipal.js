@@ -10,9 +10,21 @@ import Filtro from "./Filtro";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 import SidebarMenu from 'react-bootstrap-sidebar-menu';
 import { Col, Row } from "react-bootstrap";
+import {useContext} from "react";
+import ContextoSesion from "../Contexto/Contexto";
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
   
 export default function Paginaprincipal(){
+    const contextoAlumno = useContext(ContextoSesion);
+    const navigate = useNavigate();
+
+    useEffect(()=>{if (contextoAlumno.logeado === false || contextoAlumno.datoSesion.esProfesor ){
+      navigate('/inicioSesion')
+    }},[])
+
+
     return (
         <div style={{ backgroundColor:  "#1c1e21" }}>
           <div className="divNav">
