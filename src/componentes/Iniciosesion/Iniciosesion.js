@@ -9,6 +9,7 @@ import {
 import { esUnMail } from "../../controles";
 import { PopUp } from "../PopUp/PopUp";
 import axios from "axios";
+
 import {contactBackend} from "../../API";
 import { useNavigate } from 'react-router-dom';
 
@@ -74,6 +75,36 @@ export default function Iniciosesion(props) {
         }
     }
 
+    const verificarMail = async () =>{
+        let data ={
+            "email": email
+        };
+        try{
+            let res = await contactBackend("/users/userByMail",false,"POST",null,data,false,201)
+            console.log(res)
+            if(res.loginUser.user.email === email){
+                setTitle()
+                setModalTitle("Error al recuperar contraseña")
+                setText("El email ingresado no corresponde a ningún usuario registrado")
+                showPopUp()
+            }
+            else{
+                handleShow2()
+                console.log(res)
+            }
+        }
+        catch(e){
+            setTitle()
+            setModalTitle("Error al recuperar contraseña")
+            setText("El email ingresado es incorrecto")
+            showPopUp()
+        }
+    }
+
+    const recuperarContrasena = async () =>{
+
+    }
+
 
     return (
         <html lang="en">
@@ -103,13 +134,13 @@ export default function Iniciosesion(props) {
                                     </Modal.Header>
                                     <Modal.Body>Complete con su mail para recibir los pasos para su recupero</Modal.Body>
                                     <Form.Group id="mailGroup">
-                                        <Form.Control id="ingresoMail" placeholder="Ingresar email" />
+                                        <Form.Control id="ingresoMail" placeholder="Ingresar email" value={email} onChange={(event)=>{setEmail(event.target.value)}}/>
                                     </Form.Group>
                                     <Modal.Footer>
                                         <Button variant="secondary" onClick={handleClose}>
                                             Cerrar
                                         </Button>
-                                        <Button variant="primary" onClick={handleShow2}>
+                                        <Button variant="primary" onClick={verificarMail}>
                                             Confirmar
                                         </Button>
                                     </Modal.Footer>

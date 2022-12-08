@@ -10,12 +10,24 @@
     text-align: center; 
     padding-left: 3%;
     padding-right: 30%;
+    
 
 }
 
 #footer-form{
     margin-top: 4%;
 
+}
+
+
+
+.text-muted{
+
+    color: black;
+    font-size: 15px;
+    margin-bottom: 25px;
+    
+    
 }
 
 /* .card-container{
