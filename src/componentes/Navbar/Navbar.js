@@ -1,14 +1,18 @@
 import React from "react";
 import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Notifications from "react-notifications-menu";
+import NotificationMenu from "../Notification/Notification";
 
 
 export default function Navbar(){
     return(
         <nav className="nav">
         <a href="/paginaprincipal" className="site-title"><img src="teachupsmall.png"/></a>
+           <ul>
+            <li><NotificationMenu></NotificationMenu></li>
         
-        <NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
+        <li><NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
               <NavDropdown.Item href="/miperfil"> <img id="fotona" src="imgs/user.png"/>
                  Mi perfil
               </NavDropdown.Item>
@@ -20,6 +24,8 @@ export default function Navbar(){
                  Cerrar sesión
               </NavDropdown.Item>
             </NavDropdown>
+            </li>
+            </ul> 
         </nav>
 
 )} 

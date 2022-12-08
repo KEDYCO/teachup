@@ -17,6 +17,18 @@ return(
                         de todas las edades y regiones del mundo podrán ponerse en contacto fácilmente. 
                         De esta manera, TeachUp concentra una amplia oferta de cursos que favorece a profesores y alumnos.
                     </p>
+                    <hr></hr>
+                    <h2>Profesor</h2>
+                    <p align="justify">¿Te interesa ofrecer tu enseñanza sobre algún tema o alguna materia en particular? Con TeachUp podés hacerlo.
+                    Registrando una cuenta con el rol de "Profesor", podrás crear tus clases para que los alumnos las contraten.
+                    </p>
+                    <hr></hr>
+                    <h2>Alumno</h2>
+                    <p align="justify">Si lo que te interesa es aprender, o tener clases de apoyo, TeachUp es una gran opción. Registrándote con el rol de "alumno",
+                    podrás contratar clases de lo que necesites.</p>
+                    <hr></hr>
+                    <h6 align="justify">Empezá ahora a usar TeachUp</h6>
+
                 </div>
             </div>
 

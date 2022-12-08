@@ -2,6 +2,7 @@ import React from "react";
 import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { MDBBadge, MDBIcon } from 'mdb-react-ui-kit';
+import NotificationMenu from "../Notification/Notification";
 
 
 
@@ -9,6 +10,10 @@ export default function NavbarProf(){
     return(
         <nav className="nav">
         <a href="/paginaprincipalprof" className="site-title"><img src="teachupsmall.png"/></a>
+        <ul>
+        <li><NotificationMenu></NotificationMenu></li>
+        
+        <li>
         <NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
               <NavDropdown.Item href="/VistaAdministrarClases"> <img id="fotona" src="imgs/copybook.png"/>
                  Administrar clases
@@ -21,6 +26,9 @@ export default function NavbarProf(){
                  Cerrar sesión
               </NavDropdown.Item>
             </NavDropdown>
+            
+            </li>
+          </ul>
 
         </nav>
 

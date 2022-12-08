@@ -1,14 +1,24 @@
 import { useNavigate } from 'react-router-dom';
-import React from 'react';
+import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import InputGroup from 'react-bootstrap/InputGroup';
 import { Card } from 'react-bootstrap';
-import './RegistrarseCss.css'
+import './RegistrarseCss.css';
+import { esUnMail, yaExisteElMail } from "../../controles";
+import { PopUp } from "../PopUp/PopUp";
+import axios from "axios";
+import {contactBackend} from "../../API";
 
 
 export default function Registrarse() {
+  const [popUp, setpopUp] = useState ({
+    mensaje: "",
+    titulo: ""
+})
+  const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = React.useState()
   const [telefono, setTelefono] = React.useState()
   const [nombre, setNombre] = React.useState()
@@ -22,6 +32,27 @@ export default function Registrarse() {
   const [error, setError] = React.useState("");
   const [title, setTitle] = React.useState("");
   const [modalTitle, setModalTitle] = React.useState("");
+
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = async (event) =>{
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const existeMail = await yaExisteElMail(email);
+
+    if (form.checkValidity() == false){
+      event.preventDefault();
+      event.stopPropagataion();
+    }
+
+    else if (email === "" || !esUnMail(email) || existeMail) {
+      setpopUp({mensaje: "Por favor, Ingrese un email valido", titulo: "Email Invalido"})
+      setShowModal(true);
+  }
+
+    setValidated(true);
+  };
 
 
   const navigate = useNavigate()
@@ -75,22 +106,39 @@ export default function Registrarse() {
           <link rel="stylesheet" href="RegistrarseCss.css"></link>
         </Card.Header>
         <Card.Body>
-          <Form>
+          <Form noValidate validated = {validated} onSubmit={handleSubmit}>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Ingresar email" value={email} onChange={(text) => { setEmail(text.target.value) }} />
+                <Form.Control 
+                required
+                type="email" 
+                placeholder="Ingresar email" 
+                value={email} 
+                onChange={(text) => { setEmail(text.target.value) }} />
+              <Form.Control.Feedback type="invalid">Por favor ingrese un mail</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Telefono</Form.Label>
-                <Form.Control type="number" placeholder="Nro de telefono" value={telefono} onChange={(text) => { setTelefono(text.target.value) }} />
+                <Form.Control 
+                required
+                type="number" 
+                placeholder="Nro de telefono" 
+                value={telefono} 
+                onChange={(text) => { setTelefono(text.target.value) }}
+                 />
+                <Form.Control.Feedback type="invalid">Por favor ingrese un teléfono</Form.Control.Feedback>
               </Form.Group>
             </Row>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridAddress1">
                 <Form.Label>Nombre</Form.Label>
-                <Form.Control type="alphabet" placeholder="Nombre" value={nombre} onChange={(text) => { setNombre(text.target.value) }} />
+                <Form.Control 
+                type="alphabet" 
+                placeholder="Nombre" 
+                value={nombre} 
+                onChange={(text) => { setNombre(text.target.value) }} />
               </Form.Group>
               <Form.Group as={Col} controlId="formGridAddress2">
                 <Form.Label>Apellido</Form.Label>
@@ -144,7 +192,7 @@ export default function Registrarse() {
           </Form>
         </Card.Body>
         <Card.Footer>
-          <Button variant="primary" type="submit" onClick={(e) => { e.preventDefault(); handleClick() }}>
+          <Button variant="primary" type="submit" onClick={(e) => { e.preventDefault();handleSubmit(); handleClick() }}>
             Continuar
           </Button>
           <Row>

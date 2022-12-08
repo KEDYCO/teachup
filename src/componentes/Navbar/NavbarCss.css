@@ -17,12 +17,14 @@ body{
     display: flex;
     border-bottom: 5px solid #e9da91;
     justify-content: space-between;
+    justify-items: center;
     align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
     font-size: 24px;
-    
-    
+    height: 55px;
+    user-select: none;
+   
 }
 
 
@@ -32,6 +34,8 @@ body{
     list-style: none;
     display: flex;
     gap: 1rem;
+    user-select: none;
+    background-color: transparent;
     
 }
 
@@ -44,9 +48,7 @@ body{
     padding: .25rem;
 
 }
-.nav botonContenedor{
-    
-}
+ 
 #nav-dropdown{
     color: white;
     text-decoration: none;
@@ -55,14 +57,20 @@ body{
     display: flex;
     align-items: center;
     padding: .25rem;
+    user-select: none;
+    background-color: transparent;
 }
 
 .nav li.active{
     background-color: #555;
+    user-select: none;
+    background-color: transparent;
 }
 
 .nav li:hover{
     background-color: #777;
+    user-select: none;
+    background-color: transparent;
 }
 
 #fotona{
