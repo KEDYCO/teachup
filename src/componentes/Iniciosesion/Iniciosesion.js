@@ -21,7 +21,7 @@ export default function Iniciosesion(props) {
     const handleShow = () => setShow(true);
     const [show2, setShow2] = useState(false);
     const handleClose2 = () => setShow2(false);
-    const handleShow2 = () => setShow2(true);
+    const handleShow2 = (pregSeguridad,id) => {setPreguntaSeg(pregSeguridad);setIdUsuario(id);setShow2(true)};
     const [show3, setShow3] = useState(false);
     const handleClose3 = () => setShow3(false);
     const handleShow3 = () => setShow3(true);
@@ -37,6 +37,13 @@ export default function Iniciosesion(props) {
     const [modalTitle, setModalTitle] = useState("");
     const [text,setText] = useState("");
     const navigate = useNavigate();
+    const [emailRecup, setEmailRecup] = React.useState();
+    const [preguntaSeg, setPreguntaSeg] = React.useState("");
+    const [idUsuario, setIdUsuario] = React.useState("");
+    const [respuesta, setRespuesta] = React.useState("");
+    const [passwordRecup,setPasswordRecup] = React.useState("");
+    const [confirmPasswordRecup,setConfirmPasswordRecup] = React.useState("");
+
     
 
     const validarInicioSesion = async () => {
@@ -77,23 +84,24 @@ export default function Iniciosesion(props) {
 
     const verificarMail = async () =>{
         let data ={
-            "email": email
+            "email": emailRecup
         };
         try{
-            let res = await contactBackend("/users/userByMail",false,"POST",null,data,false,201)
+            let res = await contactBackend("/users/userByMail",false,"POST",null,data,false,200)
             console.log(res)
-            if(res.loginUser.user.email === email){
+            if(res.data[0].email !== emailRecup){
                 setTitle()
                 setModalTitle("Error al recuperar contraseña")
                 setText("El email ingresado no corresponde a ningún usuario registrado")
                 showPopUp()
             }
             else{
-                handleShow2()
+                handleShow2(res.data[0].preguntaSeg, res.data[0]._id)
                 console.log(res)
             }
         }
         catch(e){
+            console.log(e)
             setTitle()
             setModalTitle("Error al recuperar contraseña")
             setText("El email ingresado es incorrecto")
@@ -102,7 +110,37 @@ export default function Iniciosesion(props) {
     }
 
     const recuperarContrasena = async () =>{
+        let data={
+            "_id": idUsuario,
+            "password": passwordRecup,
+            "respuesta": respuesta
+        };
+        try{
+            if(passwordRecup === confirmPasswordRecup){
+                let res = await contactBackend("/users/actualizarUserPass",false,"PUT",null,data,false,200)
+                console.log(res)
+                setEmailRecup("")
+                setPreguntaSeg("")
+                setIdUsuario("")
+                setRespuesta("")
+                setPasswordRecup("")
+                setConfirmPasswordRecup("")
+                handleShow4()
+            }
+            else{
+                setTitle()
+                setModalTitle("Error al cambiar la contraseña")
+                setText("Las contraseñas ingresadas no son iguales")
+                showPopUp()
+            }
 
+        }
+        catch(e){
+            setTitle()
+            setModalTitle("Error al cambiar la contraseña")
+            setText("La respuesta a la pregunta de seguridad no es correcta")
+            showPopUp()
+        }
     }
 
 
@@ -134,7 +172,7 @@ export default function Iniciosesion(props) {
                                     </Modal.Header>
                                     <Modal.Body>Complete con su mail para recibir los pasos para su recupero</Modal.Body>
                                     <Form.Group id="mailGroup">
-                                        <Form.Control id="ingresoMail" placeholder="Ingresar email" value={email} onChange={(event)=>{setEmail(event.target.value)}}/>
+                                        <Form.Control id="ingresoMail" placeholder="Ingresar email" value={emailRecup} onChange={(event)=>{setEmailRecup(event.target.value)}}/>
                                     </Form.Group>
                                     <Modal.Footer>
                                         <Button variant="secondary" onClick={handleClose}>
@@ -150,9 +188,9 @@ export default function Iniciosesion(props) {
                                     <Modal.Header closeButton>
                                         <Modal.Title>Recupero de contraseña</Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body>Pregunta de seguridad</Modal.Body>
+                                    <Modal.Body>{preguntaSeg}</Modal.Body>
                                     <Form.Group id="mailGroup">
-                                        <Form.Control id="ingresoMail" placeholder="Ingresar respuesta" />
+                                        <Form.Control id="ingresoMail" placeholder="Ingresar respuesta" value={respuesta} onChange={(event)=>{setRespuesta(event.target.value)}}  />
                                     </Form.Group>
                                     <Modal.Footer>
                                         <Button variant="secondary" onClick={handleClose2}>
@@ -170,17 +208,17 @@ export default function Iniciosesion(props) {
                                     </Modal.Header>
                                     <Modal.Body>Nueva contraseña</Modal.Body>
                                     <Form.Group id="mailGroup">
-                                        <Form.Control id="ingresoMail" placeholder="Ingrese contraseña nueva" type="password" />
+                                        <Form.Control id="ingresoMail" placeholder="Ingrese contraseña nueva" type="password" value={passwordRecup} onChange={(event)=>{setPasswordRecup(event.target.value)}} />
                                     </Form.Group>
                                     <Modal.Body>Reingrese nueva contraseña</Modal.Body>
                                     <Form.Group id="mailGroup">
-                                        <Form.Control id="ingresoMail" placeholder="Reingrese contraseña nueva" type="password" />
+                                        <Form.Control id="ingresoMail" placeholder="Reingrese contraseña nueva" type="password" value={confirmPasswordRecup} onChange={(event)=>{setConfirmPasswordRecup(event.target.value)}}/>
                                     </Form.Group>
                                     <Modal.Footer>
                                         <Button variant="secondary" onClick={handleClose3}>
                                             Volver
                                         </Button>
-                                        <Button variant="primary" onClick={handleShow4}>
+                                        <Button variant="primary" onClick={recuperarContrasena}>
                                             Confirmar
                                         </Button>
                                     </Modal.Footer>
