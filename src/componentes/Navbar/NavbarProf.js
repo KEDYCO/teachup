@@ -7,6 +7,10 @@ import NotificationMenu from "../Notification/Notification";
 
 
 export default function NavbarProf(){
+  const cierroSesion = async () =>{
+    localStorage.clear();
+    window.location.href = "/";
+  }
     return(
         <nav className="nav">
         <a href="/paginaprincipalprof" className="site-title"><img src="teachupsmall.png"/></a>
@@ -22,7 +26,7 @@ export default function NavbarProf(){
                  Administrar comentarios
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/"> <img id="fotona" src="imgs/log-out.png"/>
+              <NavDropdown.Item href="/" onClick={cierroSesion}> <img id="fotona" src="imgs/log-out.png" />
                  Cerrar sesión
               </NavDropdown.Item>
             </NavDropdown>

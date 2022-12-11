@@ -35,22 +35,18 @@ import ContextoSesion from "./componentes/Contexto/Contexto";
 
 function App(){
   
-  const [sesion,sesionState] = useState({logeado:false,datoSesion:{}});
-  const iniciarSesion = (x) =>{
-    sesionState(x)
-  }
-  const cerrarSesion = () =>{
-    sesionState({logeado:false,datoSesion:{}})
-  }
-
+  const loggedIn = window.localStorage.getItem("isLoggedIn");
+  const soyProfesor = window.localStorage.getItem("soyProfesor");
+  console.log(loggedIn,"login");
+  
   return (
-    <ContextoSesion.Provider value={sesion}>
+    
       <Router>
         <div>
           <Routes>
-            <Route path = "/" element={<AboutUs/>}>
+            <Route path = "/" element={loggedIn ?<Paginaprincipal/>:<AboutUs/>}>
             </Route>
-            <Route path = "/inicioSesion" element={<Iniciosesion iniciarSesion={iniciarSesion} cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/inicioSesion" element={<Iniciosesion/>}>
             </Route>
             <Route path = "/registrarse" element={<Registrarse/>}>
             </Route>
@@ -58,30 +54,28 @@ function App(){
             </Route>
             <Route path = "/registrarseProf" element={<RegistrarseProf/>}>
             </Route>
-            <Route path = "/paginaprincipal" element={<Paginaprincipal cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
             </Route>
-            <Route path = "/paginaprincipalprof" element={<Paginaprincipalprof cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/paginaprincipalprof" element={<Paginaprincipal/>}>
             </Route>
-            <Route path = "/misClasesAlu" element={<MisClasesAlu cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
             </Route>
-            <Route path = "/miPerfil" element={<PerfilAlumno cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/miPerfil" element={<PerfilAlumno/>}>
             </Route>
-            <Route path = "/miPerfilProf" element={<PerfilProfesor cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/editarPerfil" element={<EditarPerfil/>}>
             </Route>
-            <Route path = "/editarPerfil" element={<EditarPerfil cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/editarPerfilProf" element={<EditarPerfilProf/>}>
             </Route>
-            <Route path = "/editarPerfilProf" element={<EditarPerfilProf cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/VistaAdministrarComentarios" element={<VistaAdministrarComentarios/>}>
             </Route>
-            <Route path = "/VistaAdministrarComentarios" element={<VistaAdministrarComentarios cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/VistaAdministrarClases" element={<VistaAdministrarClases/>}>
             </Route>
-            <Route path = "/VistaAdministrarClases" element={<VistaAdministrarClases cerrarSesion={cerrarSesion}/>}>
-            </Route>
-            <Route path = "/VistaAdministrarSolicitudes" element={<VistaAdministrarSolicitudes cerrarSesion={cerrarSesion}/>}>
+            <Route path = "/VistaAdministrarSolicitudes" element={<VistaAdministrarSolicitudes/>}>
             </Route>
           </Routes>
         </div>
       </Router>
-    </ContextoSesion.Provider> 
+  
   )
 }
 

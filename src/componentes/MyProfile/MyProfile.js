@@ -35,6 +35,9 @@ export default function PerfilUsuario() {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
   const [rating, setRating] = useState(0);
+  const [ciudad, setCiudad] = React.useState(0);
+
+
   return (
     <section style={{ backgroundColor: "rgb(28,30,33)" }}>
       <MDBContainer className="py-5">

@@ -62,10 +62,15 @@ export default function Iniciosesion(props) {
             let res = await contactBackend("/users/login",false,"POST",null,data,false,201)
             console.log(res)
             if(res.loginUser.user.esProfesor){
+                window.localStorage.setItem("token",res.loginUser.token)
+                window.localStorage.setItem("isLoggedIn",true)
+                window.localStorage.setItem("esProfesor",res.loginUser.user.esProfesor)
                 navigate('/paginaprincipalprof')
             }
             else{
-                props.iniciarSesion({logeado:true,datoSesion:{esProfesor:res.loginUser.user.esProfesor}})
+                window.localStorage.setItem("token",res.loginUser.token)
+                window.localStorage.setItem("isLoggedIn",true)
+                window.localStorage.setItem("esProfesor",res.loginUser.user.esProfesor)
                 navigate('/paginaprincipal')
             }
             }
