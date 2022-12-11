@@ -29,6 +29,7 @@ import EditarPerfilProf from "./componentes/EditProfileProf/VistaEditarPerfilPro
 import AboutUs from "./componentes/LandingPage/LandingPage";
 import VistaAdministrarSolicitudes from "./componentes/AdministrarSolicitudes/VistaAdministrarSolicitud";
 import ContextoSesion from "./componentes/Contexto/Contexto";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 
 
@@ -38,13 +39,15 @@ function App(){
   const loggedIn = window.localStorage.getItem("isLoggedIn");
   const soyProfesor = window.localStorage.getItem("soyProfesor");
   console.log(loggedIn,"login");
+  console.log(soyProfesor,"hola");
   
   return (
     
       <Router>
         <div>
           <Routes>
-            <Route path = "/" element={loggedIn ?<Paginaprincipal/>:<AboutUs/>}>
+            
+            <Route path = "/" element={<AboutUs/>}>
             </Route>
             <Route path = "/inicioSesion" element={<Iniciosesion/>}>
             </Route>
@@ -54,23 +57,37 @@ function App(){
             </Route>
             <Route path = "/registrarseProf" element={<RegistrarseProf/>}>
             </Route>
-            <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
-            </Route>
-            <Route path = "/paginaprincipalprof" element={<Paginaprincipal/>}>
-            </Route>
-            <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
-            </Route>
-            <Route path = "/miPerfil" element={<PerfilAlumno/>}>
-            </Route>
-            <Route path = "/editarPerfil" element={<EditarPerfil/>}>
-            </Route>
-            <Route path = "/editarPerfilProf" element={<EditarPerfilProf/>}>
-            </Route>
-            <Route path = "/VistaAdministrarComentarios" element={<VistaAdministrarComentarios/>}>
-            </Route>
-            <Route path = "/VistaAdministrarClases" element={<VistaAdministrarClases/>}>
-            </Route>
-            <Route path = "/VistaAdministrarSolicitudes" element={<VistaAdministrarSolicitudes/>}>
+            <Route element ={<ProtectedRoute
+            isAllowed={loggedIn === "true"}
+            redirectTo="/"/>}>
+              
+              <Route element={<ProtectedRoute 
+              isAllowed={soyProfesor==="false"}
+              redirectTo="/paginaprincipalprof" />}
+              >
+                <Route path = "/paginaprincipal" element={<Paginaprincipal/>}>
+                </Route>
+                <Route path = "/misClasesAlu" element={<MisClasesAlu/>}>
+                </Route>
+                <Route path = "/miPerfil" element={<PerfilAlumno/>}>
+                </Route>
+                <Route path = "/editarPerfil" element={<EditarPerfil/>}>
+                </Route>
+              </Route>
+            
+              <Route element={<ProtectedRoute isAllowed={loggedIn==="true" && soyProfesor==="true"}
+              redirectTo="/paginaprincipal"/>}>
+                <Route path = "/paginaprincipalprof" element={<Paginaprincipalprof/>}>
+                </Route>
+                <Route path = "/editarPerfilProf" element={<EditarPerfilProf/>}>
+                </Route>
+                <Route path = "/VistaAdministrarComentarios" element={<VistaAdministrarComentarios/>}>
+                </Route>
+                <Route path = "/VistaAdministrarClases" element={<VistaAdministrarClases/>}>
+                </Route>
+                <Route path = "/VistaAdministrarSolicitudes" element={<VistaAdministrarSolicitudes/>}>
+                </Route>
+              </Route>
             </Route>
           </Routes>
         </div>
