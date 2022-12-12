@@ -26,6 +26,9 @@ import {
   import { Rating } from 'react-simple-star-rating'
   import { FormLabel, ModalBody } from "react-bootstrap";
   import CommentBox from "../CommentBox/CommentBox.js"
+  import { contactBackend } from '../../API.js';
+  import { useNavigate } from 'react-router-dom';
+  import { PopUp } from "../PopUp/PopUp";
   
   export default function EditarPerfilUsuario() {
     const [show, setShow] = useState(false);
@@ -35,6 +38,43 @@ import {
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
     const [rating, setRating] = useState(0);
+    const [newTelefono,setNewTelefono] = React.useState("");
+    const [title, setTitle] = useState("");
+    const [modalTitle, setModalTitle] = useState("");
+    const [text,setText] = useState("");
+    const navigate = useNavigate();
+    const id = localStorage.getItem("id");
+    const email = window.localStorage.getItem("email");
+    const nombre = window.sessionStorage.getItem("nombre");
+    const telefono = window.sessionStorage.getItem("telefono");
+    const fechaNac = window.sessionStorage.getItem("fechaNac");
+    const ciudad = window.sessionStorage.getItem("ciudad");
+    const [popup, setPopup] = useState(false);
+    const showPopUp = () => setPopup(true);
+    const hidePopUp = () => setPopup(false);
+
+    const cambiarInfo = async () => {
+      let data ={
+        "_id": id,
+        "telefono": newTelefono
+      };
+      try{
+        let res = await contactBackend("/users/actualizarUser",false,"PUT",null,data,false,200)
+        console.log(res)
+        sessionStorage.setItem("telefono",newTelefono)
+        handleShow()
+
+      }
+      catch(e){
+        setTitle()
+        setModalTitle("Error al actualizar usuario")
+        setText("No se ha podido actualizar el usuario, intente nuevamente")
+        showPopUp()
+      }
+
+    }
+
+
     return (
       <section style={{ backgroundColor: "rgb(28,30,33)" }}>
         <MDBContainer className="py-5">
@@ -60,7 +100,7 @@ import {
                     style={{ width: '150px' }}
                     fluid />
                   <p className="text-muted mb-1">Alumno de UADE</p>
-                  <p className="text-muted mb-4">Avellaneda, Buenos Aires</p>
+                  <p className="text-muted mb-4">{ciudad}, Buenos Aires</p>
                   <div className="d-flex justify-content-center mb-2">
                     <Button><img id="botonupload" src="imgs/upload.png"/> Subir Imagen</Button> 
                   </div>
@@ -77,7 +117,7 @@ import {
                       <MDBCardText>Nombre completo</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Alumno Ejemplar</MDBCardText>
+                    <MDBCardText className="text-muted">{nombre}</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -86,7 +126,7 @@ import {
                       <MDBCardText>Email</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">alumnoejemplar@gmail.com</MDBCardText>
+                      <MDBCardText className="text-muted">{email}</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -95,7 +135,7 @@ import {
                       <MDBCardText>Teléfono</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                    <Form.Control placeholder="42489696" />
+                    <Form.Control placeholder={telefono} value={newTelefono} onChange={(text) => { setNewTelefono(text.target.value) }} />
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -104,15 +144,21 @@ import {
                       <MDBCardText>Fecha de nacimiento</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">01/01/99</MDBCardText>
+                      <MDBCardText className="text-muted">{fechaNac}</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                 </MDBCardBody>
               </MDBCard>
+              <MDBRow>
               <MDBCol >
-                <Button id="botonguardar" onClick={handleShow} variant="success">Guardar cambios</Button>
-              </MDBCol>
+                <Button id="botonguardar" onClick={cambiarInfo} variant="success">Guardar cambios</Button>
                 
+              </MDBCol>
+              
+              <MDBCol>
+              <Button id="botonvolver" href='/miperfil' variant="primary">Volver</Button>
+              </MDBCol>
+              </MDBRow>
 
               
             </MDBCol>
@@ -132,6 +178,13 @@ import {
         </Button>
         </Modal.Footer>
     </Modal>
+    <PopUp 
+            show={popup} 
+            onHide={hidePopUp} 
+            title={title} 
+            modalTitle={modalTitle} 
+            text={text}>
+    </PopUp>
         
       </section>
       

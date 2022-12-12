@@ -9,6 +9,7 @@ import NotificationMenu from "../Notification/Notification";
 export default function NavbarProf(){
   const cierroSesion = async () =>{
     localStorage.clear();
+    sessionStorage.clear();
     window.location.href = "/";
   }
     return(

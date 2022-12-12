@@ -65,11 +65,21 @@ export default function Iniciosesion(props) {
                 localStorage.setItem("token",res.loginUser.token)
                 localStorage.setItem("isLoggedIn",true)
                 localStorage.setItem("soyProfesor",res.loginUser.user.esProfesor) 
+                localStorage.setItem("email",res.loginUser.user.email)
+                localStorage.setItem("id",res.loginUser.user._id)
+                sessionStorage.setItem("telefono",res.loginUser.user.telefono)
+                sessionStorage.setItem("nombre",res.loginUser.user.nombre)
+                sessionStorage.setItem("ciudad",res.loginUser.user.ciudad)
+                sessionStorage.setItem("fechaNac",res.loginUser.user.fechaNac)
+
             }
             else{
                 localStorage.setItem("token",res.loginUser.token)
                 localStorage.setItem("isLoggedIn",true)
                 localStorage.setItem("soyProfesor",res.loginUser.user.esProfesor)
+                localStorage.setItem("email",res.loginUser.user.email)
+                localStorage.setItem("id",res.loginUser.user._id)
+                
             }
             if(localStorage.getItem("isLoggedIn") === "true" && localStorage.getItem("soyProfesor") === "true"){
                 navigate('/paginaprincipalprof')

@@ -63,8 +63,7 @@ export default function Registrarse() {
           {
             email: email,
             telefono: telefono,
-            nombre: nombre,
-            apellido: apellido,
+            nombre: nombre + " " + apellido,
             password: password,
             confPassword: confPassword,
             ciudad: ciudad,
@@ -81,8 +80,7 @@ export default function Registrarse() {
             {
               email: email,
               telefono: telefono,
-              nombre: nombre,
-              apellido: apellido,
+              nombre: nombre + " " + apellido,
               password: password,
               confPassword: confPassword,
               ciudad: ciudad,

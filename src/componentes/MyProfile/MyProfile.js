@@ -26,6 +26,9 @@ import Modal from 'react-bootstrap/Modal';
 import { Rating } from 'react-simple-star-rating'
 import { ModalBody } from "react-bootstrap";
 import CommentBox from "../CommentBox/CommentBox.js"
+import { contactBackend } from '../../API.js';
+import { PopUp } from "../PopUp/PopUp";
+import { useLocation } from "react-router-dom";
 
 export default function PerfilUsuario() {
   const [show, setShow] = useState(false);
@@ -34,8 +37,18 @@ export default function PerfilUsuario() {
   const [show2, setShow2] = useState(false);
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
+  const [popup, setPopup] = useState(false);
+  const showPopUp = () => setPopup(true);
+  const hidePopUp = () => setPopup(false);
+  const [title, setTitle] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [text,setText] = useState("");
   const [rating, setRating] = useState(0);
-  const [ciudad, setCiudad] = React.useState(0);
+  const email = window.localStorage.getItem("email");
+  const nombre = window.sessionStorage.getItem("nombre");
+  const telefono = window.sessionStorage.getItem("telefono");
+  const fechaNac = window.sessionStorage.getItem("fechaNac");
+  const ciudad = window.sessionStorage.getItem("ciudad");
 
 
   return (
@@ -62,7 +75,7 @@ export default function PerfilUsuario() {
                   className="rounded-circle"
                   style={{ width: '150px' }}
                   fluid />
-                <p className="text-muted mb-4">Avellaneda, Buenos Aires</p>
+                <p className="text-muted mb-4">{ciudad}, Buenos Aires</p>
                 <div className="d-flex justify-content-center mb-2">
                   <Button href="/editarPerfil"><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
                 </div>
@@ -74,10 +87,10 @@ export default function PerfilUsuario() {
               <MDBCardBody>
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Nombre completo</MDBCardText>
+                    <MDBCardText>Nombre</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Alumno Ejemplar</MDBCardText>
+                    <MDBCardText className="text-muted">{nombre}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -86,7 +99,7 @@ export default function PerfilUsuario() {
                     <MDBCardText>Email</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">alumnoejemplar@gmail.com</MDBCardText>
+                    <MDBCardText className="text-muted">{email}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -95,7 +108,7 @@ export default function PerfilUsuario() {
                     <MDBCardText>Teléfono</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">42489696</MDBCardText>
+                    <MDBCardText className="text-muted">{telefono}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -104,7 +117,7 @@ export default function PerfilUsuario() {
                     <MDBCardText>Fecha de nacimiento</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">01/01/99</MDBCardText>
+                    <MDBCardText className="text-muted">{fechaNac}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
               </MDBCardBody>
@@ -176,6 +189,9 @@ export default function PerfilUsuario() {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      <PopUp show={popup} onHide={hidePopUp} title={title} modalTitle={modalTitle} text={text}>
+
+</PopUp>
     </section>
   );
 }

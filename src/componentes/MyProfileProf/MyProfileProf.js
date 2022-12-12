@@ -40,7 +40,14 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
     const handleClose3 = () => setShow3(false);
     const handleShow3 = () => setShow3(true);
     const [rating, setRating] = useState(0);
+    const email = window.localStorage.getItem("email");
+    const nombre = window.sessionStorage.getItem("nombre");
+    const telefono = window.sessionStorage.getItem("telefono");
+    const fechaNac = window.sessionStorage.getItem("fechaNac");
+    const ciudad = window.sessionStorage.getItem("ciudad");
+
     return (
+
       <section style={{ backgroundColor: "rgb(28,30,33)" }}>
         <MDBContainer className="py-5">
           <MDBRow>
@@ -61,7 +68,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                     className="rounded-circle"
                     style={{ width: '150px' }}
                     fluid />
-                  <p className="text-muted mb-4">Lanús, Buenos Aires</p>
+                  <p className="text-muted mb-4">{ciudad}, Buenos Aires</p>
                   <div className="d-flex justify-content-center mb-2">
                     <Button href="/editarPerfilProf"><img id="fotona" src="imgs/edit.png"/> Editar perfil</Button> 
                   </div>
@@ -76,7 +83,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                       <MDBCardText>Nombre completo</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">Profesor Ejemplar</MDBCardText>
+                      <MDBCardText className="text-muted">{nombre}</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -85,7 +92,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                       <MDBCardText>Email</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">profesorejemplar@gmail.com</MDBCardText>
+                      <MDBCardText className="text-muted">{email}</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -94,7 +101,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                       <MDBCardText>Teléfono</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">42489696</MDBCardText>
+                      <MDBCardText className="text-muted">{telefono}</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                   <hr />
@@ -104,7 +111,7 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                       <MDBCardText>Fecha de nacimiento</MDBCardText>
                     </MDBCol>
                     <MDBCol sm="9">
-                      <MDBCardText className="text-muted">02/02/70</MDBCardText>
+                      <MDBCardText className="text-muted">{fechaNac}</MDBCardText>
                     </MDBCol>
                   </MDBRow>
                 </MDBCardBody>

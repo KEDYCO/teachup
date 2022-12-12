@@ -85,6 +85,16 @@ body{
 
 #botonguardar{
     margin-top: 10px ;
+    display: flex;
+    max-width: 150px;
+    justify-content: space-between;
+}
+
+#botonvolver{
+    margin-top: 10px;
+    max-width: 100px;
+    justify-content: end;
+    justify-items: end;
 }
 .botonContenedor{
     display:flex;
