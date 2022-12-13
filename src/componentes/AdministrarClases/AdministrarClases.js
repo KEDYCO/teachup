@@ -77,51 +77,48 @@ export default function ClasesProf() {
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Form.Select defaultValue="Elegir" onChange={handleShow4} id="selectorEstadoClase" >
-                                <option>Pública</option>
-                                <option>Oculta</option>
-                </Form.Select>
-                <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
-                  Modificar
-                </Button>
-                <Button rounded size="sm" variant={"danger"} onClick={handleShow3} >
-                  Eliminar
-                </Button>
-                
+                  <Form.Select defaultValue="Elegir" onChange={handleShow4} id="selectorEstadoClase" >
+                    <option>Pública</option>
+                    <option>Oculta</option>
+                  </Form.Select>
+                  <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
+                    Modificar
+                  </Button>
+                  <Button rounded size="sm" variant={"danger"} onClick={handleShow3} >
+                    Eliminar
+                  </Button>
+
                 </div>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
-    </MDBContainer>
-    <Modal show={show} onHide={handleClose}>
-                                <Modal.Header closeButton>
-                                <Modal.Title>Crear una nueva clase</Modal.Title>
-                                </Modal.Header>
-                                <Modal.Body>Nombre del profesor</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoNombre" placeholder="Ingresar nombre" />
-                                </Form.Group>
-                                <Modal.Body>Materia que se va a enseñar</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoMateria" placeholder="Ingresar materia" />
-                                </Form.Group>
-                                <Modal.Body>Duración del curso (en horas)</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
-                                </Form.Group>
-                                <Modal.Body>Frecuencia de clase</Modal.Body>
-                                <Form.Group controlId="formGridState" id="text-insert">
-                                  <Form.Select defaultValue="Elegir" onChange={handleShow4} >
-                                    <option>Unica</option>
-                                    <option>Semanal</option>
-                                    <option>Mensual</option>
-                                  </Form.Select>
-                                  </Form.Group>
-                              <Modal.Body>Costo del curso (en pesos)</Modal.Body>
-                                <Form.Group id="text-insert">
-                                <Form.Control  id="ingresoCosto" placeholder="Ingresar costo" />
-                              </Form.Group>
+      </MDBContainer>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Crear una nueva clase</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Materia que se va a enseñar</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control id="ingresoMateria" placeholder="Ingresar materia" />
+        </Form.Group>
+        <Modal.Body>Duración del curso (en horas)</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
+        </Form.Group>
+        <Modal.Body>Frecuencia de clase</Modal.Body>
+        <Form.Group controlId="formGridState" id="text-insert">
+          <Form.Select defaultValue="Elegir" >
+            <option>Seleccionar</option>
+            <option>Unica</option>
+            <option>Semanal</option>
+            <option>Mensual</option>
+          </Form.Select>
+        </Form.Group>
+        <Modal.Body>Costo del curso (en pesos)</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" />
+        </Form.Group>
 
         <Modal.Footer id="footer-form">
           <Button variant="secondary" onClick={handleClose}>
@@ -133,31 +130,26 @@ export default function ClasesProf() {
         </Modal.Footer>
       </Modal>
 
-                            <Modal show={show2} onHide={handleClose2}>
-                                <Modal.Header closeButton>
-                                <Modal.Title>Modificar clase</Modal.Title>
-                                </Modal.Header>
-
-                                <Modal.Body>Materia que se va a enseñar</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoMateria" placeholder="Ingresar materia" />
-                                </Form.Group>
-                                <Modal.Body>Duración del curso (en horas)</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
-                                </Form.Group>
-                                <Modal.Body>Frecuencia de clase</Modal.Body>
-                                <Form.Group as={Col} controlId="formGridState" id="text-insert">
-                              <Form.Select defaultValue="Elegir" className="frecClasDDL" >
-                                <option>Única</option>
-                                <option>Semanal</option>
-                                <option>Mensual</option>
-                              </Form.Select>
-                              </Form.Group>
-                              <Modal.Body>Costo del curso (en pesos)</Modal.Body>
-                                <Form.Group id="text-insert">
-                                <Form.Control  id="ingresoCosto" placeholder="Ingresar costo" />
-                              </Form.Group>
+      <Modal show={show2} onHide={handleClose2}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modificar clase</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Duración del curso (en horas)</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
+        </Form.Group>
+        <Modal.Body>Frecuencia de clase</Modal.Body>
+        <Form.Group as={Col} controlId="formGridState" id="text-insert">
+          <Form.Select defaultValue="Elegir" className="frecClasDDL" >
+            <option>Única</option>
+            <option>Semanal</option>
+            <option>Mensual</option>
+          </Form.Select>
+        </Form.Group>
+        <Modal.Body>Costo del curso (en pesos)</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" />
+        </Form.Group>
 
         <Modal.Footer id="footer-form">
           <Button variant="secondary" onClick={handleClose2}>

@@ -18,9 +18,9 @@ export default function Tarjetas() {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
   const [rating, setRating] = useState(0);
-  
+
   return (
-    <div className="vh-100" style={{ backgroundColor:  "#1c1e21", overflowX : "hidden"}}>
+    <div className="vh-100" style={{ backgroundColor: "#1c1e21", overflowX: "hidden" }}>
       <MDBContainer className="container py-5 h-100">
         <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
           <MDBCol md="12" xl="4">
@@ -34,10 +34,10 @@ export default function Tarjetas() {
                 <MDBCardText className="text-muted mb-4">
                   Musica<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
-                <MDBCardText className="text-muted mb-4" style={{ overflowX : "hidden"}}>
+                <MDBCardText className="text-muted mb-4" style={{ overflowX: "hidden" }}>
 
                   Clases de teclado, guitarra, bateria, bajo y canto. Tengo lugar propio en Av. Mitre 2340. Si tenes ganas de aprender, contactame.a
-                </MDBCardText> 
+                </MDBCardText>
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
@@ -45,16 +45,16 @@ export default function Tarjetas() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={5} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={5} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
+                  <Button rounded size="lg" onClick={handleShow} >
+                    Contratar clase
+                  </Button>
+                  <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                    Ver comentarios
+                  </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -80,16 +80,16 @@ export default function Tarjetas() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
+                  <Button rounded size="lg" onClick={handleShow} >
+                    Contratar clase
+                  </Button>
+                  <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                    Ver comentarios
+                  </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -115,16 +115,16 @@ export default function Tarjetas() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
+                  <Button rounded size="lg" onClick={handleShow} >
+                    Contratar clase
+                  </Button>
+                  <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                    Ver comentarios
+                  </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -141,7 +141,7 @@ export default function Tarjetas() {
                   Matematica<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
-                  Hola, contactame si tenes ganas de aprender matematicas o si queres salvar alguna materia relacionada. 
+                  Hola, contactame si tenes ganas de aprender matematicas o si queres salvar alguna materia relacionada.
                 </MDBCardText>
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
@@ -150,16 +150,16 @@ export default function Tarjetas() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={2} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={2} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
+                  <Button rounded size="lg" onClick={handleShow} >
+                    Contratar clase
+                  </Button>
+                  <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                    Ver comentarios
+                  </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -176,7 +176,7 @@ export default function Tarjetas() {
                   Programación<span className="mx-2">|</span> <a>Unica</a><span className="mx-2">|</span> <a>5 horas</a>
                 </MDBCardText>
                 <MDBCardText className="text-muted mb-4">
-                Enseño clases de bateria, piano y canto. No tengas dudas en contactarme, te aseguro que te voy a servir, mi calificacion no miente.
+                  Enseño clases de bateria, piano y canto. No tengas dudas en contactarme, te aseguro que te voy a servir, mi calificacion no miente.
                 </MDBCardText>
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
@@ -185,16 +185,16 @@ export default function Tarjetas() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={4} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={4} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
+                  <Button rounded size="lg" onClick={handleShow} >
+                    Contratar clase
+                  </Button>
+                  <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                    Ver comentarios
+                  </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -220,59 +220,59 @@ export default function Tarjetas() {
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" onClick={handleShow} >
-                  Contratar clase
-                </Button>
-                <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
+                  <Button rounded size="lg" onClick={handleShow} >
+                    Contratar clase
+                  </Button>
+                  <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                    Ver comentarios
+                  </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
-          </MDBCol>                  
-          
+          </MDBCol>
+
         </MDBRow>
       </MDBContainer>
       <Modal show={show} onHide={handleClose}>
-                                <Modal.Header closeButton>
-                                <Modal.Title>Contratar clase</Modal.Title>
-                                </Modal.Header>
-                                <Modal.Body>Horario de referencia para el contacto</Modal.Body>
-                                <Form.Group id="text-insert">
-                                    <Form.Control id="ingresoTelefono" placeholder="Ingresar horario" />
-                                </Form.Group>
-                                <Modal.Body>Motivo por el cual desea contratar esta clase</Modal.Body>
-                                <Form.Group id="text-insert">
-                                  <Form.Control as="textarea" rows={3} id="ingresoMotivo" placeholder="Ingresar motivo" />
-                                </Form.Group>
-                                <Modal.Footer id="footer-form">
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Cerrar
-                                </Button>
-                                <Button variant="primary" onClick={handleClose}>
-                                    Enviar
-                                </Button>
-                                </Modal.Footer>
-                            </Modal>
-        
-        <Modal show={show2} onHide={handleClose2} size="lg">
-          <Modal.Header closeButton>
-            <Modal.Title>Programación</Modal.Title>
-            <Modal.Body>por Franco Siciliano</Modal.Body>
-          </Modal.Header>
-          <Modal.Body>
-            <div>
-            <CommentBox></CommentBox>
-            </div>
-          </Modal.Body>
-          
-        </Modal>
+        <Modal.Header closeButton>
+          <Modal.Title>Contratar clase</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Horario de referencia para el contacto</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control id="ingresoTelefono" placeholder="Ingresar horario" />
+        </Form.Group>
+        <Modal.Body>Motivo por el cual desea contratar esta clase</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control as="textarea" rows={3} id="ingresoMotivo" placeholder="Ingresar motivo" />
+        </Form.Group>
+        <Modal.Footer id="footer-form">
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Enviar
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
-      
+      <Modal show={show2} onHide={handleClose2} size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>Programación</Modal.Title>
+          <Modal.Body>por Franco Siciliano</Modal.Body>
+        </Modal.Header>
+        <Modal.Body>
+          <div>
+            <CommentBox></CommentBox>
+          </div>
+        </Modal.Body>
+
+      </Modal>
+
+
     </div>
 
   );

@@ -1,4 +1,4 @@
-import React , { useState }  from "react";
+import React, { useState } from "react";
 import {
   MDBCard,
   MDBCardBody,
@@ -17,12 +17,12 @@ import Form from 'react-bootstrap/Form';
 
 
 export default function AdministrarComentarios() {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const [show2, setShow2] = useState(false);
-    const handleClose2 = () => setShow2(false);
-    const handleShow2 = () => setShow2(true);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
   return (
     <MDBContainer className="mt-5" style={{ maxWidth: "1000px", height: "100vh" }}>
       <MDBRow className="justify-content-center">
@@ -48,9 +48,9 @@ export default function AdministrarComentarios() {
                       <p className="small mb-0 ms-2">Fabrizio Moretti</p>
                     </div>
                     <div className="d-flex flex-row align-items-center">
-                    <Button className="botonApruebo btn-success" onClick={handleShow} >
-                       Aprobar
-                    </Button>
+                      <Button className="botonApruebo btn-success" onClick={handleShow} >
+                        Aprobar
+                      </Button>
                       <MDBIcon
                         far
                         icon="thumbs-up mx-2 fa-xs text-black"
@@ -58,7 +58,7 @@ export default function AdministrarComentarios() {
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
                         Rechazar
-                     </Button>
+                      </Button>
                     </div>
                   </div>
                 </MDBCardBody>
@@ -67,7 +67,7 @@ export default function AdministrarComentarios() {
               <MDBCard className="mb-4">
                 <MDBCardBody className="colorBody">
                   <p>Me hizo lavar autos y yo queria aprender karate
-                    
+
                   </p>
 
                   <div className="d-flex justify-content-between">
@@ -82,9 +82,9 @@ export default function AdministrarComentarios() {
                       <p className="small mb-0 ms-2">Daniel</p>
                     </div>
                     <div className="d-flex flex-row align-items-center">
-                    <Button className="botonApruebo btn-success" onClick={handleShow} >
-                       Aprobar
-                    </Button>
+                      <Button className="botonApruebo btn-success" onClick={handleShow} >
+                        Aprobar
+                      </Button>
                       <MDBIcon
                         far
                         icon="thumbs-up mx-2 fa-xs text-black"
@@ -92,7 +92,7 @@ export default function AdministrarComentarios() {
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
                         Rechazar
-                     </Button>
+                      </Button>
                     </div>
                   </div>
                 </MDBCardBody>
@@ -113,9 +113,9 @@ export default function AdministrarComentarios() {
                       <p className="small mb-0 ms-2">Adrian Suar.</p>
                     </div>
                     <div className="d-flex flex-row align-items-center">
-                    <Button className="botonApruebo btn-success" onClick={handleShow} >
-                       Aprobar
-                    </Button>
+                      <Button className="botonApruebo btn-success" onClick={handleShow} >
+                        Aprobar
+                      </Button>
                       <MDBIcon
                         far
                         icon="thumbs-up mx-2 fa-xs text-black"
@@ -123,7 +123,7 @@ export default function AdministrarComentarios() {
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
                         Rechazar
-                     </Button>
+                      </Button>
                     </div>
                   </div>
                 </MDBCardBody>
@@ -131,7 +131,7 @@ export default function AdministrarComentarios() {
               <MDBCard className="mb-4">
                 <MDBCardBody className="colorBody">
                   <p>xcxzzxnv xcxzzxnv
-                    
+
                   </p>
 
                   <div className="d-flex justify-content-between">
@@ -146,9 +146,9 @@ export default function AdministrarComentarios() {
                       <p className="small mb-0 ms-2">Luke</p>
                     </div>
                     <div className="d-flex flex-row align-items-center">
-                    <Button className="botonApruebo btn-success" onClick={handleShow} >
-                       Aprobar
-                    </Button>
+                      <Button className="botonApruebo btn-success" onClick={handleShow} >
+                        Aprobar
+                      </Button>
                       <MDBIcon
                         far
                         icon="thumbs-up mx-2 fa-xs text-black"
@@ -156,7 +156,7 @@ export default function AdministrarComentarios() {
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
                         Rechazar
-                     </Button>
+                      </Button>
                     </div>
                   </div>
                 </MDBCardBody>
@@ -165,7 +165,7 @@ export default function AdministrarComentarios() {
               <MDBCard className="mb-4">
                 <MDBCardBody className="colorBody">
                   <p>Pude aprobar el parcial gracias a este profesor. se lo recomende a todos mis conocidos
-                    
+
                   </p>
 
                   <div className="d-flex justify-content-between">
@@ -180,9 +180,9 @@ export default function AdministrarComentarios() {
                       <p className="small mb-0 ms-2">Juan Perez</p>
                     </div>
                     <div className="d-flex flex-row align-items-center">
-                    <Button className="botonApruebo btn-success" onClick={handleShow} >
-                       Aprobar
-                    </Button>
+                      <Button className="botonApruebo btn-success" onClick={handleShow} >
+                        Aprobar
+                      </Button>
                       <MDBIcon
                         far
                         icon="thumbs-up mx-2 fa-xs text-black"
@@ -190,12 +190,12 @@ export default function AdministrarComentarios() {
                       />
                       <Button className="botonRechazo btn-danger" onClick={handleShow2} >
                         Rechazar
-                     </Button>
+                      </Button>
                     </div>
                   </div>
                 </MDBCardBody>
               </MDBCard>
-              
+
 
             </MDBCardBody>
           </MDBCard>
@@ -220,23 +220,23 @@ export default function AdministrarComentarios() {
           </Button>
         </Modal.Footer>
       </Modal>
-    
+
       <Modal show={show2} onHide={handleClose2} size="lg">
-          <Modal.Header closeButton>
-            <Modal.Title>Rechazar comentario</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Ingrese el motivo por el cual desea eliminar este comentario</Modal.Body>
-              <Form.Group id="text-insert">
-              <Form.Control as="textarea" rows={3} id="ingresoMotivo" placeholder="Ingresar motivo" />
-              </Form.Group>
-              <Modal.Footer id="footer-form">
-                                <Button variant="secondary" onClick={handleClose2}>
-                                    Cerrar
-                                </Button>
-                                <Button variant="primary" onClick={handleClose2}>
-                                    Enviar
-                                </Button>
-                                </Modal.Footer>
+        <Modal.Header closeButton>
+          <Modal.Title>Rechazar comentario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Ingrese el motivo por el cual desea eliminar este comentario</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control as="textarea" rows={3} id="ingresoMotivo" placeholder="Ingresar motivo" />
+        </Form.Group>
+        <Modal.Footer id="footer-form">
+          <Button variant="secondary" onClick={handleClose2}>
+            Cerrar
+          </Button>
+          <Button variant="primary" onClick={handleClose2}>
+            Enviar
+          </Button>
+        </Modal.Footer>
       </Modal>
 
 
