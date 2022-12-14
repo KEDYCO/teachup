@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
+import React, {useState} from 'react';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon, MDBTextArea } from 'mdb-react-ui-kit';
 import Col from 'react-bootstrap/Col';
 import { AiFillStar } from 'react-icons/ai';
 import "./AdministrarClasesCss.css";
@@ -12,6 +12,9 @@ import CommentBox from "../CommentBox/CommentBox.js"
 import { fontFamily } from "@mui/system";
 import AddComment from "../CommentBox/AddComment.js";
 import './AdministrarClasesCss.css'
+import { contactBackend } from "../../API";
+import { PopUp } from "../PopUp/PopUp";
+
 
 
 export default function ClasesProf() {
@@ -37,6 +40,53 @@ export default function ClasesProf() {
   const [show7, setShow7] = useState(false);
   const handleClose7 = () => setShow7(false);
   const handleShow7 = () => setShow7(true);
+
+  const [title, setTitle] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [text,setText] = useState("");
+  const [popup, setPopup] = useState(false);
+  const showPopUp = () => setPopup(true);
+  const hidePopUp = () => setPopup(false);
+
+  const idProfesor = window.localStorage.getItem("id");
+  const nombre = window.sessionStorage.getItem("nombre");
+  const [materia, setMateria] = React.useState("");
+  const [duracion, setDuracion] = React.useState("");
+  const [frecuencia, setFrecuencia] = React.useState("");
+  const [costo, setCosto] = React.useState("");
+  const [descripcion, setDescripcion] = React.useState("");
+
+  const creacionClase = async () =>{
+    let data = {
+      "idProfesor": idProfesor,
+      "profesor": nombre,
+      "materia": materia,
+      "duracion": duracion,
+      "frecuencia": frecuencia,
+      "costo": costo,
+      "descripcion": descripcion
+    }
+    try{
+      let res = await contactBackend("/clases/creacionClase",false,"POST",null,data,false,201)
+      console.log(res)
+      if(frecuencia === "Seleccionar"){
+        setTitle()
+        setModalTitle("Error al crear clase")
+        setText("Por favor, seleccione una frecuencia válida")
+        showPopUp()
+      }
+      else{
+        handleShow7()
+      }
+    }
+    catch(e){
+      setTitle()
+      setModalTitle("Error al crear clase")
+      setText("Error al crear clase, por favor verifique los datos ingresados")
+      showPopUp()
+    }
+  }
+  
 
   return (
     <div className="contenedorClaseProf" style={{ backgroundColor: "#1c1e21", overflowX: "hidden" }}>
@@ -100,15 +150,15 @@ export default function ClasesProf() {
         </Modal.Header>
         <Modal.Body>Materia que se va a enseñar</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoMateria" placeholder="Ingresar materia" />
+          <Form.Control id="ingresoMateria" placeholder="Ingresar materia" value={materia} onChange={(text)=>{setMateria(text.target.value)}} />
         </Form.Group>
         <Modal.Body>Duración del curso (en horas)</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
+          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" value={duracion} onChange={(text)=>{setDuracion(text.target.value)}} />
         </Form.Group>
         <Modal.Body>Frecuencia de clase</Modal.Body>
-        <Form.Group controlId="formGridState" id="text-insert">
-          <Form.Select defaultValue="Elegir" >
+        <Form.Group controlId="formGridState" id="text-insert" >
+          <Form.Select defaultValue="Elegir" value={frecuencia} onChange={(text)=>{setFrecuencia(text.target.value)}} >
             <option>Seleccionar</option>
             <option>Unica</option>
             <option>Semanal</option>
@@ -117,14 +167,18 @@ export default function ClasesProf() {
         </Form.Group>
         <Modal.Body>Costo del curso (en pesos)</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" />
+          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" value={costo} onChange={(text)=>{setCosto(text.target.value)}}/>
+        </Form.Group>
+        <Modal.Body>Descripción de la clase</Modal.Body>
+        <Form.Group id="text-insert">
+          <Form.Control id="ingresoDescripcion" placeholder="Ingresar descripcion" as="textarea" rows={3} value={descripcion} onChange={(text)=>{setDescripcion(text.target.value)}} />
         </Form.Group>
 
         <Modal.Footer id="footer-form">
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
           </Button>
-          <Button variant="primary" onClick={handleShow7}>
+          <Button variant="primary" onClick={creacionClase}>
             Enviar
           </Button>
         </Modal.Footer>
@@ -141,6 +195,7 @@ export default function ClasesProf() {
         <Modal.Body>Frecuencia de clase</Modal.Body>
         <Form.Group as={Col} controlId="formGridState" id="text-insert">
           <Form.Select defaultValue="Elegir" className="frecClasDDL" >
+            <option>Seleccionar</option>
             <option>Única</option>
             <option>Semanal</option>
             <option>Mensual</option>
@@ -226,6 +281,10 @@ export default function ClasesProf() {
           </Button>
         </Modal.Footer>
       </Modal>
+      <PopUp show={popup} onHide={hidePopUp} title={title} modalTitle={modalTitle} text={text}>
+
+</PopUp>
+
 
     </div>
   )
