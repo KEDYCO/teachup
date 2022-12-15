@@ -28,6 +28,7 @@ import {
   import { ModalBody } from "react-bootstrap";
   import CommentBox from "../CommentBox/CommentBox.js"
 import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
+import { contactBackend } from "../../API";
   
   export default function PerfilProfesor() {
     const [show, setShow] = useState(false);
@@ -40,11 +41,31 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
     const handleClose3 = () => setShow3(false);
     const handleShow3 = () => setShow3(true);
     const [rating, setRating] = useState(0);
+    const idProfesor = window.localStorage.getItem("id");
     const email = window.localStorage.getItem("email");
     const nombre = window.sessionStorage.getItem("nombre");
     const telefono = window.sessionStorage.getItem("telefono");
     const fechaNac = window.sessionStorage.getItem("fechaNac");
     const ciudad = window.sessionStorage.getItem("ciudad");
+    const [clases,setClases] = React.useState("");
+
+    const mostrarClases = async () =>{
+      let data = {
+        "idProfesor": idProfesor
+      }
+      try{
+        let res = await contactBackend("/clases/getClasesPID",false,"POST",null,data,false,200)
+        console.log(res)
+        setClases(res.data.docs)
+      }
+      catch(e){
+  
+      }
+    }
+
+    useEffect( () => {
+      mostrarClases()
+    }, [])
 
     return (
 
@@ -123,25 +144,27 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
         <MDBContainer className=" py-5 h-100">
           <MDBTypography className="text-decoration-underline fw-bold" tag="h1" color="white">Clases creadas </MDBTypography>
           <MDBRow className="mb-3">
+          {clases && clases.map (item => (
             <MDBCol md='6'>
+              <div key = {item._id}>
               <MDBCard style={{ borderRadius: '15px' }} >
                 <MDBCardBody className="text-center">
                   <div className="mt-3 mb-4">
                     <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                       className="rounded-circle" fluid style={{ width: '100px' }} />
                   </div>
-                  <MDBTypography tag="h4">Profesor Ejemplar</MDBTypography>
+                  <MDBTypography tag="h4">{item.profesor}</MDBTypography>
                   <MDBCardText className="text-muted mb-4">
-                    Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                    {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a>
                   </MDBCardText> 
                   <div className="d-flex justify-content-between text-center mt-4 mb-2">
                     <div>
                       <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                      <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                      <MDBCardText className="mb-1 h5">${item.costo}</MDBCardText>
                     </div>
                     <div>
                       <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                      <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
+                      <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={item.clasifcacion} size={"30px"}/>
                     </div>
                   </div>
                   <div className="d-flex justify-content-between text-center">
@@ -161,49 +184,10 @@ import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
                   
                 </MDBCardBody>
               </MDBCard>
+              </div>
             </MDBCol>
-            <MDBCol md='6' className='ml-auto'>
-              <MDBCard style={{ borderRadius: '15px' }} >
-                <MDBCardBody className="text-center">
-                  <div className="mt-3 mb-4">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                      className="rounded-circle" fluid style={{ width: '100px' }} />
-                  </div>
-                  <MDBTypography tag="h4">Profesor Ejemplar</MDBTypography>
-                  <MDBCardText className="text-muted mb-4">
-                    Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
-                  </MDBCardText>
-  
-                  <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                    <div>
-                      <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                      <MDBCardText className="mb-1 h5">$100</MDBCardText>
-                    </div>
-                    <div>
-                      <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                      <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
-                    </div>
-                  </div>
-                  <div className="d-flex justify-content-between text-center">
-                <Button rounded size="sm" variant={"secondary"} onClick={handleShow} >
-                  Ver alumnos
-                </Button>
-                <Button rounded size="sm" variant={"secondary"} href="/VistaAdministrarSolicitudes"  >
-                  Solicitudes
-                <MDBBadge className='ms-2' color='danger'>
-                    8
-                  </MDBBadge>
-                </Button>
-                <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
-                  Ver comentarios
-                </Button>
-                </div>
-                  
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-            
-            
+
+          ))}   
           </MDBRow>
         </MDBContainer>
         </div>

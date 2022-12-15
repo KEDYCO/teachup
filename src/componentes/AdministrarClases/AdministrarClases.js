@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon, MDBTextArea } from 'mdb-react-ui-kit';
 import Col from 'react-bootstrap/Col';
 import { AiFillStar } from 'react-icons/ai';
@@ -55,6 +55,8 @@ export default function ClasesProf() {
   const [frecuencia, setFrecuencia] = React.useState("");
   const [costo, setCosto] = React.useState("");
   const [descripcion, setDescripcion] = React.useState("");
+  const [clasificacion, setClasificacion] = React.useState("");
+  const [clases,setClases] = React.useState("");
 
   const creacionClase = async () =>{
     let data = {
@@ -86,9 +88,32 @@ export default function ClasesProf() {
       showPopUp()
     }
   }
+
+  const mostrarClases = async () =>{
+    let data = {
+      "idProfesor": idProfesor
+    }
+    try{
+      let res = await contactBackend("/clases/getClasesPID",false,"POST",null,data,false,200)
+      console.log(res)
+      setClases(res.data.docs)
+    }
+    catch(e){
+
+    }
+  }
   
+  useEffect( () => {
+    mostrarClases()
+
+  }, [] )
+
+  const modificarClase = async (id) =>{
+
+  }
 
   return (
+    
     <div className="contenedorClaseProf" style={{ backgroundColor: "#1c1e21", overflowX: "hidden" }}>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -104,26 +129,31 @@ export default function ClasesProf() {
           </Button>
         </div>
         <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
+        {clases && clases.map (item => {
+        
+
+        return(
           <MDBCol md="12" xl="4">
+            <div key = {item._id}>
             <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
               <MDBCardBody className="text-center">
                 <div className="mt-3 mb-4">
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                     className="rounded-circle" fluid style={{ width: '100px' }} />
                 </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
+                <MDBTypography tag="h4">{item.profesor}</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Mensual</a><span className="mx-2">|</span> <a>40 horas</a>
+                  {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a>
                 </MDBCardText>
 
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
                     <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$100</MDBCardText>
+                    <MDBCardText className="mb-1 h5">${item.costo}</MDBCardText>
                   </div>
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"} />
+                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={item.clasificacion} size={"30px"} />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
@@ -131,7 +161,7 @@ export default function ClasesProf() {
                     <option>Pública</option>
                     <option>Oculta</option>
                   </Form.Select>
-                  <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
+                  <Button rounded size="sm" variant={"secondary"} onClick={modificarClase(item._id)} >
                     Modificar
                   </Button>
                   <Button rounded size="sm" variant={"danger"} onClick={handleShow3} >
@@ -141,9 +171,14 @@ export default function ClasesProf() {
                 </div>
               </MDBCardBody>
             </MDBCard>
+            </div>
           </MDBCol>
-        </MDBRow>
+        
+        
+      )})}
+      </MDBRow>
       </MDBContainer>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Crear una nueva clase</Modal.Title>
@@ -284,6 +319,8 @@ export default function ClasesProf() {
       <PopUp show={popup} onHide={hidePopUp} title={title} modalTitle={modalTitle} text={text}>
 
 </PopUp>
+
+
 
 
     </div>

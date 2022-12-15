@@ -7,6 +7,45 @@
     
 }
 
+.componenteFiltro{
+    margin-top: 10%;
+    background-color: #e9da91;
+    
+    
+}
+
+.tarjetadefiltro{
+    display: flex;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    margin-left: 10%;
+    border-color: #1c1e21;
+    align-content: center;
+}
+.componenteFiltro a{
+    font-size: 16px;
+   
+}
+
+.componenteFiltro {
+    font-size: 16px;
+   
+}
+
+#chekibox{
+    size:5px;
+}
+
+#botonfiltrito{
+    display:flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    margin-top: 10%;
+}
+
 
 #contenedorFiltro{
     padding-top: 15%;
