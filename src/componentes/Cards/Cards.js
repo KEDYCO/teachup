@@ -41,7 +41,7 @@ export default function Tarjetas() {
       <MDBContainer className="container py-5 h-100">
         <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
           {clases && clases.map (item => (
-            <MDBCol md="12" xl="4">
+            <MDBCol className="elementoClase">
             <div key = {item._id}>
             <MDBCard style={{ borderRadius: '15px' }} id='clasesContratar'>
               <MDBCardBody className="text-center">
@@ -53,24 +53,24 @@ export default function Tarjetas() {
                 <MDBCardText className="text-muted mb-4">
                   {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a>
                 </MDBCardText>
-                <MDBCardText className="text-muted mb-4" style={{ overflowX: "hidden" }}>
+                <MDBCardText className="textoCard" style={{ overflowX: "hidden" }}>
                   {item.descripcion}
                 </MDBCardText>
                 <div className="d-flex justify-content-between text-center mt-4 mb-2">
                   <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">${item.costo}</MDBCardText>
+                    <MDBCardText className="col-12 small text mb-0">Precio</MDBCardText>
+                    <MDBCardText className="col-12  h5">${item.costo}</MDBCardText>
                   </div>
                   <div>
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={item.clasificacion} size={"30px"} />
+                    <MDBCardText className="col-6 small text-muted mb-0">Rating</MDBCardText>
+                    <Rating className="col-12" ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={item.clasificacion} size={"30px"} />
                   </div>
                 </div>
-                <div className="d-flex justify-content-between text-center">
-                  <Button rounded size="lg" onClick={handleShow} >
+                <div className="d-flex justify-content-between text-center row">
+                  <Button rounded size="sm" className="col-6" onClick={handleShow} >
                     Contratar clase
                   </Button>
-                  <Button rounded size="lg" variant={"secondary"} onClick={handleShow2} >
+                  <Button rounded size="sm" className="col-6" variant={"secondary"} onClick={handleShow2} >
                     Ver comentarios
                   </Button>
                 </div>
