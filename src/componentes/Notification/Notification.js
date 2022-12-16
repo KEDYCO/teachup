@@ -13,7 +13,7 @@ export default function NotificationMenu() {
   const [data, setData] = useState([DEFAULT_NOTIFICATION]);
   const [message, setMessage] = useState("");
 
-  const onClick = () => {
+  const handleOnClick = () => {
     if (message.length > 0) {
       setData([
         ...data,
@@ -29,12 +29,12 @@ export default function NotificationMenu() {
 
   return (
     <div className="App">
-      <div style={{ marginLeft: "50%", marginBottom: 100 }}>
+      <div style={{ marginLeft: "50%", marginBottom: 100, marginTop: "10%" }}>
         <Notifications
           data={data}
           header={{
             title: "Notifications",
-            option: { text: "View All", onClick: () => console.log("Clicked") }
+            option: { text: "View All", onClick: () => handleOnClick()  }
           }}
           markAsRead={(data) => {
             console.log(data);

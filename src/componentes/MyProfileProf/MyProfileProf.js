@@ -29,6 +29,7 @@ import {
   import CommentBox from "../CommentBox/CommentBox.js"
 import VerAlumnos from '../VerAlumnos/VerAlumnos.js';
 import { contactBackend } from "../../API";
+import { useNavigate } from 'react-router-dom';
   
   export default function PerfilProfesor() {
     const [show, setShow] = useState(false);
@@ -48,6 +49,7 @@ import { contactBackend } from "../../API";
     const fechaNac = window.sessionStorage.getItem("fechaNac");
     const ciudad = window.sessionStorage.getItem("ciudad");
     const [clases,setClases] = React.useState("");
+    const navigate = useNavigate();
 
     const mostrarClases = async () =>{
       let data = {
@@ -66,6 +68,14 @@ import { contactBackend } from "../../API";
     useEffect( () => {
       mostrarClases()
     }, [])
+
+    const [claseID, setClaseID] = React.useState({
+      "_id": 0,
+    })
+
+    const handleClick = () => {
+      navigate('/VistaAdministrarSolicitudes')
+    }
 
     return (
 
@@ -147,7 +157,7 @@ import { contactBackend } from "../../API";
           {clases && clases.map (item => (
             <MDBCol md='6'>
               <div key = {item._id}>
-              <MDBCard style={{ borderRadius: '15px' }} >
+              <MDBCard style={{ borderRadius: '15px' }} id='pinga23' >
                 <MDBCardBody className="text-center">
                   <div className="mt-3 mb-4">
                     <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
@@ -168,14 +178,17 @@ import { contactBackend } from "../../API";
                     </div>
                   </div>
                   <div className="d-flex justify-content-between text-center">
-                <Button rounded size="sm" variant={"secondary"} onClick={handleShow} >
+                <Button rounded size="sm" variant={"secondary"} onClick={() => {
+                        sessionStorage.setItem("IDClase",item._id)
+                          handleShow()
+                        }} >
                   Ver alumnos
                 </Button>
-                <Button rounded size="sm" variant={"secondary"} href="/VistaAdministrarSolicitudes" >
+                <Button rounded size="sm" variant={"secondary"} onClick={() => {
+                        sessionStorage.setItem("IDClase",item._id)
+                          handleClick()
+                        }}> 
                   Solicitudes
-                <MDBBadge className='ms-2' color='danger'>
-                    8
-                  </MDBBadge>
                 </Button>
                 <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
                   Ver comentarios
@@ -200,7 +213,7 @@ import { contactBackend } from "../../API";
         <Modal show={show} onHide={handleClose} size="lg">
           <Modal.Header closeButton>
             <Modal.Title>Alumnos</Modal.Title>
-            <Modal.Body>Inscriptos: 5</Modal.Body>
+            <Modal.Body>Inscriptos:</Modal.Body>
           </Modal.Header>
           <Modal.Body>
             <div>

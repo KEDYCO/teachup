@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import {
   MDBCard,
   MDBCardBody,
@@ -9,9 +9,39 @@ import {
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
+import { contactBackend } from "../../API";
+import { PopUp } from "../PopUp/PopUp";
 
 
 export default function VerAlumnos() {
+  const [title, setTitle] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [text, setText] = useState("");
+  const [popup, setPopup] = useState(false);
+  const showPopUp = () => setPopup(true);
+  const hidePopUp = () => setPopup(false);
+
+  const [alumnos, setAlumnos] = React.useState("");
+
+  const mostrarAlumnos = async () => {
+    let data = {
+      "_id": sessionStorage.getItem("IDClase")
+    }
+    try {
+      let res = await contactBackend("/clases/getAlumnosCursando", false, "POST", null, data, false, 200)
+      console.log(res)
+      setAlumnos(res.data)
+    }
+    catch (e) {
+
+    }
+  }
+
+  useEffect(() => {
+    mostrarAlumnos()
+
+  }, [])
+
   return (
     <section style={{ backgroundColor: "rgb(28,30,33)" }}>
       <MDBContainer className="py-5" style={{ maxWidth: "1000px" }}>
@@ -52,7 +82,7 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Julián Gamietea
                     </MDBTypography>
-                    
+
                   </div>
                 </div>
               </MDBCardBody>
@@ -71,7 +101,7 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Lionel Hernández
                     </MDBTypography>
-                    
+
                   </div>
                 </div>
               </MDBCardBody>
@@ -91,12 +121,12 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Robert Moreira
                     </MDBTypography>
-                    
+
                   </div>
                 </div>
               </MDBCardBody>
               <hr className="my-0" />
-            <MDBCardBody className="p-3">
+              <MDBCardBody className="p-3">
 
                 <div className="d-flex flex-start">
                   <MDBCardImage
@@ -110,7 +140,7 @@ export default function VerAlumnos() {
                     <MDBTypography tag="h4" className="fw-bold mb-1">
                       Jorge Bermúdez
                     </MDBTypography>
-                   
+
                   </div>
                 </div>
               </MDBCardBody>

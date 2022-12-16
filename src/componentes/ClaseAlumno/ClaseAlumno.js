@@ -8,8 +8,11 @@ import Modal from 'react-bootstrap/Modal';
 import { Rating } from 'react-simple-star-rating';
 import { ModalBody } from "react-bootstrap";
 import CommentBox from "../CommentBox/CommentBox.js"
-import { fontFamily } from "@mui/system";
+import { fontFamily, textTransform } from "@mui/system";
 import AddComment from "../CommentBox/AddComment.js";
+import { contactBackend } from "../../API";
+import { PopUp } from "../PopUp/PopUp";
+
 
 export default function CadaClase() {
   const [show, setShow] = useState(false);
@@ -19,6 +22,59 @@ export default function CadaClase() {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
   const [rating, setRating] = useState(0);
+
+  const [title, setTitle] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [text, setText] = useState("");
+  const [popup, setPopup] = useState(false);
+  const showPopUp = () => setPopup(true);
+  const hidePopUp = () => setPopup(false);
+
+  const [clases, setClases] = React.useState("");
+  const [datosBaja,setDatosBaja] = React.useState({
+    "_idClase": 0,
+    "_idAlumno": 0,
+    "estado": ""
+  })
+
+  const [datosComentarios,setDatosComentarios] = React.useState({
+    "_idClase": 0,
+    "_idAlumno": 0,
+    "estado": ""
+    
+    
+  })
+
+  const mostrarClasesAlu = async () => {
+    let data = {
+      "_id": localStorage.getItem("id")
+    }
+    try {
+      let res = await contactBackend("/users/getClasesAlu", false, "POST", null, data, false, 200)
+      console.log(res)
+      setClases(res.data)
+    }
+    catch (e) {
+
+    }
+  }
+
+  const darBajaAlumno = async () => {
+    try{
+      let res = await contactBackend("/clases/bajaClase",false,"POST",null,datosBaja,false,200)
+      console.log(res)
+      
+
+    }
+    catch(e){
+
+    }
+  }
+
+  useEffect(() => {
+    mostrarClasesAlu()
+
+  }, [])
   
   return (
     
@@ -32,109 +88,65 @@ export default function CadaClase() {
       <MDBTypography className="text-decoration fw-bold" tag="h1">Mis clases </MDBTypography>
     </header>
      
-        <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100"> 
-          <MDBCol md="12" xl="4">
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
+        <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
+
+          {clases && clases.map((item)=>{
+            
+            return(
+              <MDBCol md="12" xl="4">
+              <div key={item._id}>
+                <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
               <MDBCardBody className="text-center">
                 <div className="mt-3 mb-4">
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                     className="rounded-circle" fluid style={{ width: '100px' }} />
                 </div>
-                <MDBTypography tag="h4">Julian Casablancas</MDBTypography>
+                <MDBTypography tag="h4">{item.profesor}</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                  Musica<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>40 horas</a>
+                  {item.materia}
                 </MDBCardText>
-                <Button disabled variant="info" >
-                  En curso
+                <Button disabled variant="info" style={{textTransform:"capitalize"}} >
+                  {item.estado}
                 </Button>
                 
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$1251</MDBCardText>
-                  </div>
+                <div className="d-flex justify-content-end text-center mt-4 mb-2">
+                  
                   <div>
                     <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
                     <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={5} size={"30px"}/>
                   </div>
                 </div>
                 <div className="d-flex justify-content-between text-center">
-                <Button rounded size="lg" variant={"danger"} onClick={handleShow} >
+                <Button rounded size="md" style={{fontWeight:"bold"}} variant={"danger"} onClick={() => {
+                          setDatosBaja({
+                            "_idClase": item.idclase,
+                            "_idAlumno": localStorage.getItem("id"),
+                            "estado": "cancelado"
+                            
+                          })
+                         handleShow()
+                        }} >
                   Darse de baja
                 </Button>
-                <Button rounded size="lg" variant={"dark"} onClick={handleShow2} >
+                <Button rounded size="md" style={{fontWeight:"bold"}} variant={"dark"} onClick={() => {
+                          setDatosComentarios({
+                            "claseID": item.idclase,
+                            "alumnoID": localStorage.getItem("id"),
+                            "estado": "cancelado"
+                            
+                          })
+                         handleShow2()
+                        }}  >
                   Comentar y puntuar
                 </Button>
                 </div>
               </MDBCardBody>
             </MDBCard>
-          </MDBCol>
-          <MDBCol md="12" xl="4">
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
-              <MDBCardBody className="text-center">
-                <div className="mt-3 mb-4">
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                    className="rounded-circle" fluid style={{ width: '100px' }} />
-                </div>
-                <MDBTypography tag="h4">John Mulaney</MDBTypography>
-                <MDBCardText className="text-muted mb-4">
-                  Lengua<span className="mx-2">|</span> <a>Unica</a><span className="mx-2">|</span> <a>3 horas</a>
-                </MDBCardText>
-                <Button disabled variant="success" >
-                  Terminado
-                </Button>
-                
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$1500</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3} size={"30px"}/>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-center text-center">
-                <Button rounded size="lg" variant={"dark"} onClick={handleShow2} >
-                  Comentar y puntuar
-                </Button>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="12" xl="4">
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
-              <MDBCardBody className="text-center">
-                <div className="mt-3 mb-4">
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                    className="rounded-circle" fluid style={{ width: '100px' }} />
-                </div>
-                <MDBTypography tag="h4">Franco Siciliano</MDBTypography>
-                <MDBCardText className="text-muted mb-4">
-                  Programación<span className="mx-2">|</span> <a>Semanal</a><span className="mx-2">|</span> <a>50 horas</a>
-                </MDBCardText>
-                <Button disabled variant="warning" >
-                  Esperando confirmacion
-                </Button>
-                
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">$912</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={3.5} size={"30px"}/>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-center text-center">
-                <Button rounded size="lg" variant={"danger"} onClick={handleShow} >
-                  Darse de baja
-                </Button>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
+          
+              </div>
+              </MDBCol>
+            )
+          })} 
         </MDBRow>
     </MDBContainer>
 
@@ -157,17 +169,21 @@ export default function CadaClase() {
           </Modal.Header>
           <Modal.Body>
             <div>
-                ¿Estás seguro que deseas solicitar la baja de la clase Programacion?
+                ¿Estás seguro que deseas solicitar la baja de la clase?
             </div>
           </Modal.Body>
           <Modal.Footer>
                 <Button variant="light" onClick={handleClose}>
                         Cancelar <MDBIcon fas icon="long-arrow-alt-right ms-1" />
                 </Button>
-                <Button variant="danger">Confirmar</Button>
+                <Button variant="danger" onClick={darBajaAlumno}>Confirmar</Button>
           </Modal.Footer>
           
         </Modal>
+
+        <PopUp show={popup} onHide={hidePopUp} title={title} modalTitle={modalTitle} text={text}>
+
+      </PopUp>
         </div>
     
           )};

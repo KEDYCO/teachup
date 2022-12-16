@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon, MDBTextArea } from 'mdb-react-ui-kit';
 import Col from 'react-bootstrap/Col';
 import { AiFillStar } from 'react-icons/ai';
@@ -14,6 +14,7 @@ import AddComment from "../CommentBox/AddComment.js";
 import './AdministrarClasesCss.css'
 import { contactBackend } from "../../API";
 import { PopUp } from "../PopUp/PopUp";
+
 
 
 
@@ -40,10 +41,13 @@ export default function ClasesProf() {
   const [show7, setShow7] = useState(false);
   const handleClose7 = () => setShow7(false);
   const handleShow7 = () => setShow7(true);
+  const [show8, setShow8] = useState(false);
+  const handleClose8 = () => setShow8(false);
+  const handleShow8 = () => setShow8(true);
 
   const [title, setTitle] = useState("");
   const [modalTitle, setModalTitle] = useState("");
-  const [text,setText] = useState("");
+  const [text, setText] = useState("");
   const [popup, setPopup] = useState(false);
   const showPopUp = () => setPopup(true);
   const hidePopUp = () => setPopup(false);
@@ -55,10 +59,29 @@ export default function ClasesProf() {
   const [frecuencia, setFrecuencia] = React.useState("");
   const [costo, setCosto] = React.useState("");
   const [descripcion, setDescripcion] = React.useState("");
+  const [tipo, setTipo] = React.useState("");
   const [clasificacion, setClasificacion] = React.useState("");
-  const [clases,setClases] = React.useState("");
+  const [clases, setClases] = React.useState("");
+  const [newDuracion, setNewDuracion] = React.useState("");
+  const [newFrecuencia, setNewFrecuencia] = React.useState("");
+  const [newCosto, setNewCosto] = React.useState("");
+  const [datosModificar, setDatosModificar] = React.useState({
+    "_id": 0,
+    "duracion": 1,
+    "frecuencia": "",
+    "costo": 15
+  })
+  const [datosEliminar, setDatosEliminar] = React.useState({
+    "_id": 0
+  })
 
-  const creacionClase = async () =>{
+  const [datosModificarEstado, setDatosModificarEstado] = React.useState({
+    "_id": 0,
+    "estado": ""
+  })
+
+
+  const creacionClase = async () => {
     let data = {
       "idProfesor": idProfesor,
       "profesor": nombre,
@@ -66,22 +89,23 @@ export default function ClasesProf() {
       "duracion": duracion,
       "frecuencia": frecuencia,
       "costo": costo,
-      "descripcion": descripcion
+      "descripcion": descripcion,
+      "tipo": tipo
     }
-    try{
-      let res = await contactBackend("/clases/creacionClase",false,"POST",null,data,false,201)
+    try {
+      let res = await contactBackend("/clases/creacionClase", false, "POST", null, data, false, 201)
       console.log(res)
-      if(frecuencia === "Seleccionar"){
+      if (frecuencia === "Seleccionar") {
         setTitle()
         setModalTitle("Error al crear clase")
         setText("Por favor, seleccione una frecuencia válida")
         showPopUp()
       }
-      else{
+      else {
         handleShow7()
       }
     }
-    catch(e){
+    catch (e) {
       setTitle()
       setModalTitle("Error al crear clase")
       setText("Error al crear clase, por favor verifique los datos ingresados")
@@ -89,31 +113,89 @@ export default function ClasesProf() {
     }
   }
 
-  const mostrarClases = async () =>{
+  const mostrarClases = async () => {
     let data = {
       "idProfesor": idProfesor
     }
-    try{
-      let res = await contactBackend("/clases/getClasesPID",false,"POST",null,data,false,200)
+    try {
+      let res = await contactBackend("/clases/getClasesPID", false, "POST", null, data, false, 200)
       console.log(res)
       setClases(res.data.docs)
     }
-    catch(e){
+    catch (e) {
 
     }
   }
-  
-  useEffect( () => {
+
+  useEffect(() => {
     mostrarClases()
 
-  }, [] )
+  }, [])
 
-  const modificarClase = async (id) =>{
-
+  const modificarClase = async () => {
+    try {
+      let res = await contactBackend("/clases/modificarClase", false, "PUT", null, datosModificar, false, 200)
+      console.log(res)
+      handleShow5()
+    }
+    catch (e) {
+      setTitle()
+      setModalTitle("Error al modificar clase")
+      setText("Error al modificar clase, verifique que los datos ingresados sean correctos")
+      showPopUp()
+    }
   }
 
+  const modificarEstadoClase = async () =>{
+    try{
+      if(datosModificarEstado.estado === "publica"){
+        setDatosModificarEstado({
+          "estadoClase": "oculta"
+        })
+        let res = await contactBackend("/clases/modificarEstado",false,"PUT",null,datosModificarEstado,false,200)
+        console.log(res)
+        handleShow4()
+      }
+      else{
+        setDatosModificarEstado({
+          "estadoClase": "publica"
+        })
+        let res = await contactBackend("/clases/modificarEstado",false,"PUT",null,datosModificarEstado,false,200)
+        console.log(res)
+        handleShow6()
+      }
+      
+    }
+    catch(e){
+      setTitle()
+      setModalTitle("Error al cambiar estado de clase")
+      setText("Error al cambiar el estado de la clase, intente nuevamente")
+      showPopUp()
+    }
+  }
+
+  
+  
+  const eliminarClase = async () => {
+    try{
+      let res = await contactBackend("/clases/eliminarClase",false,"POST",null,datosEliminar,false,200)
+      console.log(res)
+      window.location.reload()
+
+    }
+    catch(e){
+      setTitle()
+      setModalTitle("Error al eliminar clase")
+      setText("Hubo un error al intentar eliminar la clase")
+      showPopUp()
+    }
+  }
+
+
+  
+
   return (
-    
+
     <div className="contenedorClaseProf" style={{ backgroundColor: "#1c1e21", overflowX: "hidden" }}>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -124,59 +206,78 @@ export default function ClasesProf() {
           <header style={{ color: "#FFA726", fontFamily: 'Bebas Neue', fontWeight: "bold" }}>
             <MDBTypography className="text-decoration fw-bold" tag="h1">Mis clases </MDBTypography>
           </header>
-          <Button rounded size="md" variant={"success"} onClick={handleShow} fontWeight="bold" >
-            Crear nueva clase
+          <Button rounded size="md" onClick={handleShow} fontWeight="bold" id='botonCrearClase'>
+            <b> Crear nueva clase</b>
           </Button>
         </div>
         <MDBRow className="row-cols-2 row-cols-md-3 g-4justify-content-center align-items-center h-100">
-        {clases && clases.map (item => {
-        
 
-        return(
-          <MDBCol md="12" xl="4">
-            <div key = {item._id}>
-            <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
-              <MDBCardBody className="text-center">
-                <div className="mt-3 mb-4">
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                    className="rounded-circle" fluid style={{ width: '100px' }} />
-                </div>
-                <MDBTypography tag="h4">{item.profesor}</MDBTypography>
-                <MDBCardText className="text-muted mb-4">
-                  {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a>
-                </MDBCardText>
+          {clases && clases.map((item) => {
+            return (
+              <MDBCol md="12" xl="4">
+                <div key={item._id}>
+                  <MDBCard style={{ borderRadius: '15px' }} id='pinga23'>
+                    <MDBCardBody className="text-center">
+                      <div className="mt-3 mb-4">
+                        <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                          className="rounded-circle" fluid style={{ width: '100px' }} />
+                      </div>
+                      <MDBTypography tag="h4">{item.profesor}</MDBTypography>
+                      <MDBCardText className="text-muted mb-4">
+                        {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a><span className="mx-2">|</span> <a>{item.tipo}</a>
+                      </MDBCardText>
 
-                <div className="d-flex justify-content-between text-center mt-4 mb-2">
-                  <div>
-                    <MDBCardText className="small text mb-0">Precio</MDBCardText>
-                    <MDBCardText className="mb-1 h5">${item.costo}</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
-                    <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={item.clasificacion} size={"30px"} />
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between text-center">
-                  <Form.Select defaultValue="Elegir" onChange={handleShow4} id="selectorEstadoClase" >
-                    <option>Pública</option>
-                    <option>Oculta</option>
-                  </Form.Select>
-                  <Button rounded size="sm" variant={"secondary"} onClick={modificarClase(item._id)} >
-                    Modificar
-                  </Button>
-                  <Button rounded size="sm" variant={"danger"} onClick={handleShow3} >
-                    Eliminar
-                  </Button>
+                      <div className="d-flex justify-content-between text-center mt-4 mb-2">
+                        <div>
+                          <MDBCardText className="small text mb-0">Precio</MDBCardText>
+                          <MDBCardText className="mb-1 h5">${item.costo}</MDBCardText>
+                        </div>
+                        <div>
+                          <MDBCardText className="small text-muted mb-0">Rating</MDBCardText>
+                          <Rating ratingValue={rating} readonly={true} allowHalfIcon={true} initialValue={item.clasificacion} size={"30px"} />
+                        </div>
+                      </div>
+                      <div className="d-flex justify-content-between text-center">
+                      <b style={{marginTop: '2%', textTransform:'uppercase', fontSize:'16px'}}><img id="fotona2" src="imgs/change.png" onClick={() => {
+                          setDatosModificarEstado({
+                            "_id": item._id,
+                            "estado": item.estadoClase
+                          })
+                         handleShow8()
+                        }}/> {item.estadoClase}</b>
+                        <Button rounded size="sm" variant={"secondary"} onClick={() => {
+                          setDatosModificar({
+                            "_id": item._id,
+                            "duracion": item.duracion,
+                            "costo": item.costo,
+                            "frecuencia": item.frecuencia
+                          })
+                          handleShow2()
+                        }}>
+                          Modificar
+                        </Button>
+                        <Button rounded size="sm" variant={"danger"} onClick={() => {
+                          setDatosEliminar({
+                            "_id": item._id,
+                          })
+                          handleShow3()
+                        }} >
+                          Eliminar
+                        </Button>
+                      </div>
+                    </MDBCardBody>
+                  </MDBCard>
+
+
+
 
                 </div>
-              </MDBCardBody>
-            </MDBCard>
-            </div>
-          </MDBCol>
-        
-        
-      )})}
-      </MDBRow>
+              </MDBCol>
+
+
+            )
+          })}
+        </MDBRow>
       </MDBContainer>
 
       <Modal show={show} onHide={handleClose}>
@@ -185,28 +286,36 @@ export default function ClasesProf() {
         </Modal.Header>
         <Modal.Body>Materia que se va a enseñar</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoMateria" placeholder="Ingresar materia" value={materia} onChange={(text)=>{setMateria(text.target.value)}} />
+          <Form.Control id="ingresoMateria" placeholder="Ingresar materia" value={materia} onChange={(text) => { setMateria(text.target.value) }} />
         </Form.Group>
         <Modal.Body>Duración del curso (en horas)</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" value={duracion} onChange={(text)=>{setDuracion(text.target.value)}} />
+          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" value={duracion} onChange={(text) => { setDuracion(text.target.value) }} />
         </Form.Group>
         <Modal.Body>Frecuencia de clase</Modal.Body>
         <Form.Group controlId="formGridState" id="text-insert" >
-          <Form.Select defaultValue="Elegir" value={frecuencia} onChange={(text)=>{setFrecuencia(text.target.value)}} >
+          <Form.Select defaultValue="Elegir" value={frecuencia} onChange={(text) => { setFrecuencia(text.target.value) }} >
             <option>Seleccionar</option>
             <option>Unica</option>
             <option>Semanal</option>
             <option>Mensual</option>
           </Form.Select>
         </Form.Group>
+        <Modal.Body>Tipo de clase</Modal.Body>
+        <Form.Group controlId="formGridState" id="text-insert" >
+          <Form.Select defaultValue="Elegir" value={tipo} onChange={(text) => { setTipo(text.target.value) }} >
+            <option>Seleccionar</option>
+            <option>Individual</option>
+            <option>Grupal</option>
+          </Form.Select>
+        </Form.Group>
         <Modal.Body>Costo del curso (en pesos)</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" value={costo} onChange={(text)=>{setCosto(text.target.value)}}/>
+          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" value={costo} onChange={(text) => { setCosto(text.target.value) }} />
         </Form.Group>
         <Modal.Body>Descripción de la clase</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoDescripcion" placeholder="Ingresar descripcion" as="textarea" rows={3} value={descripcion} onChange={(text)=>{setDescripcion(text.target.value)}} />
+          <Form.Control id="ingresoDescripcion" placeholder="Ingresar descripcion" as="textarea" rows={3} value={descripcion} onChange={(text) => { setDescripcion(text.target.value) }} />
         </Form.Group>
 
         <Modal.Footer id="footer-form">
@@ -221,15 +330,25 @@ export default function ClasesProf() {
 
       <Modal show={show2} onHide={handleClose2}>
         <Modal.Header closeButton>
-          <Modal.Title>Modificar clase</Modal.Title>
+          <Modal.Title>Modificar Clase</Modal.Title>
         </Modal.Header>
         <Modal.Body>Duración del curso (en horas)</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" />
+          <Form.Control id="ingresoDuracion" placeholder="Ingresar duración" value={datosModificar.duracion} onChange={(text) => {
+            setDatosModificar({
+              ...
+              datosModificar, ["duracion"]: text.target.value
+            })
+          }} />
         </Form.Group>
         <Modal.Body>Frecuencia de clase</Modal.Body>
         <Form.Group as={Col} controlId="formGridState" id="text-insert">
-          <Form.Select defaultValue="Elegir" className="frecClasDDL" >
+          <Form.Select defaultValue="Elegir" className="frecClasDDL" value={datosModificar.frecuencia} onChange={(text) => {
+            setDatosModificar({
+              ...
+              datosModificar, ["frecuencia"]: text.target.value
+            })
+          }}>
             <option>Seleccionar</option>
             <option>Única</option>
             <option>Semanal</option>
@@ -238,14 +357,19 @@ export default function ClasesProf() {
         </Form.Group>
         <Modal.Body>Costo del curso (en pesos)</Modal.Body>
         <Form.Group id="text-insert">
-          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" />
+          <Form.Control id="ingresoCosto" placeholder="Ingresar costo" value={datosModificar.costo} onChange={(text) => {
+            setDatosModificar({
+              ...
+              datosModificar, ["costo"]: text.target.value
+            })
+          }} />
         </Form.Group>
 
         <Modal.Footer id="footer-form">
           <Button variant="secondary" onClick={handleClose2}>
             Cerrar
           </Button>
-          <Button variant="primary" onClick={handleShow5}>
+          <Button variant="primary" onClick={modificarClase}>
             Enviar
           </Button>
         </Modal.Footer>
@@ -260,7 +384,7 @@ export default function ClasesProf() {
           <Button variant="secondary" onClick={handleClose3}>
             Cancelar
           </Button>
-          <Button variant="danger" onClick={handleShow6}>
+          <Button variant="danger" onClick={eliminarClase}>
             Eliminar
           </Button>
         </Modal.Footer>
@@ -268,15 +392,12 @@ export default function ClasesProf() {
 
       <Modal show={show4} onHide={handleClose4} backdrop="static" keyboard={false}>
         <Modal.Header>
-          <Modal.Title>Cambiar estado de la clase</Modal.Title>
+          <Modal.Title>Estado de clase cambiado</Modal.Title>
         </Modal.Header>
-        <Modal.Body>¿Estás seguro que deseas cambiar el estado de la clase?</Modal.Body>
+        <Modal.Body>Se ha cambiado el estado de la clase a "Oculta"</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose4}>
-            Cancelar
-          </Button>
-          <Button variant="success" onClick={handleClose4}>
-            Cambiar
+          <Button variant="secondary" onClick={handleClose4} href="/vistaadministrarclases">
+            Aceptar
           </Button>
         </Modal.Footer>
       </Modal>
@@ -295,12 +416,12 @@ export default function ClasesProf() {
 
       <Modal show={show6} onHide={handleClose6} backdrop="static" keyboard={false}>
         <Modal.Header>
-          <Modal.Title>Eliminar clase</Modal.Title>
+          <Modal.Title>Estado de clase cambiado</Modal.Title>
         </Modal.Header>
-        <Modal.Body>¡Clase eliminada con éxito!</Modal.Body>
+        <Modal.Body>Se ha cambiado el estado de la clase a "Pública"</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose6} href="/vistaadministrarclases">
-            Continuar
+          <Button variant="secondary" onClick={handleClose6} href="/vistaadministrarclases">
+            Aceptar
           </Button>
         </Modal.Footer>
       </Modal>
@@ -316,9 +437,26 @@ export default function ClasesProf() {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <Modal show={show8} onHide={handleClose8} backdrop="static" keyboard={false}>
+        <Modal.Header>
+          <Modal.Title>Modificar estado de la clase</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>¿Estás seguro que deseas modificar el estado de esta clase?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose8}>
+            Cancelar
+          </Button>
+          <Button variant="primary" onClick={modificarEstadoClase}>
+            Modificar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+
       <PopUp show={popup} onHide={hidePopUp} title={title} modalTitle={modalTitle} text={text}>
 
-</PopUp>
+      </PopUp>
 
 
 

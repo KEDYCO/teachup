@@ -79,6 +79,7 @@ export default function Iniciosesion(props) {
                 localStorage.setItem("soyProfesor",res.loginUser.user.esProfesor)
                 localStorage.setItem("email",res.loginUser.user.email)
                 localStorage.setItem("id",res.loginUser.user._id)
+                sessionStorage.setItem("nombre",res.loginUser.user.nombre)
                 
             }
             if(localStorage.getItem("isLoggedIn") === "true" && localStorage.getItem("soyProfesor") === "true"){

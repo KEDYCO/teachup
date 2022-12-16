@@ -1,0 +1,8 @@
+.notifications .icon .count{
+    background-color: #e9da91;
+    color:black;
+}
+
+.notifications.icon.image{
+    margin-top: 2%;
+}

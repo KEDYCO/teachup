@@ -11,3 +11,14 @@
   width: 50% !important;
 
 }
+
+#botonCrearClase{
+  background: rgb(214, 148, 4);
+  border-width: 3px;
+  border-color:#e9da91;
+}
+
+#fotona2{
+  width: 20px;
+  height: 20px;
+}
