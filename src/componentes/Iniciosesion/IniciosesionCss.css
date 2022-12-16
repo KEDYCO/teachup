@@ -1,22 +1,22 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #0e0d0d;
-  }
-  
-  main {
+}
+
+main {
     height: 100vh;
     width: 100vw;
     position: relative;
     margin: 0 auto;
     background-color: #1c1e21
-  }
-           
+}
+
 
 .rowsinho {
     display: flex;
@@ -64,7 +64,8 @@ body {
     align-content: center;
 }
 
-.colm-form .form-container input, .colm-form .form-container .btn-login {
+.colm-form .form-container input,
+.colm-form .form-container .btn-login {
     width: 100%;
     margin: 5px 0;
     height: 45px;
@@ -117,7 +118,7 @@ body {
     padding: 0 16px;
     color: #ffffff;
     font-weight: 700;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 .colm-form p {
@@ -138,18 +139,34 @@ body {
 
 
 
-#mailGroup{
+#mailGroup {
     align-items: center;
     align-content: center;
-    text-align: center; 
+    text-align: center;
     padding-left: 3%;
     padding-right: 30%;
     padding-bottom: 5%;
 }
 
 
-#ingresoMail{
-  width: 100%;
-  margin-right: 45%;
+#ingresoMail {
+    width: 100%;
+    margin-right: 45%;
 
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+    #my-content {
+        display: block;
+    }
+
+    /* show it on small screens */
+}
+
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+    #my-content {
+        display: none;
+    }
+
+    /* hide it elsewhere */
 }

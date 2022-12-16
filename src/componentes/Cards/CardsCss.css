@@ -155,3 +155,11 @@ background:rgb(54, 56, 58);
 
 }
 
+.elementoClase{
+    max-height: fit-content;
+
+}
+
+.textoCard{
+    max-height:80px;
+}
