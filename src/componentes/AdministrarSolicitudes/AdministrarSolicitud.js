@@ -37,7 +37,8 @@ export default function AdministrarSolicitudes() {
   const hidePopUp = () => setPopup(false);
 
   const [datosAprobar,setDatosAprobar] = React.useState({
-    "_id": 0
+    "_id": 0,
+    "profesorID":""
   });
 
   const [datosRechazar,setDatosRechazar] = React.useState({
@@ -125,6 +126,7 @@ export default function AdministrarSolicitudes() {
                       <Button className="botonApruebo btn-success" onClick={() => {
                           setDatosAprobar({
                             "_id": item._id,
+                            "profesorID": item.profesorID
                           })
                          handleShow()
                         }} >

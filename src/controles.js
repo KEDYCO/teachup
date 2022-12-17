@@ -16,9 +16,7 @@ export const esUnMail = (string) => {
 };
 
 export const yaExisteElMail = async (email) => {
-    const admin = await axios.get(`http://localhost:8080/existeMailAdministrador?mail=${email}`);
-    const responsable = await axios.get(`http://localhost:8080/existeMailResponsable?mail=${email}`);
-    const jugadores = await axios.get(`http://localhost:8080/existeMailJugador?mail=${email}`);
+    const admin = await axios.post(`http://localhost:4000/users/userByMail?mail=${email}`);
 
-    return (admin.data || responsable.data || jugadores.data);
+    return (admin.data);
 }

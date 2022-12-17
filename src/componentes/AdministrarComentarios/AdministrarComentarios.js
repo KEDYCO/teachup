@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   MDBCard,
   MDBCardBody,
@@ -14,6 +14,8 @@ import { Button } from "react-bootstrap";
 import "./AdministrarComentariosCss.css";
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { contactBackend } from "../../API";
+import { PopUp } from "../PopUp/PopUp";
 
 
 export default function AdministrarComentarios() {
@@ -23,6 +25,56 @@ export default function AdministrarComentarios() {
   const [show2, setShow2] = useState(false);
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
+
+  const [title, setTitle] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [text, setText] = useState("");
+  const [popup, setPopup] = useState(false);
+  const showPopUp = () => setPopup(true);
+  const hidePopUp = () => setPopup(false);
+
+  const [comentarios, setComentarios] = React.useState("");
+
+  const mostrarComentarios = async () => {
+    let data = {
+      "profesorID": localStorage.getItem("id")
+    }
+    try {
+      let res = await contactBackend("/caa/getComentariosAAprobarPID", false, "POST", null, data, false, 200)
+      console.log(res)
+      setComentarios(res.data)
+    }
+    catch (e) {
+
+    }
+  }
+
+  const aprobarComentario = async () =>{
+    try{
+      let res = await contactBackend("/caa/aprobarComentario",false,"POST",null,datosAprobar,false,200)
+      console.log(res)
+      handleClose()
+    }
+    catch (e){
+
+    }
+  }
+
+  const [datosAprobar, setDatosAprobar] = React.useState({
+    "_id": 0,
+    "claseID": 1,
+    "idAlu": 0,
+    "nombreAlu": "",
+    "textoComentario": "",
+    "clasificacionComent": 0
+  })
+
+  useEffect(() => {
+    mostrarComentarios()
+
+  }, [])
+
+
   return (
     <MDBContainer className="mt-5" style={{ maxWidth: "1000px", height: "100vh" }}>
       <MDBRow className="justify-content-center">
@@ -32,169 +84,52 @@ export default function AdministrarComentarios() {
             style={{ backgroundColor: "#f0f2f5" }}
           >
             <MDBCardBody className="colorBody">
-              <MDBCard className="mb-4">
-                <MDBCardBody className="colorBody">
-                  <p>Es un gran profesor, enseña muy bien y el trato con los alumnos es muy bueno </p>
+              {comentarios && comentarios.map((item) => {
+                return (
+                  <MDBCard className="mb-4">
+                    <MDBCardBody className="colorBody">
+                      <p>{item.comentario} </p>
 
-                  <div className="d-flex justify-content-between">
-                    <div className="d-flex flex-row align-items-center">
-                      <MDBCardImage
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                        alt="avatar"
-                        className="rounded-circle"
-                        style={{ width: '50px' }}
-                        fluid
-                      />
-                      <p className="small mb-0 ms-2">Fabrizio Moretti</p>
-                    </div>
-                    <div className="d-flex flex-row align-items-center">
-                      <Button className="botonApruebo btn-success" onClick={handleShow} >
-                        Aprobar
-                      </Button>
-                      <MDBIcon
-                        far
-                        icon="thumbs-up mx-2 fa-xs text-black"
-                        style={{ marginTop: "-0.16rem" }}
-                      />
-                      <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        Rechazar
-                      </Button>
-                    </div>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
+                      <div className="d-flex justify-content-between">
+                        <div className="d-flex flex-row align-items-center">
+                          <MDBCardImage
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                            alt="avatar"
+                            className="rounded-circle"
+                            style={{ width: '50px' }}
+                            fluid
+                          />
+                          <p className="small mb-0 ms-2">{item.nombreAlumno}</p>
+                        </div>
+                        <div className="d-flex flex-row align-items-center">
+                          <Button className="botonApruebo btn-success" onClick={() => {
+                            setDatosAprobar({
+                              "_id": item._id,
+                              "claseID": item.claseID,
+                              "idAlu": item.alumnoID,
+                              "nombreAlu": item.nombreAlumno,
+                              "textoComentario": item.comentario,
+                              "clasificacionComent": item.clasificacion
+                            })
+                            handleShow()
+                          }} >
+                            Aprobar
+                          </Button>
+                          <MDBIcon
+                            far
+                            icon="thumbs-up mx-2 fa-xs text-black"
+                            style={{ marginTop: "-0.16rem" }}
+                          />
+                          <Button className="botonRechazo btn-danger" onClick={handleShow2} >
+                            Rechazar
+                          </Button>
+                        </div>
+                      </div>
+                    </MDBCardBody>
+                  </MDBCard>
+                )
+              })}
 
-              <MDBCard className="mb-4">
-                <MDBCardBody className="colorBody">
-                  <p>Me hizo lavar autos y yo queria aprender karate
-
-                  </p>
-
-                  <div className="d-flex justify-content-between">
-                    <div className="d-flex flex-row align-items-center">
-                      <MDBCardImage
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                        alt="avatar"
-                        className="rounded-circle"
-                        style={{ width: '50px' }}
-                        fluid
-                      />
-                      <p className="small mb-0 ms-2">Daniel</p>
-                    </div>
-                    <div className="d-flex flex-row align-items-center">
-                      <Button className="botonApruebo btn-success" onClick={handleShow} >
-                        Aprobar
-                      </Button>
-                      <MDBIcon
-                        far
-                        icon="thumbs-up mx-2 fa-xs text-black"
-                        style={{ marginTop: "-0.16rem" }}
-                      />
-                      <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        Rechazar
-                      </Button>
-                    </div>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-              <MDBCard className="mb-4">
-                <MDBCardBody className="colorBody">
-                  <p>Si bien su forma de enseñar es buena, como persona deja mucho que desear</p>
-
-                  <div className="d-flex justify-content-between">
-                    <div className="d-flex flex-row align-items-center">
-                      <MDBCardImage
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                        alt="avatar"
-                        className="rounded-circle"
-                        style={{ width: '50px' }}
-                        fluid
-                      />
-                      <p className="small mb-0 ms-2">Adrian Suar.</p>
-                    </div>
-                    <div className="d-flex flex-row align-items-center">
-                      <Button className="botonApruebo btn-success" onClick={handleShow} >
-                        Aprobar
-                      </Button>
-                      <MDBIcon
-                        far
-                        icon="thumbs-up mx-2 fa-xs text-black"
-                        style={{ marginTop: "-0.16rem" }}
-                      />
-                      <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        Rechazar
-                      </Button>
-                    </div>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-              <MDBCard className="mb-4">
-                <MDBCardBody className="colorBody">
-                  <p>xcxzzxnv xcxzzxnv
-
-                  </p>
-
-                  <div className="d-flex justify-content-between">
-                    <div className="d-flex flex-row align-items-center">
-                      <MDBCardImage
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                        alt="avatar"
-                        className="rounded-circle"
-                        style={{ width: '50px' }}
-                        fluid
-                      />
-                      <p className="small mb-0 ms-2">Luke</p>
-                    </div>
-                    <div className="d-flex flex-row align-items-center">
-                      <Button className="botonApruebo btn-success" onClick={handleShow} >
-                        Aprobar
-                      </Button>
-                      <MDBIcon
-                        far
-                        icon="thumbs-up mx-2 fa-xs text-black"
-                        style={{ marginTop: "-0.16rem" }}
-                      />
-                      <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        Rechazar
-                      </Button>
-                    </div>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-
-              <MDBCard className="mb-4">
-                <MDBCardBody className="colorBody">
-                  <p>Pude aprobar el parcial gracias a este profesor. se lo recomende a todos mis conocidos
-
-                  </p>
-
-                  <div className="d-flex justify-content-between">
-                    <div className="d-flex flex-row align-items-center">
-                      <MDBCardImage
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                        alt="avatar"
-                        className="rounded-circle"
-                        style={{ width: '50px' }}
-                        fluid
-                      />
-                      <p className="small mb-0 ms-2">Juan Perez</p>
-                    </div>
-                    <div className="d-flex flex-row align-items-center">
-                      <Button className="botonApruebo btn-success" onClick={handleShow} >
-                        Aprobar
-                      </Button>
-                      <MDBIcon
-                        far
-                        icon="thumbs-up mx-2 fa-xs text-black"
-                        style={{ marginTop: "-0.16rem" }}
-                      />
-                      <Button className="botonRechazo btn-danger" onClick={handleShow2} >
-                        Rechazar
-                      </Button>
-                    </div>
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
 
 
             </MDBCardBody>
@@ -215,7 +150,7 @@ export default function AdministrarComentarios() {
         </Modal.Header>
         <Modal.Body>Podra ver este comentario en la seccion de comentarios de su clase.</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={aprobarComentario}>
             Entendido
           </Button>
         </Modal.Footer>

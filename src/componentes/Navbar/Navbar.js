@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Notifications from "react-notifications-menu";
-import NotificationMenu from "../Notification/Notification";
 import { esUnMail, yaExisteElMail } from "../../controles";
 import { PopUp } from "../PopUp/PopUp";
 import axios from "axios";
@@ -61,7 +59,7 @@ export default function Navbar(){
         <nav className="nav">
         <a href="/paginaprincipal" className="site-title"><img src="teachupsmall.png"/></a>
            <ul>
-            <li><NotificationMenu></NotificationMenu></li>
+            
         
         <li><NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
               <NavDropdown.Item onClick={mostrarInfoUsuario}> <img id="fotona" src="imgs/user.png"/>

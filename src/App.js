@@ -28,7 +28,6 @@ import EditarPerfilProfesor from "./componentes/EditProfileProf/EditProfileProf"
 import EditarPerfilProf from "./componentes/EditProfileProf/VistaEditarPerfilProf";
 import AboutUs from "./componentes/LandingPage/LandingPage";
 import VistaAdministrarSolicitudes from "./componentes/AdministrarSolicitudes/VistaAdministrarSolicitud";
-import ContextoSesion from "./componentes/Contexto/Contexto";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 

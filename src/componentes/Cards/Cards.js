@@ -31,13 +31,37 @@ export default function Tarjetas() {
   const [popup, setPopup] = useState(false);
   const showPopUp = () => setPopup(true);
   const hidePopUp = () => setPopup(false);
+  const filtro = sessionStorage.getItem("filtro")
 
   const mostrarClases = async () => {
     try {
+      if(filtro === "false"){
       let res = await contactBackend("/clases/getClases", false, "GET", null, null, false, 200)
       console.log(res)
-      setClases(res.data.docs)
+      setClases(res.data)
+      }
+      else if (filtro === "true"){
+        let data = {
+          "materia": sessionStorage.getItem("materia"),
+          "tipo": sessionStorage.getItem("tipo"),
+          "frecuencia": sessionStorage.getItem("frecuencia"),
+          "precioMin": sessionStorage.getItem("precioMin"),
+          "precioMax": sessionStorage.getItem("precioMax"),
+          "clasificacionMin": sessionStorage.getItem("clasificacionMin"),
+          "clasificacionMax": sessionStorage.getItem("clasificacionMax")
+        }
+        try {
+          let res = await contactBackend("/clases/filtroClases",false,"POST",null,data,false,200)
+          console.log(res)
+          setClases(res.data)
+        }
+        catch(e){
+  
+        }
+      }
+      
     }
+    
     catch (e) {
 
     }
@@ -52,6 +76,7 @@ export default function Tarjetas() {
     "alumnoID": 1,
     "solicitud": "",
     "horario": "",
+    "profesorID":"",
     "nombreAlu": "",
     "materia": "",
     "profesor":"",
@@ -89,7 +114,7 @@ export default function Tarjetas() {
                       </div>
                       <MDBTypography tag="h4">{item.profesor}</MDBTypography>
                       <MDBCardText className="text-muted mb-4">
-                        {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a>
+                        {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a> <span className="mx-2">|</span><a>{item.tipo}</a>
                       </MDBCardText>
                       <MDBCardText className="text-muted mb-4" style={{ overflowX: "hidden" }}>
                         {item.descripcion}
@@ -109,18 +134,32 @@ export default function Tarjetas() {
                           setDatosSolicitud({
                             "claseID": item._id,
                             "alumnoID": localStorage.getItem("id"),
+                            "profesorID":item.idProfesor,
+                            "nombreAlu": sessionStorage.getItem("nombre"),
                             "solicitud": "",
                             "horario": "",
-                            "nombreAlu": sessionStorage.getItem("nombre"),
-                            "materia": item.materia,
                             "profesor": item.profesor,
+                            "materia": item.materia,
                             "mail": localStorage.getItem("email")
                           })
                           handleShow()
                         }} >
                           Contratar clase
                         </Button>
-                        <Button rounded size="md" variant={"secondary"} onClick={handleShow2} >
+                        <Button rounded size="md" variant={"secondary"} onClick={() => {
+                          setDatosSolicitud({
+                            "claseID": item._id,
+                            "alumnoID": localStorage.getItem("id"),
+                            "profesorID":item.idProfesor,
+                            "nombreAlu": sessionStorage.getItem("nombre"),
+                            "solicitud": "",
+                            "horario": "",
+                            "profesor": item.profesor,
+                            "materia": item.materia,
+                            "mail": localStorage.getItem("email")
+                          })
+                          handleShow2()
+                        }} >
                           Ver comentarios
                         </Button>
                       </div>
@@ -168,8 +207,8 @@ export default function Tarjetas() {
 
       <Modal show={show2} onHide={handleClose2} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>Programación</Modal.Title>
-          <Modal.Body>por Franco Siciliano</Modal.Body>
+          <Modal.Title>{datosSolicitud.materia}</Modal.Title>
+          <Modal.Body>por {datosSolicitud.profesor}</Modal.Body>
         </Modal.Header>
         <Modal.Body>
           <div>

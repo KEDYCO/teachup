@@ -11,49 +11,51 @@ import {
   MDBListGroup,
   MDBListGroupItem
 } from 'mdb-react-ui-kit';
+import { contactBackend } from "../../API";
+import { PopUp } from "../PopUp/PopUp";
 
 export default function Filtro() {
-  const [precioMinimo, setPrecioMinimo] = useState(0);
-  const funcPrecMin = (e) => {
-    if (e.target.value > 0) {
-      setPrecioMinimo(e.target.value)
-    }
-    else {
-      setPrecioMinimo(0);
-    }
+  const [title, setTitle] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [text, setText] = useState("");
+  const [popup, setPopup] = useState(false);
+  const showPopUp = () => setPopup(true);
+  const hidePopUp = () => setPopup(false);
+  const [materia, setMateria] = React.useState()
+  const [tipo, setTipo] = React.useState()
+  const [frecuencia, setFrecuencia] = React.useState()
+  const [precioMax, setPrecioMax] = React.useState()
+  const [precioMin, setPrecioMin] = React.useState()
+  const [clasificacionMax, setClasificacionMax] = React.useState()
+  const [clasificacionMin, setClasificacionMin] = React.useState()
 
-  }
-  const [precioMax, setPrecioMax] = useState(0);
-  const funcPrecMax = (e) => {
-    if (e.target.value > 0) {
-      setPrecioMax(e.target.value)
-    }
-    else {
-      setPrecioMax(0);
-    }
-  }
+ 
 
 
-  const [puntMin, setPuntMin] = useState(1);
-  const funcPuntMin = (e) => {
-    if (e.target.value > 1 && 5 >= e.target.value) {
-      setPuntMin(e.target.value)
-    }
-    else {
-      setPuntMin(1);
-    }
+  const generarFiltro = async () => {
+    sessionStorage.setItem("filtro", true)
+    sessionStorage.setItem("materia",materia)
+    sessionStorage.setItem("tipo",tipo)
+    sessionStorage.setItem("frecuencia",frecuencia)
+    sessionStorage.setItem("precioMin",precioMin)
+    sessionStorage.setItem("precioMax",precioMax)
+    sessionStorage.setItem("clasificacionMin",clasificacionMin)
+    sessionStorage.setItem("clasificacionMax",clasificacionMax)
+    window.location.reload() 
   }
 
-
-  const [puntMax, setPuntMax] = useState(5);
-  const funcPuntMax = (e) => {
-    if (e.target.value > 0 && 5 >= e.target.value) {
-      setPuntMax(e.target.value);
-    }
-    else {
-      setPuntMax(5);
-    }
+  const quitarFiltro = async () => {
+    sessionStorage.setItem("filtro", false)
+    sessionStorage.setItem("materia",null)
+    sessionStorage.setItem("tipo",null)
+    sessionStorage.setItem("frecuencia",null)
+    sessionStorage.setItem("precioMin",null)
+    sessionStorage.setItem("precioMax",null)
+    sessionStorage.setItem("clasificacionMin",null)
+    sessionStorage.setItem("clasificacionMax",null)
+    window.location.reload() 
   }
+
 
   return (
 
@@ -61,61 +63,43 @@ export default function Filtro() {
       <MDBCard className="cardFiltro">
         <div className="componenteFiltro">
           <MDBCardHeader><b>Buscar materia</b></MDBCardHeader>
-          <Form.Control placeholder="Buscar por materia"></Form.Control>
+          <Form.Control placeholder="Buscar por materia" value={materia} onChange={(text) => { setMateria(text.target.value) }}></Form.Control>
         </div>
         <div className="componenteFiltro">
           <MDBCardHeader><b>Tipo</b></MDBCardHeader>
-          <label class="form-check">
-            <input class="form-check-input" type="checkbox" value="" />
-            <span class="form-check-label">
-              <a>Individual</a>
-            </span>
-          </label>
-          <label class="form-check">
-            <input class="form-check-input" type="checkbox" value="" />
-            <span class="form-check-label">
-             <a> Grupal</a>
-            </span>
-          </label>
+          <Form.Select defaultValue="Elegir" value={tipo} onChange={(text) => { setTipo(text.target.value) }}>
+            <option>Seleccionar</option>
+            <option>Individual</option>
+            <option>Grupal</option>
+          </Form.Select>
         </div>
         <div className="componenteFiltro">
           <MDBCardHeader><b>Frecuencia</b></MDBCardHeader>
-          <label class="form-check">
-            <input class="form-check-input" id="chekibox" type="checkbox" value="" />
-            <span class="form-check-label">
-              Unica
-            </span>
-          </label>
-          <label class="form-check">
-            <input class="form-check-input" id="chekibox" type="checkbox" value="" />
-            <span class="form-check-label">
-              Semanal
-            </span>
-          </label>
-          <label class="form-check">
-            <input class="form-check-input" id="chekibox" type="checkbox" value="" />
-            <span class="form-check-label">
-              Mensual
-            </span>
-          </label>
+          <Form.Select defaultValue="Elegir" value={frecuencia} onChange={(text) => { setFrecuencia(text.target.value) }}>
+            <option>Seleccionar</option>
+            <option>Unica</option>
+            <option>Semanal</option>
+            <option>Mensual</option>
+          </Form.Select>
         </div>
         <div className="componenteFiltro">
           <MDBCardHeader><b>Precio</b></MDBCardHeader>
-          <Form.Control placeholder="Ingresar precio" />
-          <Form.Label>Precio mínimo</Form.Label>
-          <Form.Control placeholder="Ingresar precio" />
+          <Form.Control placeholder="Ingresar precio" value={precioMin} onChange={(text) => { setPrecioMin(text.target.value) }} />
+          <Form.Label >Precio mínimo</Form.Label>
+          <Form.Control placeholder="Ingresar precio" value={precioMax} onChange={(text) => { setPrecioMax(text.target.value) }} />
           <Form.Label>Precio máximo</Form.Label>
         </div>
         <div className="componenteFiltro">
           <MDBCardHeader><b>Clasificacion</b></MDBCardHeader>
           <label>Min</label>
-          <Form.Control value={puntMin} onChange={funcPuntMin} step="0.5" />
+          <Form.Control value={clasificacionMin} onChange={(text) => { setClasificacionMin(text.target.value) }} step="0.5" />
           <label>Max</label>
-          <Form.Control value={puntMax} onChange={funcPuntMax} step="0.5" />
+          <Form.Control value={clasificacionMax} onChange={(text) => { setClasificacionMax(text.target.value) }} step="0.5" />
         </div>
-      <footer id="botonfiltrito">
-        <Button variant={"secondary"}>Filtrar</Button>
-      </footer>
+        <footer id="botonfiltrito">
+          <Button variant={"secondary"} onClick={generarFiltro}>Filtrar</Button>
+          <Button variant={"secondary"} onClick={quitarFiltro}>Quitar filtro</Button>
+        </footer>
       </MDBCard>
 
     </div>

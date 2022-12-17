@@ -58,7 +58,7 @@ import { useNavigate } from 'react-router-dom';
       try{
         let res = await contactBackend("/clases/getClasesPID",false,"POST",null,data,false,200)
         console.log(res)
-        setClases(res.data.docs)
+        setClases(res.data)
       }
       catch(e){
   
@@ -165,7 +165,7 @@ import { useNavigate } from 'react-router-dom';
                   </div>
                   <MDBTypography tag="h4">{item.profesor}</MDBTypography>
                   <MDBCardText className="text-muted mb-4">
-                    {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a>
+                    {item.materia}<span className="mx-2">|</span> <a>{item.frecuencia}</a><span className="mx-2">|</span> <a>{item.duracion} horas</a> <span className="mx-2">|</span> <a>{item.tipo}</a>
                   </MDBCardText> 
                   <div className="d-flex justify-content-between text-center mt-4 mb-2">
                     <div>

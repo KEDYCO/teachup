@@ -120,7 +120,7 @@ export default function ClasesProf() {
     try {
       let res = await contactBackend("/clases/getClasesPID", false, "POST", null, data, false, 200)
       console.log(res)
-      setClases(res.data.docs)
+      setClases(res.data)
     }
     catch (e) {
 

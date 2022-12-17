@@ -16,11 +16,16 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-export default function AddComment() {
-const [rating, setRating] = useState(0);
+
+export default function AddComment({handleChangeComment,handleSubmit,handleChangeRating}) {
+const [clasificacion, setClasificacion] = useState(0);
 const [show, setShow] = useState(false);
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
+
+
+
+
   return (
     <section className="vh-99" style={{ backgroundColor: "rgb(28,30,33)" }}>
       <MDBContainer className="py-5" style={{ maxWidth: "1000px" }}>
@@ -40,12 +45,15 @@ const handleShow = () => setShow(true);
                   <div className="w-100">
                     <MDBTypography tag="h5">Agregar un comentario</MDBTypography>
                     <div>
-                        <Rating ratingValue={rating} allowHalfIcon={true} initialValue={0} size={"30px"}/>
+                        <Rating ratingValue={clasificacion} allowHalfIcon={true} initialValue={0} size={"30px"} name="clasificacion" onClick={handleChangeRating}/>
                     </div>
-                    <MDBTextArea label="¿Qué opinas sobre la clase contratada?" rows={4} />
+                    <MDBTextArea label="¿Qué opinas sobre la clase contratada?" rows={4} name="comentario" onChange={handleChangeComment}/>
 
                     <div className="d-flex justify-content-end mt-3">
-                      <Button variant="success" onClick={handleShow}>
+                      <Button variant="success" onClick={()=>{
+                        handleShow();
+                        handleSubmit()
+                        }}>
                         Enviar comentario <MDBIcon fas icon="long-arrow-alt-right ms-1" />
                       </Button>
                     </div>

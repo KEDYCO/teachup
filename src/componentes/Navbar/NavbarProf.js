@@ -2,7 +2,7 @@ import React from "react";
 import './NavbarCss.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { MDBBadge, MDBIcon } from 'mdb-react-ui-kit';
-import NotificationMenu from "../Notification/Notification";
+
 
 
 
@@ -16,7 +16,7 @@ export default function NavbarProf(){
         <nav className="nav">
         <a href="/paginaprincipalprof" className="site-title"><img src="teachupsmall.png"/></a>
         <ul>
-        <li><NotificationMenu></NotificationMenu></li>
+       
         
         <li>
         <NavDropdown title="Perfil" id="nav-dropdown" menuVariant="light">
