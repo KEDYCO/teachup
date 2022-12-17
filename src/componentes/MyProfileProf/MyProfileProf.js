@@ -73,6 +73,12 @@ import { useNavigate } from 'react-router-dom';
       "_id": 0,
     })
 
+    const [datosNombrar,setDatosNombrar] = React.useState({
+      "idClase":0,
+      "materia":"",
+      "profesor":""
+    })
+
     const handleClick = () => {
       navigate('/VistaAdministrarSolicitudes')
     }
@@ -190,7 +196,15 @@ import { useNavigate } from 'react-router-dom';
                         }}> 
                   Solicitudes
                 </Button>
-                <Button rounded size="sm" variant={"secondary"} onClick={handleShow2} >
+                <Button rounded size="sm" variant={"secondary"} onClick={() => {
+                        sessionStorage.setItem("IDClase",item._id)
+                        setDatosNombrar({
+                          "idClase":item._id,
+                          "materia":item.materia,
+                          "profesor":item.profesor
+                        })
+                          handleShow2()
+                        }} >
                   Ver comentarios
                 </Button>
                 </div>
@@ -225,12 +239,12 @@ import { useNavigate } from 'react-router-dom';
 
         <Modal show={show2} onHide={handleClose2} size="lg">
           <Modal.Header closeButton>
-            <Modal.Title>Programación</Modal.Title>
-            <Modal.Body>por Profesor Ejemplar</Modal.Body>
+            <Modal.Title>{datosNombrar.materia}</Modal.Title>
+            <Modal.Body>por {datosNombrar.profesor}</Modal.Body>
           </Modal.Header>
           <Modal.Body>
             <div>
-            <CommentBox></CommentBox>
+            <CommentBox idClase={datosNombrar}></CommentBox>
             </div>
           </Modal.Body>
           

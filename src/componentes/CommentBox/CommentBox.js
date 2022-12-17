@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import {
   MDBCard,
   MDBCardBody,
@@ -10,8 +10,41 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 
+import { contactBackend } from "../../API";
+import { PopUp } from "../PopUp/PopUp";
 
-export default function Commentbox() {
+
+
+
+export default function Commentbox(idClase) {
+  console.log(idClase)
+  const [title, setTitle] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [text, setText] = useState("");
+  const [popup, setPopup] = useState(false);
+  const showPopUp = () => setPopup(true);
+  const hidePopUp = () => setPopup(false);
+  const [comentarios, setComentarios] = React.useState("")
+
+  const mostrarComments = async () => {
+    let data = {
+      "idClase": idClase.idClase.idClase
+    }
+    try {
+      let res = await contactBackend("/clases/getComentarios", false, "POST", null, data, false, 200)
+      console.log(res)
+      setComentarios(res.data)
+    }
+    catch (e) {
+
+    }
+  }
+
+  useEffect(() => {
+    mostrarComments()
+
+  }, [])
+
   return (
     <section style={{ backgroundColor: "rgb(28,30,33)" }}>
       <MDBContainer className="py-5" style={{ maxWidth: "1000px" }}>
@@ -26,92 +59,38 @@ export default function Commentbox() {
                   Comentarios recientes de alumnos sobre esta clase
                 </p>
 
-                <div className="d-flex flex-start">
-                  <MDBCardImage
-                    className="rounded-circle shadow-1-strong me-3"
-                    src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png"
-                    alt="avatar"
-                    width="60"
-                    height="60"
-                  />
-                  <div>
-                    <MDBTypography tag="h6" className="fw-bold mb-1">
-                      Agustín Sturba
-                    </MDBTypography>
-                    <div className="d-flex align-items-center mb-3">
-                      <p className="mb-0">
-                        24 de septiembre, 2022
-                      </p>
-                      
+                {comentarios && comentarios.map((item) => {
+                  return (
+                    <div key={item._id}>
+                      <div className="d-flex flex-start">
+                        <MDBCardImage
+                          className="rounded-circle shadow-1-strong me-3"
+                          src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png"
+                          alt="avatar"
+                          width="60"
+                          height="60"
+                        />
+                        <div>
+                          <MDBTypography tag="h6" className="fw-bold mb-1">
+                            {item.nombreAlu}
+                          </MDBTypography>
+                          <div className="d-flex align-items-center mb-3">
+                            
+
+                          </div>
+                          <p className="mb-0" >
+                            {item.textoComentario}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <p className="mb-0" >
-                      Excelente clase, muy buen trato hacia los alumnos, pude aprender a programar y 
-                      me sirvió para el laburo
-                    </p>
-                  </div>
-                </div>
+                  )
+                })}
+
+
               </MDBCardBody>
 
-              <hr className="my-0" />
-
-              <MDBCardBody className="p-4">
               
-
-                <div className="d-flex flex-start">
-                  <MDBCardImage
-                    className="rounded-circle shadow-1-strong me-3"
-                    src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png"
-                    alt="avatar"
-                    width="60"
-                    height="60"
-                  />
-                  <div>
-                    <MDBTypography tag="h6" className="fw-bold mb-1">
-                      Mauro Lombardo
-                    </MDBTypography>
-                    <div className="d-flex align-items-center mb-3">
-                      <p className="mb-0">
-                        20 de septiembre, 2022
-                      </p>
-                      
-                    </div>
-                    <p className="mb-0" >
-                      Las clases buenas, se hizo un poco larga pero el profesor la sabía llevar bien jaja, recomendado
-                    </p>
-                  </div>
-                </div>
-              </MDBCardBody>
-
-              <hr className="my-0" />
-
-              <MDBCardBody className="p-4">
-          
-           
-
-                <div className="d-flex flex-start">
-                  <MDBCardImage
-                    className="rounded-circle shadow-1-strong me-3"
-                    src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png"
-                    alt="avatar"
-                    width="60"
-                    height="60"
-                  />
-                  <div>
-                    <MDBTypography tag="h6" className="fw-bold mb-1">
-                      Alejandro Gómez
-                    </MDBTypography>
-                    <div className="d-flex align-items-center mb-3">
-                      <p className="mb-0">
-                        17 de septiembre, 2022
-                      </p>
-                      
-                    </div>
-                    <p className="mb-0" >
-                      Buenas clases loco, para el profe 5 palabras: CRACK
-                    </p>
-                  </div>
-                </div>
-              </MDBCardBody>
 
 
 

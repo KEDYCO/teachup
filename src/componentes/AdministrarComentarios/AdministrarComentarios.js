@@ -53,12 +53,30 @@ export default function AdministrarComentarios() {
     try{
       let res = await contactBackend("/caa/aprobarComentario",false,"POST",null,datosAprobar,false,200)
       console.log(res)
+      window.location.reload()
+      handleClose()
+      
+    }
+    catch (e){
+
+    }
+  }
+
+  const rechazarComentario = async () =>{
+    try{
+      let res = await contactBackend("/caa/rechazarComentario",false,"POST",null,datosRechazar,false,200)
+      console.log(res)
+      window.location.reload()
       handleClose()
     }
     catch (e){
 
     }
   }
+
+  const [datosRechazar,setDatosRechazar] = React.useState({
+    "_id": 0
+  })
 
   const [datosAprobar, setDatosAprobar] = React.useState({
     "_id": 0,
@@ -120,7 +138,13 @@ export default function AdministrarComentarios() {
                             icon="thumbs-up mx-2 fa-xs text-black"
                             style={{ marginTop: "-0.16rem" }}
                           />
-                          <Button className="botonRechazo btn-danger" onClick={handleShow2} >
+                          <Button className="botonRechazo btn-danger" onClick={() => {
+                            setDatosRechazar({
+                              "_id": item._id,
+                              
+                            })
+                            handleShow2()
+                          }} >
                             Rechazar
                           </Button>
                         </div>
@@ -158,17 +182,14 @@ export default function AdministrarComentarios() {
 
       <Modal show={show2} onHide={handleClose2} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>Rechazar comentario</Modal.Title>
+          <Modal.Title>El comentario fue rechazado</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Ingrese el motivo por el cual desea eliminar este comentario</Modal.Body>
-        <Form.Group id="text-insert">
-          <Form.Control as="textarea" rows={3} id="ingresoMotivo" placeholder="Ingresar motivo" />
-        </Form.Group>
+        <Modal.Body>Se rechazó el comentario. No será visible en los comentarios de su clase.</Modal.Body>
         <Modal.Footer id="footer-form">
           <Button variant="secondary" onClick={handleClose2}>
             Cerrar
           </Button>
-          <Button variant="primary" onClick={handleClose2}>
+          <Button variant="primary" onClick={rechazarComentario}>
             Enviar
           </Button>
         </Modal.Footer>

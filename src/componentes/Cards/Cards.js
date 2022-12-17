@@ -84,6 +84,12 @@ export default function Tarjetas() {
 
   })
 
+  const [datosComentariosClase,setDatosComentariosClase] = React.useState({
+    "idClase":0,
+    "materia":"",
+    "profesor":""
+  })
+
   const enviarSolicitud = async () =>{
     try{
       let res = await contactBackend("/solicitudunirse/creacionSolicitud",false,"POST",null,datosSolicitud,false,201)
@@ -147,16 +153,10 @@ export default function Tarjetas() {
                           Contratar clase
                         </Button>
                         <Button rounded size="md" variant={"secondary"} onClick={() => {
-                          setDatosSolicitud({
-                            "claseID": item._id,
-                            "alumnoID": localStorage.getItem("id"),
-                            "profesorID":item.idProfesor,
-                            "nombreAlu": sessionStorage.getItem("nombre"),
-                            "solicitud": "",
-                            "horario": "",
-                            "profesor": item.profesor,
+                          setDatosComentariosClase({
+                            "idClase": item._id,
                             "materia": item.materia,
-                            "mail": localStorage.getItem("email")
+                            "profesor": item.profesor,
                           })
                           handleShow2()
                         }} >
@@ -207,12 +207,12 @@ export default function Tarjetas() {
 
       <Modal show={show2} onHide={handleClose2} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>{datosSolicitud.materia}</Modal.Title>
-          <Modal.Body>por {datosSolicitud.profesor}</Modal.Body>
+          <Modal.Title>{datosComentariosClase.materia}</Modal.Title>
+          <Modal.Body>por {datosComentariosClase.profesor}</Modal.Body>
         </Modal.Header>
         <Modal.Body>
           <div>
-            <CommentBox></CommentBox>
+            <CommentBox idClase={datosComentariosClase}  ></CommentBox>
           </div>
         </Modal.Body>
 
