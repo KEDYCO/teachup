@@ -34,7 +34,7 @@ export default function CadaClase() {
   const handleChangeRating = (value) => {
     setDatosComentarios({
       ...datosComentarios,
-      clasificacion: value / 10
+      clasificacion: value / 20
     });
     
   }
@@ -96,7 +96,7 @@ export default function CadaClase() {
       console.log(res)
     }
     catch(e){
-      
+
     }
   }
 
